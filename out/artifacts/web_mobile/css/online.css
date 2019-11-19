@@ -1,0 +1,18 @@
+body {
+    margin: auto;
+}
+
+.title_big {
+    font-size: 25px;
+    color: #ff6700;
+    font-weight: bold;
+}
+
+.input_text {
+    height: 20px;
+}
+
+li, b {
+    font-size: 20px;
+    text-align: center;
+}

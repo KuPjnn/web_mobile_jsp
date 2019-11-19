@@ -1,0 +1,37 @@
+<%@ page import="vn.edu.nlu.fit.util.Util" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<!--=================    LOGIN   ==============-->
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content w-75 m-auto">
+            <div class="card">
+                <div class="card-header bg-light">
+                    <h4 class="text-center font-weight-bold">Đăng nhập</h4>
+                </div>
+                <div class="card-body">
+                    <form action="<%=Util.fullPath("login")%>" method="GET" class="form-signin">
+                        <div class="form-label-group mb-5 mt-5">
+                            <input name="username" type="text" id="inputEmail" class="form-control"
+                                   placeholder="Nhập tên đăng nhập"
+                                   autofocus>
+                        </div>
+                        <div class="form-label-group mb-5">
+                            <input name="password" type="password" id="inputPassword" class="form-control"
+                                   placeholder="Nhập mật khẩu"
+                            >
+                        </div>
+                        <div class="custom-control custom-checkbox mb-4">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
+                        </div>
+                        <button class="btn_login btn btn-lg btn-block text-uppercase" type="submit">Đăng
+                            nhập
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
