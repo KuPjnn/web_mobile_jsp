@@ -110,11 +110,5 @@
 <%@include file="change_password.jsp" %>
 <%-----------------------------------------------%>
 
-<!--==============  MODAL LOGIN   ==============-->
-<%@include file="login.jsp" %>
-
-<!--==============  MODAL REGIS   ==============-->
-<%@include file="register.jsp" %>
-
 </body>
 </html>

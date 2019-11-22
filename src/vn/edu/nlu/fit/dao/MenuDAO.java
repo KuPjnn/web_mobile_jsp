@@ -33,12 +33,12 @@ public class MenuDAO {
     }
 
     public ArrayList<MenuDAO> getSupplier() throws SQLException, ClassNotFoundException {
-        Statement statement = DBConect.connectMySQL();
 
         String query = "SELECT DISTINCT items.ID_ITEMS,supplier.NAME_SUPPLIER FROM items,supplier,product \n" +
                 "WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER;";
 
-        ResultSet menu = statement.executeQuery(query);
+        PreparedStatement ps = DBConect.getPreparedStatement(query);
+        ResultSet menu = ps.executeQuery();
 
         ArrayList<MenuDAO> listMenu = new ArrayList<>();
 

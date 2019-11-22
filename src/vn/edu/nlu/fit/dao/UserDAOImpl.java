@@ -31,7 +31,6 @@ public class UserDAOImpl implements UserDAO {
         return false;
     }
 
-//    get thông tin khách hàng
 
     @Override
     public boolean checkLogin(String user, String pass) throws SQLException, ClassNotFoundException {
@@ -55,7 +54,6 @@ public class UserDAOImpl implements UserDAO {
             u.setEmail(resultSet.getString(5));
             u.setPhone(resultSet.getString(6));
             u.setPrivileges(resultSet.getString(7));
-
             return true;
         }
         return false;

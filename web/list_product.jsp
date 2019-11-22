@@ -75,11 +75,5 @@
 <%@include file="footer.jsp" %>
 <%-----------------------------------------------%>
 
-<!--==============  MODAL LOGIN   ==============-->
-<%@include file="login.jsp" %>
-
-<!--==============  MODAL REGIS   ==============-->
-<%@include file="register.jsp" %>
-
 </body>
 </html>

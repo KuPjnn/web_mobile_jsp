@@ -1,7 +1,7 @@
 <%@ page import="vn.edu.nlu.fit.util.Util" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!--=================    LOGIN   ==============-->
+<!--================= LOGIN ==============-->
 <!-- Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -11,7 +11,8 @@
                     <h4 class="text-center font-weight-bold">Đăng nhập</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<%=Util.fullPath("login")%>" method="GET" class="form-signin">
+                    <form action="<%=Util.fullPath("login")%>" method="GET"
+                          class="form-signin">
                         <div class="form-label-group mb-5 mt-5">
                             <input name="username" type="text" id="inputEmail" class="form-control"
                                    placeholder="Nhập tên đăng nhập"
@@ -35,3 +36,4 @@
         </div>
     </div>
 </div>
+

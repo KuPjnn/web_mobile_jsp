@@ -1,5 +1,6 @@
 <%@ page import="vn.edu.nlu.fit.dao.MenuDAO" %>
 <%@ page import="java.util.List" %>
+<%@ page import="vn.edu.nlu.fit.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header id="main_header">
     <div id="header_style">
@@ -26,10 +27,29 @@
                         <div class="col-md-4 col-12 login">
                             <a id="shopping_cart" class="fas fa-shopping-cart float-right mt-3 ml-5"
                                href="cart.jsp"></a>
-                            <a class="float-right mt-3" href="index.jsp" data-toggle="modal"
+                            <%
+                                User ss = (User) session.getAttribute("user");
+                                if (ss != null) {
+                            %>
+                            <ul class="login mt-3 float-right">
+                                <a class="mx-2 text-decoration-none" href="info_user.jsp"><i class="fa fa-user"
+                                                                                             style="font-size: 25px; color: #fff"></i>
+                                    <%=ss.getUser_name()%>
+                                </a>
+                                <a class="text-decoration-none" href="logout">Đăng xuất</a>
+                            </ul>
+                            <%
+                            } else {
+                            %>
+                            <a class="float-right mt-3"
+                               href="" data-toggle="modal"
                                data-target="#regisModal">Đăng kí</a>
-                            <a class="float-right mt-3" href="index.jsp" data-toggle="modal"
+                            <a class="float-right mt-3"
+                               href="" data-toggle="modal"
                                data-target="#loginModal">Đăng nhập</a>
+                            <%
+                                }
+                            %>
                         </div>
                     </nav>
                 </div>
@@ -117,3 +137,10 @@
         </div>
     </div>
 </header>
+
+
+<!--============== MODAL LOGIN ==============-->
+<%@include file="login.jsp" %>
+
+<!--============== MODAL REGIS ==============-->
+<%@include file="register.jsp" %>

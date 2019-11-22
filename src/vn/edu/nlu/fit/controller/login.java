@@ -2,7 +2,6 @@ package vn.edu.nlu.fit.controller;
 
 import vn.edu.nlu.fit.dao.UserDAOImpl;
 import vn.edu.nlu.fit.model.User;
-import vn.edu.nlu.fit.util.Util;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpSession;
@@ -23,13 +22,14 @@ public class login extends javax.servlet.http.HttpServlet {
         String pass = request.getParameter("password");
 
         User u = new User(user, pass);
+
         try {
             if (new UserDAOImpl().checkLogin(user, pass)) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", u);
-                response.sendRedirect(Util.fullPath("admin.jsp"));
+                response.sendRedirect("home");
             } else {
-                request.setAttribute("err", "Sai ten dang nhap hoac mat khau.");
+                request.setAttribute("err", "Sai tên hoặc mật khẩu !");
                 request.getRequestDispatcher("home").forward(request, response);
             }
         } catch (SQLException e) {

@@ -96,11 +96,19 @@
                 </div>
             </form>
             <div>
+                <%
+                    ResultSet comment = (ResultSet) request.getAttribute("comment");
+                    while (comment.next()) {
+                %>
                 <div class="user_evaluation">
-                    <span class="float-right">12/12/2019</span>
-                    <p>Bởi : Nguyễn Quốc Hoàng Huy</p>
-                    <span>Giảm giá s10 + trả góp 0% được không ạ? Mấy ngày trước còn thấy giảm giá trả góp 0% mà sao giờ hết rồi ạ</span>
+                    <span class="float-right"><%=comment.getString(5)%></span>
+                    <p>Bởi : <%=comment.getString(2)%>
+                    </p>
+                    <span><%=comment.getString(4)%></span>
                 </div>
+                <%
+                    }
+                %>
             </div>
         </div>
         <!--SẢN PHẨM TƯƠNG TỰ-->
@@ -109,17 +117,31 @@
         </div>
         <div class="product_similar">
             <div class="row">
+                <%
+                    int i = 1;
+                    ResultSet like = (ResultSet) request.getAttribute("like");
+                    while (like.next()) {
+                        if (i <= 8) {
+                %>
                 <div class="col-md-3 col-6">
                     <div class="product_item">
                         <div class="figure figure-img">
-                            <a href="detail_product.jpp">
-                                <img class="img-fluid" src="img/smart_phone/note8pro-t-300x300.jpg" alt="img">
+                            <a href="<%=Util.fullPath("detail_product?detail="+like.getString(6))%>">
+                                <img class="img-fluid" src="<%=like.getString(3)%>" alt="img">
                             </a>
                         </div>
-                        <h5 class="product_name"><a href="detail_product.jpp">Xiaomi MI 9</a></h5>
-                        <span class="product_price">12.000.000</span>
+                        <h5 class="product_name"><a
+                                href="<%=Util.fullPath("detail_product?detail="+like.getString(6))%>">
+                            <%=like.getString(4) + " " + like.getString(1)%>
+                        </a></h5>
+                        <span class="product_price"><%=Util.convertPrice(like.getDouble(2))%></span>
                     </div>
                 </div>
+                <%
+                            i++;
+                        }
+                    }
+                %>
             </div>
         </div>
     </div>
@@ -130,11 +152,6 @@
 <%@include file="footer.jsp" %>
 <%-----------------------------------------------%>
 
-<!--==============  MODAL LOGIN   ==============-->
-<%@include file="login.jsp" %>
-
-<!--==============  MODAL REGIS   ==============-->
-<%@include file="register.jsp" %>
 
 </body>
 </html>

@@ -23,20 +23,43 @@ public class detail_product extends HttpServlet {
         String detail = request.getParameter("detail");
         try {
 
-            Statement statement = DBConect.connectMySQL();
+            /*thong tin san pham*/
+            Statement stProduct = DBConect.connectMySQL();
             String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
                     " FROM product,items,supplier\n" +
                     " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER " +
                     "AND product.ID_PRODUCT=" + "\'" + detail + "\'";
-            ResultSet resultSet = statement.executeQuery(product);
+            ResultSet resultSet = stProduct.executeQuery(product);
             request.setAttribute("resultSet", resultSet);
 
-            /*Cau hinh*/
-            Statement st = DBConect.connectMySQL();
+            /*Cau hinh san pham*/
+            Statement stConf = DBConect.connectMySQL();
             String conf = "SELECT * FROM configuration WHERE configuration.ID_PRODUCT=" + "\'" + detail + "\'";
-            ResultSet configuration = st.executeQuery(conf);
+            ResultSet configuration = stConf.executeQuery(conf);
             request.setAttribute("configuration", configuration);
 
+            /*Binh luan san pham*/
+            Statement stCom = DBConect.connectMySQL();
+            String com = "SELECT DISTINCT `comment`.ID_COMMENT,`user`.FULLNAME,`comment`.ID_PRODUCT,`comment`.CONTENT,`comment`.DATE_COMMENT\n" +
+                    "FROM `comment`,`user` WHERE `comment`.ID_USER=`user`.ID_USER AND `comment`.ID_PRODUCT=" + "\'" + detail + "\'";
+            ResultSet comment = stCom.executeQuery(com);
+            request.setAttribute("comment", comment);
+
+            /*San pham tuong tu*/
+            Statement stSame = DBConect.connectMySQL();
+            String same = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
+                    "FROM product,items,supplier\n" +
+                    "WHERE \n" +
+                    "product.ID_ITEMS=items.ID_ITEMS \n" +
+                    "AND \n" +
+                    "product.ID_SUPPLIER=supplier.ID_SUPPLIER\n" +
+                    "AND\n" +
+                    "product.ID_SUPPLIER =(SELECT product.ID_SUPPLIER FROM product WHERE product.ID_PRODUCT =" + "\'" + detail + "\') \n" +
+                    "AND \n" +
+                    "product.ID_ITEMS = (SELECT product.ID_ITEMS FROM product WHERE product.ID_PRODUCT =" + "\'" + detail + "\') \n" +
+                    " ORDER BY RAND ( );";
+            ResultSet like = stSame.executeQuery(same);
+            request.setAttribute("like", like);
 
             request.getRequestDispatcher("detail_product.jsp").forward(request, response);
 

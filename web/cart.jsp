@@ -41,13 +41,13 @@
                     <div class="col-md-3 col-6">
                         <div>
                             <input type="checkbox" name="select_product">
-                            <img width="100px" src="img/note8pro-t.jpg" alt="img">
+                            <img width="100px" src="img/phone/IphoneX.jpg" alt="img">
                         </div>
                     </div>
                     <div class="col-md-3 col-6 detail_cart">
                         <div class="float-left mt-4">
-                            <span>Xiaomi Mi 9</span> <br>
-                            <span>Giá : 12.000.000đ</span>
+                            <span>Iphone X</span> <br>
+                            <span>Giá : 15.000.000đ</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mt-4">
@@ -64,13 +64,13 @@
                     <div class="col-md-3 col-6">
                         <div>
                             <input type="checkbox" name="select_product">
-                            <img width="100px" src="img/note8pro-t.jpg" alt="img">
+                            <img width="100px" src="img/phone/IphoneX.jpg" alt="img">
                         </div>
                     </div>
                     <div class="col-md-3 col-6 detail_cart">
                         <div class="float-left mt-4">
-                            <span>Xiaomi Mi 9</span> <br>
-                            <span>Giá : 12.000.000đ</span>
+                            <span>Iphone X</span> <br>
+                            <span>Giá : 15.000.000đ</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mt-4">
@@ -87,13 +87,13 @@
                     <div class="col-md-3 col-6">
                         <div>
                             <input type="checkbox" name="select_product">
-                            <img width="100px" src="img/note8pro-t.jpg" alt="img">
+                            <img width="100px" src="img/phone/IphoneX.jpg" alt="img">
                         </div>
                     </div>
                     <div class="col-md-3 col-6 detail_cart">
                         <div class="float-left mt-4">
-                            <span>Xiaomi Mi 9</span> <br>
-                            <span>Giá : 12.000.000đ</span>
+                            <span>Iphone X</span> <br>
+                            <span>Giá : 15.000.000đ</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mt-4">
@@ -110,36 +110,13 @@
                     <div class="col-md-3 col-6">
                         <div>
                             <input type="checkbox" name="select_product">
-                            <img width="100px" src="img/note8pro-t.jpg" alt="img">
+                            <img width="100px" src="img/phone/IphoneX.jpg" alt="img">
                         </div>
                     </div>
                     <div class="col-md-3 col-6 detail_cart">
                         <div class="float-left mt-4">
-                            <span>Xiaomi Mi 9</span> <br>
-                            <span>Giá : 12.000.000đ</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mt-4">
-                        <div class="input-group">
-                            <span class="input-group-text">Số lượng</span>
-                            <input type="number" class="form-control" value="1">
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mt-4">
-                        <input class="btn btn-dark ml-3" type="button" name="delete_product" value="Xóa">
-                    </div>
-                </div>
-                <div class="product_cart row">
-                    <div class="col-md-3 col-6">
-                        <div>
-                            <input type="checkbox" name="select_product">
-                            <img width="100px" src="img/note8pro-t.jpg" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 detail_cart">
-                        <div class="float-left mt-4">
-                            <span>Xiaomi Mi 9</span> <br>
-                            <span>Giá : 12.000.000đ</span>
+                            <span>Iphone X</span> <br>
+                            <span>Giá : 15.000.000đ</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mt-4">
@@ -156,7 +133,7 @@
             <div class="col-md-4 col-12">
                 <div class="product_total mt-5 mb-5">
                     <p>Tổng tiền</p>
-                    <span>36.000.000đ</span>
+                    <span>60.000.000đ</span>
                     <button class="btn m-auto" type="submit" data-toggle="modal"
                             data-target="#payModal">Đặt hàng
                     </button>
@@ -175,11 +152,6 @@
 <%@include file="pay_online.jsp" %>
 <%----------------------------------------------%>
 
-<!--==============  MODAL LOGIN   ==============-->
-<%@include file="login.jsp" %>
-
-<!--==============  MODAL REGIS   ==============-->
-<%@include file="register.jsp" %>
 
 </body>
 </html>
