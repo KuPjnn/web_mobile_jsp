@@ -47,8 +47,6 @@ public class MenuDAO {
             String name = menu.getString(2);
             listMenu.add(new MenuDAO(id, name));
         }
-
         return listMenu;
-
     }
 }

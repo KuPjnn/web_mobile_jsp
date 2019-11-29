@@ -29,8 +29,8 @@ public class detail_product extends HttpServlet {
                     " FROM product,items,supplier\n" +
                     " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER " +
                     "AND product.ID_PRODUCT=" + "\'" + detail + "\'";
-            ResultSet resultSet = stProduct.executeQuery(product);
-            request.setAttribute("resultSet", resultSet);
+            ResultSet detailProduct = stProduct.executeQuery(product);
+            request.setAttribute("detailProduct", detailProduct);
 
             /*Cau hinh san pham*/
             Statement stConf = DBConect.connectMySQL();
@@ -41,7 +41,7 @@ public class detail_product extends HttpServlet {
             /*Binh luan san pham*/
             Statement stCom = DBConect.connectMySQL();
             String com = "SELECT DISTINCT `comment`.ID_COMMENT,`user`.FULLNAME,`comment`.ID_PRODUCT,`comment`.CONTENT,`comment`.DATE_COMMENT\n" +
-                    "FROM `comment`,`user` WHERE `comment`.ID_USER=`user`.ID_USER AND `comment`.ID_PRODUCT=" + "\'" + detail + "\'";
+                    "FROM `comment`,`user` WHERE `comment`.USER_NAME=`user`.USER_NAME AND `comment`.ID_PRODUCT=" + "\'" + detail + "\'";
             ResultSet comment = stCom.executeQuery(com);
             request.setAttribute("comment", comment);
 

@@ -4,23 +4,28 @@ package vn.edu.nlu.fit.dao;
 import vn.edu.nlu.fit.db.DBConect;
 import vn.edu.nlu.fit.model.User;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAOImpl implements UserDAO {
     @Override
-    public boolean addUser(Object obj) {
-        User user = (User) obj;
+    public boolean addUser(User obj) {
+        User user = obj;
 
         try {
-            Statement statement = DBConect.connectMySQL();
-
-            String query = "INSERT INTO `user` VALUES ('" + user.getId_user() + "','" + user.getUser_name() + "','" + user.getPassword()
-                    + "','" + user.getFull_name() + "','" + user.getEmail() + "','" + user.getPhone() + "','" + user.getPrivileges() + "');";
-
-            System.out.println(query);
-            statement.executeUpdate(query);
+            String query = "INSERT INTO `user` (USER_NAME, PASSWORD, FULLNAME, EMAIL, PHONE, PRIVILEGES) VALUES " +
+                    " (?,?,?,?,?,?); ";
+            PreparedStatement preparedStatement = DBConect.getPreparedStatement(query);
+            preparedStatement.setString(1, user.getUser_name());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setString(3, user.getFull_name());
+            preparedStatement.setString(4, user.getEmail());
+            preparedStatement.setString(5, user.getPhone());
+            preparedStatement.setString(6, user.getPrivileges());
+            preparedStatement.executeUpdate();
             return true;
 
         } catch (SQLException e) {
@@ -31,46 +36,67 @@ public class UserDAOImpl implements UserDAO {
         return false;
     }
 
-
     @Override
     public boolean checkLogin(String user, String pass) throws SQLException, ClassNotFoundException {
 
-        Statement statement = DBConect.connectMySQL();
+        String query = "SELECT * FROM `user` WHERE USER_NAME= ? AND `PASSWORD`= ?;";
 
-        String query = "SELECT * FROM `user` WHERE USER_NAME='" + user + "' AND `PASSWORD`='" + pass + "';";
-
-        ResultSet resultSet = statement.executeQuery(query);
+        PreparedStatement preparedStatement = DBConect.getPreparedStatement(query);
+        preparedStatement.setString(1, user);
+        preparedStatement.setString(2, pass);
+        ResultSet resultSet = preparedStatement.executeQuery();
 
         resultSet.last();
-
         int row = resultSet.getRow();
         if (resultSet != null && row == 1) {
-            resultSet.first();
-            User u = new User();
-            u.setId_user(resultSet.getString(1));
-            u.setUser_name(resultSet.getString(2));
-            u.setPassword("");
-            u.setFull_name(resultSet.getString(4));
-            u.setEmail(resultSet.getString(5));
-            u.setPhone(resultSet.getString(6));
-            u.setPrivileges(resultSet.getString(7));
             return true;
         }
         return false;
     }
 
-    /*public static void main(String[] args) {
-        User user = new User();
-        user.setId_user("17130006");
-        user.setUser_name("hoanghuy");
-        user.setPassword("123456");
-        user.setFull_name("Hoang Huy");
-        user.setEmail("hoanghuy@gmail.com");
-        user.setPhone("0123456789");
-        user.setPrivileges("KH");
+    @Override
+    public User getUser(String userName) throws SQLException, ClassNotFoundException {
 
-        System.out.println(user.toString());
+        String query = "SELECT * FROM `user` WHERE USER_NAME=?;";
+        PreparedStatement preparedStatement = DBConect.getPreparedStatement(query);
+        preparedStatement.setString(1, userName);
+        ResultSet rs = preparedStatement.executeQuery();
 
-        System.out.println(new UserDAO().addUser(user));
-    }*/
+        rs.last();
+        int row = rs.getRow();
+
+        User u = new User();
+        if (rs != null && row == 1) {
+            rs.first();
+            u.setUser_name(rs.getString(1));
+            u.setPassword("");
+            u.setFull_name(rs.getString(3));
+            u.setEmail(rs.getString(4));
+            u.setPhone(rs.getString(5));
+            u.setPrivileges(rs.getString(6));
+            return u;
+        }
+        return u;
+    }
+
+    @Override
+    public List<User> list() throws SQLException, ClassNotFoundException {
+
+        List<User> list = new ArrayList<>();
+
+        String query = "select * from `user`";
+        PreparedStatement preparedStatement = DBConect.getPreparedStatement(query);
+        ResultSet rs = preparedStatement.executeQuery();
+
+        while (rs.next()) {
+            String userName = rs.getString("USER_NAME");
+            String password = rs.getString("PASSWORD");
+            String fullName = rs.getString("FULLNAME");
+            String email = rs.getString("EMAIL");
+            String phone = rs.getString("PHONE");
+            String privileges = rs.getString("PRIVILEGES");
+            list.add(new User(userName, password, fullName, email, phone, privileges));
+        }
+        return list;
+    }
 }

@@ -11,8 +11,10 @@
                     <h4 class="text-center font-weight-bold">Đăng nhập</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<%=Util.fullPath("login")%>" method="GET"
-                          class="form-signin">
+                    <form action="<%=Util.fullPath("login")%>" method="post" class="form-signin">
+
+                        <input type="hidden" name="link" value="<%=Util.urlRedirect(request)%>">
+
                         <div class="form-label-group mb-5 mt-5">
                             <input name="username" type="text" id="inputEmail" class="form-control"
                                    placeholder="Nhập tên đăng nhập"

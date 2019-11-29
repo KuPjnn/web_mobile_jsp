@@ -9,8 +9,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SlideDAOImpl {
+public class SlideDAOImpl implements SlideDAO {
 
+    @Override
     public List<Slide> getSlide() throws SQLException, ClassNotFoundException {
         List<Slide> list = new ArrayList<>();
 
@@ -25,14 +26,5 @@ public class SlideDAOImpl {
             list.add(new Slide(id, img));
         }
         return list;
-    }
-
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        List<Slide> list = new SlideDAOImpl().getSlide();
-
-        for (Slide s : list) {
-            System.out.print(s.getId() + "\t");
-            System.out.println(s.getImg());
-        }
     }
 }

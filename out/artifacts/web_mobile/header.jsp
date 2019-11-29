@@ -32,9 +32,9 @@
                                 if (ss != null) {
                             %>
                             <ul class="login mt-3 float-right">
-                                <a class="mx-2 text-decoration-none" href="info_user.jsp"><i class="fa fa-user"
-                                                                                             style="font-size: 25px; color: #fff"></i>
-                                    <%=ss.getUser_name()%>
+                                <a class="mx-2 text-decoration-none" href="info_user.jsp">
+                                    <i class="fa fa-user" style="font-size: 25px; color: #fff"></i>
+                                    <%=ss.getFull_name()%>
                                 </a>
                                 <a class="text-decoration-none" href="logout">Đăng xuất</a>
                             </ul>
@@ -137,7 +137,6 @@
         </div>
     </div>
 </header>
-
 
 <!--============== MODAL LOGIN ==============-->
 <%@include file="login.jsp" %>

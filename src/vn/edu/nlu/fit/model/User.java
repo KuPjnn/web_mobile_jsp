@@ -1,32 +1,18 @@
 package vn.edu.nlu.fit.model;
 
 public class User {
-    private String id_user, user_name, password, full_name, email, phone, privileges;
+    private String user_name, password, full_name, email, phone, privileges;
 
     public User() {
     }
 
-    public User(String user_name, String password) {
-        this.user_name = user_name;
-        this.password = password;
-    }
-
-    public User(String id_user, String user_name, String password, String full_name, String email, String phone, String privileges) {
-        this.id_user = id_user;
+    public User(String user_name, String password, String full_name, String email, String phone, String privileges) {
         this.user_name = user_name;
         this.password = password;
         this.full_name = full_name;
         this.email = email;
         this.phone = phone;
         this.privileges = privileges;
-    }
-
-    public String getId_user() {
-        return id_user;
-    }
-
-    public void setId_user(String id_user) {
-        this.id_user = id_user;
     }
 
     public String getUser_name() {
@@ -77,17 +63,5 @@ public class User {
         this.privileges = privileges;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id_user='" + id_user + '\'' +
-                ", user_name='" + user_name + '\'' +
-                ", password='" + password + '\'' +
-                ", full_name='" + full_name + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", privileges='" + privileges + '\'' +
-                '}';
-    }
 }
 

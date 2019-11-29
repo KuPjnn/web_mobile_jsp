@@ -17,16 +17,18 @@ public class list_product extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String supplier = request.getParameter("supplier");
-        String[] arr = supplier.split("_");
+        String[] arr = null;
+        if (supplier != null)
+            arr = supplier.split("_");
         try {
             Statement statement = DBConect.connectMySQL();
 
             String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
                     " FROM product,items,supplier\n" +
-                    " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER ";
+                    " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER";
 
             if (supplier != null)
-                product += "AND supplier.NAME_SUPPLIER=" + "\'" + arr[1] + "\'" + " AND items.ID_ITEMS=" + "\'" + arr[0] + "\'";
+                product += " AND supplier.NAME_SUPPLIER=" + "\'" + arr[1] + "\'" + " AND items.ID_ITEMS=" + "\'" + arr[0] + "\'";
 
             ResultSet resultSet = statement.executeQuery(product);
 

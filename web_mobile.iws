@@ -7,52 +7,831 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79b9d7c4-a086-4b09-9e5f-6f13304ad0a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/logout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/SlideDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Slide.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin_bill.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin_comment.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin_items.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin_product.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin_slide.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin_user.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideaDataSources/1f345c2a-3d7b-403b-9da1-3c1fca6bddc0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataSources/1f345c2a-3d7b-403b-9da1-3c1fca6bddc0/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/SlideDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/database/webmobile.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/635961665195248508_taba6-den-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/635961665337125082_taba6-den-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/635961665480175608_taba6-den-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/635961665643015944_taba6-den-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/635961665760492668_taba6-den-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636159398645952790_ip7-black-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636159398740350005_ip7-black-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636159398740506008_ip7-black-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636172339622394948_apple-Iphone-6s-gold-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636172339809600948_apple-Iphone-6s-gold-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636172339809912958_apple-Iphone-6s-gold-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636330306635691141_800-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636396217066191623_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636396217240361623_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636396217378181623_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636396217480091623_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636447215496605018_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636451322761586706_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636451322761586706_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636451322761742686_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636451322761742686_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636459041871523220_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636459041871523220_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636459041871679213_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636459060591822074_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636459060731746898_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636459060877911402_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636483223586024189_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636483223586024189_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636483223586180190_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636483223586180190_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636489482634290423_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636489482634290423_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636489482634290423_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636489482634446409_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636566245911422489_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636566245911734475_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636566245911734475_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636612854975079854_Dell-Vostro-3578A-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636612854975547785_Dell-Vostro-3578A-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636612854975547785_Dell-Vostro-3578A-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636612854975703762_Dell-Vostro-3578A-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636625859225453043_N3576-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636625859225765021_N3576-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636625859225921010_N3576-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636625859225921010_N3576-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636645900399364543_xps-15-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636645900399364543_xps-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636645902497572582_xps-15-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636663192822020051_ipad-2018-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636663192826750051_ipad-2018-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636688207026676028_macbookair-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636688207026676028_macbookair-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636700091911969287_HASP-Dell-Ins-3567(2).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636700091912009287_HASP-Dell-Ins-3567(5).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636700091912019287_HASP-Dell-Ins-3567(4).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636700091912019287_HASP-Dell-Ins-3567(6).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636703736254310068_note9-xanh-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636703738270710068_note9-xanh-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636703738270710068_note9-xanh-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636703738276900068_note9-xanh-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636703738277690068_note9-xanh-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636716712468849777_macbook-pro-13-touch-bar-256gb-2018-bac-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636716712468939777_macbook-pro-13-touch-bar-256gb-2018-bac-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636716712468989777_macbook-pro-13-touch-bar-256gb-2018-bac-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636716712469319777_macbook-pro-13-touch-bar-256gb-2018-bac-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636746958719007591_A7-2018-Blue-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636746958719007591_A7-2018-Blue-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636746958719007591_A7-2018-Blue-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636746958719163577_A7-2018-Blue-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636746958721371395_A7-2018-Blue-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636748771945393060_iPhone-Xs-Max-gold.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636748797174925889_iphone-Xr-den.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636748797174925889_iphone-Xr-trang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636764973135496458_xiaomi-mi8-lite-den-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636767481289803972_iphone-xs-gold-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636767481293188883_iphone-xs-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636767481293463872_iphone-xs-gold-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636778883212829758_macbook-air-13-2018-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636778883213389758_macbook-air-13-2018-Gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636803927145138282_huawei-mediapad-t510-0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636803927145138282_huawei-mediapad-t510-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636803927145304271_huawei-mediapad-t510-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636803927145314271_huawei-mediapad-t510-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636809190688432141_ss-a6plus-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636809190688442141_ss-a6plus-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636809190688782141_ss-a6plus-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636809190688992141_ss-a6plus-xanh-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636809190689012141_ss-a6plus-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636812413545117183_ip-xr-trang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636812413545273171_ip-xr-trang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636812414861121183_ip-xr-trang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636812432713563751_ip-xr-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636812432713563751_ip-xr-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636812432713875725_ip-xr-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636812690029596126_oppo-a7-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636813355548095597_xiaomi-mi-a2-lite-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636816668645532115_Dell-N5370(3).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636816668645532115_Dell-N5370(4).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636816668645542115_Dell-N5370(1).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636816668645542115_Dell-N5370(2).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636824519620991210_huawei-mediapad-t3-80-vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636824519621147207_huawei-mediapad-t3-80-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636824519621303204_huawei-mediapad-t3-80-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636824519621303204_huawei-mediapad-t3-80-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827374898205567_iPad-2018-WiFi-32gb-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827374898455542_iPad-2018-WiFi-32gb-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827374899135474_iPad-2018-WiFi-32gb-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827374899295458_iPad-2018-WiFi-32gb-vang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827396792015967_ipad-pro-11-wi-fi-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827396792055963_ipad-pro-11-wi-fi-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827396792985870_ipad-pro-11-wi-fi-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827999345060364_ipad-pro-11-wi-fi-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827999345684256_ipad-pro-11-wi-fi-4g-xam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827999346152175_ipad-pro-11-wi-fi-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828015978316900_ipad-pro-12-9-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828015978316900_ipad-pro-12-9-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828015979096790_ipad-pro-12-9-xam-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828015979408746_ipad-pro-12-9-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828015979564724_ipad-pro-12-9-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828136124727006_ipad-pro-105-2017-vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828136124887006_ipad-pro-105-2017-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828140726799186_ipad-pro-105-2017-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828140726819184_ipad-pro-105-2017-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828265774231407_ipad-pro-129-2017-vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828265774855351_ipad-pro-129-2017-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828265775635281_ipad-pro-129-2017-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636828265775791267_ipad-pro-129-2017-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636830598772653742_ipad-pro-129-2017-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636836628987688789_ip7-plus-vang-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636836628988166719_ip7-plus-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636836628988166719_ip7-plus-vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636836628988322696_ip7-plus-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636836628988478673_ip7-plus-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636837426628318935_huawei-mediapad-T3-7-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636837426628474898_huawei-mediapad-T3-7-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636837426628630861_huawei-mediapad-T3-7-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636856463608789792_Galaxy-M20-gray-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636863636050673338_ss-galaxy-s10-plus-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636863636050913338_ss-galaxy-s10-plus-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636863636051023338_ss-galaxy-s10-plus-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636863637628103338_ss-galaxy-s10-plus-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636863643186615711_ss-galaxy-s10-trang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636863643186995673_ss-galaxy-s10-trang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636863643187365636_ss-galaxy-s10-trang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636863643187455627_ss-galaxy-s10-trang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636868838011728030_samsung-galaxy-a30-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636868838012148030_samsung-galaxy-a30-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636868838018978030_samsung-galaxy-a30-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636880897344041431_ss-galaxy-a50-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636880897344451431_ss-galaxy-a50-xanh-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636880897344731431_ss-galaxy-a50-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636880897346861431_ss-galaxy-a50-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636880897348111431_ss-galaxy-a50-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636881600332837065_ss-galaxy-tab-s5e-bac-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636881600335417065_ss-galaxy-tab-s5e-bac-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636881600335817065_ss-galaxy-tab-s5e-bac-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636881600336157065_ss-galaxy-tab-s5e-bac-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636887569650284152_xiaomi-redmi-note-7-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636888638313721946_xiaomi-redmi-7-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636888737679482202_oppo-f11-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636891307002642548_ss-galaxy-a20-do-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636898814185663837_dell-inspiron-n3476-00508605-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636900747852548410_ss-tab-a-plus-8-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636900747853128410_ss-tab-a-plus-8-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636900747857018410_ss-tab-a-plus-8-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636900747857038410_ss-tab-a-plus-8-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906565297622951_oppo-f11-pro-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906798509320738_ipad-air-3-gold-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906798511020738_ipad-air-3-gold-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906798511100738_ipad-air-3-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906798513240738_ipad-air-3-gold-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906894408620099_ipad-mini-5-gold-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906894410480099_ipad-mini-5-gold-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906894411460099_ipad-mini-5-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906894414610099_ipad-mini-5-gold-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636907475976490637_samsung-galaxy-a70-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636907475976810637_samsung-galaxy-a70-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636907475980100637_samsung-galaxy-a70-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636907475981220637_samsung-galaxy-a70-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636907523745957260_samsung-galaxy-a80-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636907523746007260_samsung-galaxy-a80-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636907523746637260_samsung-galaxy-a80-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636912614574572070_samsung-galaxy-a30-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636912820366389653_ss-galaxy-tab-a-101-den-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636912820366689653_ss-galaxy-tab-a-101-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636912820366689653_ss-galaxy-tab-a-101-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636912820367199653_ss-galaxy-tab-a-101-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636912820370999653_ss-galaxy-tab-a-101-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636916112234004683_636898814183234080_dell-inspiron-n3476-00508605-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636916112234114683_HASP-Dell-INS-N3476-AMD(15).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636916953215040289_dell-inspiron-n3476-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636923881329690610_ipad-air-3-4g-gold-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636923881329990580_ipad-air-3-4g-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636923894581445302_ipad-mini5-4g-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636923894581665280_ipad-mini5-4g-gold-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636928415238970301_xiaomi-mi-9-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636930203385853205_oppo-a5s-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636933637955357473_samsung-galaxy-a10-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636943826665822425_oppo-a1k-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636946309132630742_dell-vostro-v3481-core-i3-7020u-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636946309135780742_dell-vostro-v3481-core-i3-7020u-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636946309136310742_dell-vostro-v3481-core-i3-7020u-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636946309137070742_dell-vostro-v3481-core-i3-7020u-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636946309138780742_dell-vostro-v3481-core-i3-7020u-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636946617688640554_oppo-reno-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948950246561627_macbook-pro-13-touch-bar-2019-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948950246751627_macbook-pro-13-touch-bar-2019-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948950246801627_macbook-pro-13-touch-bar-2019-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948950247111627_macbook-pro-13-touch-bar-2019-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948952652077974_macbook-pro-15-touch-bar-2019-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948952652297974_macbook-pro-15-touch-bar-2019-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948952652427974_macbook-pro-15-touch-bar-2019-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948952652837974_macbook-pro-15-touch-bar-2019-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948953542919202_macbook-pro-15-touch-bar-2019-bac-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948953542989195_macbook-pro-15-touch-bar-2019-bac-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948953543029191_macbook-pro-15-touch-bar-2019-bac-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636951725534332796_ss-a80- vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636951725534644854_ss-a80- vang-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636955303939831698_oppo-reno-10x-zoom-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636958490178178811_dell-inspiron-5584-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636958490178646775_dell-inspiron-5584-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636958490178802763_dell-inspiron-5584-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636958490178802763_dell-inspiron-5584-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636958606923779709_dell-inspiron-5482-silver-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636958606923939709_dell-inspiron-5482-silver-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636958606924149709_dell-inspiron-5482-silver-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636958606924299709_dell-inspiron-5482-silver-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636958606924777673_dell-inspiron-5482-silver-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963822328452031_dell-vostro-v5581-70175957-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963822328452031_dell-vostro-v5581-70175957-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963822328608018_dell-vostro-v5581-70175957-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963822328919992_dell-vostro-v5581-70175957-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963822329075979_dell-vostro-v5581-70175957-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963829754202782_dell-inspiron-n5370-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963829754670767_dell-inspiron-n5370-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963829754670767_dell-inspiron-n5370-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963829754670767_dell-inspiron-n5370-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963846641363006_dell-inspiron-n3581-i3-7020-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963846642298928_dell-inspiron-n3581-i3-7020-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963846642298928_dell-inspiron-n3581-i3-7020-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963846642610902_dell-inspiron-n3581-i3-7020-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963846642766889_dell-inspiron-n3581-i3-7020-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963880699645250_dell-inspiron-n3480-bac-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963880700269198_dell-inspiron-n3480-bac-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963880700269198_dell-inspiron-n3480-bac-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963880700425185_dell-inspiron-n3480-bac-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963907378603710_dell-vostro-5481-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963907378603710_dell-vostro-5481-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963907378603710_dell-vostro-5481-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963907378759737_dell-vostro-5481-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963907380007953_dell-vostro-5481-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963912789534576_dell-3481-den-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963912789846560_dell-3481-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963912790002552_dell-3481-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963912790626520_dell-3481-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636963912790626520_dell-3481-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636964467415357187_dell-vostro-v3480-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636964467415357187_dell-vostro-v3480-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636964467415825151_dell-vostro-v3480-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636964467415981139_dell-vostro-v3480-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636964475047437963_dell-inspiron-n3580-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636964475047437963_dell-inspiron-n3580-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636964475047437963_dell-inspiron-n3580-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636964475047749939_dell-inspiron-n3580-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636973183082327703_samsung-galaxy-tab-a8-2019-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636973183082367607_samsung-galaxy-tab-a8-2019-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636973183082427463_samsung-galaxy-tab-a8-2019-den-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636973183085170863_samsung-galaxy-tab-a8-2019-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636977637533313571_dell-vostro-v3580-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636977637533781520_dell-vostro-v3580-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636977637536433231_dell-vostro-v3580-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636977637536433231_dell-vostro-v3580-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636977667337709615_dell-vostro-v3580i-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636977667337709615_dell-vostro-v3580i-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636977667341141285_dell-vostro-v3580i-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636977667341453255_dell-vostro-v3580i-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636991281947522345_macbook-air-13-2019-silver-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636991281947678337_macbook-air-13-2019-silver-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636991281947678337_macbook-air-13-2019-silver-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636991281947990321_macbook-air-13-2019-silver-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636991283780263790_macbook-air-13-2019-gold-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636991283780731763_macbook-air-13-2019-gold-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636991283780887754_macbook-air-13-2019-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636994743728810745_xiaomi-mi-9t-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636994958321498457_xiaomi-redmi-7a-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636995644032612351_xiaomi-mi-a3-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637001065755397910_dell-v3581-den-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637001065755553898_dell-v3581-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637001065755709886_dell-v3581-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637001065755709886_dell-v3581-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637001065755709886_dell-v3581-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637002757583637894_samsung-galaxy-tab-s6-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637002757583717886_samsung-galaxy-tab-s6-xanh-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637002765551246478_samsung-galaxy-tab-s6-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637002765551402463_samsung-galaxy-tab-s6-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008129843485817_SS-S10e-green-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008129843825817_SS-S10e-green-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008129845765817_SS-S10e-green-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008587935229498_SS-note-10-glow-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008587935549690_SS-note-10-glow-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008587938711586_SS-note-10-glow-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008587939151850_SS-note-10-glow-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008587939942324_SS-note-10-glow-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008691895586121_SS-note-10-pl-glow-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008691896256121_SS-note-10-pl-glow-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008691896296121_SS-note-10-pl-glow-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008691896296121_SS-note-10-pl-glow-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637008702547566121_SS-note-10-pl-glow-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637012257236303478_dell-inspiron-n7591-bac-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637012257236343478_dell-inspiron-n7591-bac-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637012257236453478_dell-inspiron-n7591-bac-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637012880064673970_SS-a10s-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637019089920371539_macbook-pro-13-touch-bar-2019-xam-4-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637019089920771539_macbook-pro-13-touch-bar-2019-xam-3-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637019089920951539_macbook-pro-13-touch-bar-2019-xam-2-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637019089921181539_macbook-pro-13-touch-bar-2019-xam-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637027741626320955_ss-a30s-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637027741626632925_ss-a30s-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637027741626632925_ss-a30s-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637030967816506704_ss-a50s-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637030967816506704_ss-a50s-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637030967816819060_ss-a50s-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637030967816819060_ss-a50s-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637031273088898415_oppo-a9-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637037652463329577_11-do.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637037672778988772_11-pro-xanh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637037687763926758_11-pro-max-xanh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637037687765081535_11-pro-max-vang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637039011348629223_macbook-12-silver-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637039011349879085_macbook-12-silver-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637039015893343887_macbook-12-grey-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637039015893773918_macbook-12-grey-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637049168848152311_ss-a20s-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637049168848951724_ss-a20s-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637049168849121650_ss-a20s-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637049168849131639_ss-a20s-xanh-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637049168849441623_ss-a20s-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637057859885558677_oppo-a5-2020-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637060410960077373_xiaomi-redmi-note-8-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637060418361864075_xiaomi-redmi-note-8-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637060435932431657_xiaomi-redmi-note-8-pro-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637060441292208256_xiaomi-redmi-note-8-pro-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637063024309758682_oppo-reno2-den-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637063038223413617_oppo-reno2-f-xanh-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637063882537017599_ipad-wifi-2019-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637063882537486653_ipad-wifi-2019-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637063905215042663_ipad-wifi-4g-2019-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637063905215368952_ipad-wifi-4g-2019-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637063905215498838_ipad-wifi-4g-2019-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637072701542091596_xiaomi-redmi-8a-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637102750658709593_samsung-galaxy-fold-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637102750659209597_samsung-galaxy-fold-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637102750659229623_samsung-galaxy-fold-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637102754985533985_samsung-galaxy-fold-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637102754985873870_samsung-galaxy-fold-den-0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637104705908003415_huawei-mediapad-m5-lite-101-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637104705908313430_huawei-mediapad-m5-lite-101-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637104705908963409_huawei-mediapad-m5-lite-101-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637104705911913419_huawei-mediapad-m5-lite-101-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/SlideDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/SlideDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/635961665195248508_taba6-den-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/635961665337125082_taba6-den-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/635961665480175608_taba6-den-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/635961665643015944_taba6-den-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/635961665760492668_taba6-den-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636159398645952790_ip7-black-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636159398740350005_ip7-black-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636159398740506008_ip7-black-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636172339622394948_apple-Iphone-6s-gold-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636172339809600948_apple-Iphone-6s-gold-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636172339809912958_apple-Iphone-6s-gold-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636330306635691141_800-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636396217066191623_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636396217240361623_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636396217378181623_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636396217480091623_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636447215496605018_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636451322761586706_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636451322761586706_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636451322761742686_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636451322761742686_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636459041871523220_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636459041871523220_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636459041871679213_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636459060591822074_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636459060731746898_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636459060877911402_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636483223586024189_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636483223586024189_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636483223586180190_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636483223586180190_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636489482634290423_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636489482634290423_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636489482634290423_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636489482634446409_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636566245911422489_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636566245911734475_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636566245911734475_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636612854975079854_Dell-Vostro-3578A-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636612854975547785_Dell-Vostro-3578A-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636612854975547785_Dell-Vostro-3578A-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636612854975703762_Dell-Vostro-3578A-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636625859225453043_N3576-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636625859225765021_N3576-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636625859225921010_N3576-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636625859225921010_N3576-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636645900399364543_xps-15-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636645900399364543_xps-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636645902497572582_xps-15-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636663192822020051_ipad-2018-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636663192826750051_ipad-2018-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636688207026676028_macbookair-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636688207026676028_macbookair-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636700091911969287_HASP-Dell-Ins-3567(2).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636700091912009287_HASP-Dell-Ins-3567(5).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636700091912019287_HASP-Dell-Ins-3567(4).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636700091912019287_HASP-Dell-Ins-3567(6).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636703736254310068_note9-xanh-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636703738270710068_note9-xanh-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636703738270710068_note9-xanh-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636703738276900068_note9-xanh-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636703738277690068_note9-xanh-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636716712468849777_macbook-pro-13-touch-bar-256gb-2018-bac-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636716712468939777_macbook-pro-13-touch-bar-256gb-2018-bac-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636716712468989777_macbook-pro-13-touch-bar-256gb-2018-bac-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636716712469319777_macbook-pro-13-touch-bar-256gb-2018-bac-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636746958719007591_A7-2018-Blue-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636746958719007591_A7-2018-Blue-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636746958719007591_A7-2018-Blue-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636746958719163577_A7-2018-Blue-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636746958721371395_A7-2018-Blue-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636748771945393060_iPhone-Xs-Max-gold.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636748797174925889_iphone-Xr-den.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636748797174925889_iphone-Xr-trang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636764973135496458_xiaomi-mi8-lite-den-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636767481289803972_iphone-xs-gold-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636767481293188883_iphone-xs-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636767481293463872_iphone-xs-gold-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636778883212829758_macbook-air-13-2018-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636778883213389758_macbook-air-13-2018-Gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636803927145138282_huawei-mediapad-t510-0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636803927145138282_huawei-mediapad-t510-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636803927145304271_huawei-mediapad-t510-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636803927145314271_huawei-mediapad-t510-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636809190688432141_ss-a6plus-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636809190688442141_ss-a6plus-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636809190688782141_ss-a6plus-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636809190688992141_ss-a6plus-xanh-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636809190689012141_ss-a6plus-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636812413545117183_ip-xr-trang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636812413545273171_ip-xr-trang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636812414861121183_ip-xr-trang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636812432713563751_ip-xr-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636812432713563751_ip-xr-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636812432713875725_ip-xr-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636812690029596126_oppo-a7-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636813355548095597_xiaomi-mi-a2-lite-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636816668645532115_Dell-N5370(3).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636816668645532115_Dell-N5370(4).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636816668645542115_Dell-N5370(1).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636816668645542115_Dell-N5370(2).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636824519620991210_huawei-mediapad-t3-80-vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636824519621147207_huawei-mediapad-t3-80-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636824519621303204_huawei-mediapad-t3-80-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636824519621303204_huawei-mediapad-t3-80-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827374898205567_iPad-2018-WiFi-32gb-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827374898455542_iPad-2018-WiFi-32gb-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827374899135474_iPad-2018-WiFi-32gb-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827374899295458_iPad-2018-WiFi-32gb-vang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827396792015967_ipad-pro-11-wi-fi-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827396792055963_ipad-pro-11-wi-fi-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827396792985870_ipad-pro-11-wi-fi-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827396793045864_ipad-pro-11-wi-fi-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827999345060364_ipad-pro-11-wi-fi-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827999345684256_ipad-pro-11-wi-fi-4g-xam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827999346152175_ipad-pro-11-wi-fi-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636827999346152175_ipad-pro-11-wi-fi-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828015978316900_ipad-pro-12-9-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828015978316900_ipad-pro-12-9-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828015979096790_ipad-pro-12-9-xam-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828015979408746_ipad-pro-12-9-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828015979564724_ipad-pro-12-9-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828136124727006_ipad-pro-105-2017-vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828136124887006_ipad-pro-105-2017-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828140726799186_ipad-pro-105-2017-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828140726819184_ipad-pro-105-2017-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828265774231407_ipad-pro-129-2017-vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828265774855351_ipad-pro-129-2017-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828265775635281_ipad-pro-129-2017-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636828265775791267_ipad-pro-129-2017-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636830598772653742_ipad-pro-129-2017-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636836628987688789_ip7-plus-vang-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636836628988166719_ip7-plus-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636836628988166719_ip7-plus-vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636836628988322696_ip7-plus-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636836628988478673_ip7-plus-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636837426628318935_huawei-mediapad-T3-7-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636837426628474898_huawei-mediapad-T3-7-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636837426628630861_huawei-mediapad-T3-7-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636856463608789792_Galaxy-M20-gray-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636863636050673338_ss-galaxy-s10-plus-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636863636050913338_ss-galaxy-s10-plus-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636863636051023338_ss-galaxy-s10-plus-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636863637628103338_ss-galaxy-s10-plus-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636863643186615711_ss-galaxy-s10-trang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636863643186995673_ss-galaxy-s10-trang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636863643187365636_ss-galaxy-s10-trang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636863643187455627_ss-galaxy-s10-trang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636868838011728030_samsung-galaxy-a30-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636868838012148030_samsung-galaxy-a30-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636868838018978030_samsung-galaxy-a30-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636880897344041431_ss-galaxy-a50-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636880897344451431_ss-galaxy-a50-xanh-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636880897344731431_ss-galaxy-a50-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636880897346861431_ss-galaxy-a50-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636880897348111431_ss-galaxy-a50-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636881600332837065_ss-galaxy-tab-s5e-bac-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636881600335417065_ss-galaxy-tab-s5e-bac-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636881600335817065_ss-galaxy-tab-s5e-bac-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636881600336157065_ss-galaxy-tab-s5e-bac-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636887569650284152_xiaomi-redmi-note-7-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636888638313721946_xiaomi-redmi-7-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636888737679482202_oppo-f11-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636891307002642548_ss-galaxy-a20-do-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636898814185663837_dell-inspiron-n3476-00508605-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636900747852548410_ss-tab-a-plus-8-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636900747853128410_ss-tab-a-plus-8-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636900747857018410_ss-tab-a-plus-8-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636900747857038410_ss-tab-a-plus-8-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636906565297622951_oppo-f11-pro-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636906798509320738_ipad-air-3-gold-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636906798511020738_ipad-air-3-gold-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636906798511100738_ipad-air-3-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636906798513240738_ipad-air-3-gold-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636906894408620099_ipad-mini-5-gold-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636906894410480099_ipad-mini-5-gold-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636906894411460099_ipad-mini-5-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636906894414610099_ipad-mini-5-gold-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636907475976490637_samsung-galaxy-a70-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636907475976810637_samsung-galaxy-a70-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636907475980100637_samsung-galaxy-a70-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636907475981220637_samsung-galaxy-a70-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636907523745957260_samsung-galaxy-a80-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636907523746007260_samsung-galaxy-a80-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636907523746637260_samsung-galaxy-a80-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636912614574572070_samsung-galaxy-a30-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636912820366389653_ss-galaxy-tab-a-101-den-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636912820366689653_ss-galaxy-tab-a-101-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636912820366689653_ss-galaxy-tab-a-101-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636912820367199653_ss-galaxy-tab-a-101-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636912820370999653_ss-galaxy-tab-a-101-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636916112234004683_636898814183234080_dell-inspiron-n3476-00508605-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636916112234114683_HASP-Dell-INS-N3476-AMD(15).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636916953215040289_dell-inspiron-n3476-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636923881329690610_ipad-air-3-4g-gold-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636923881329990580_ipad-air-3-4g-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636923894581445302_ipad-mini5-4g-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636923894581665280_ipad-mini5-4g-gold-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636928415238970301_xiaomi-mi-9-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636930203385853205_oppo-a5s-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636933637955357473_samsung-galaxy-a10-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636943826665822425_oppo-a1k-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636946309132630742_dell-vostro-v3481-core-i3-7020u-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636946309135780742_dell-vostro-v3481-core-i3-7020u-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636946309136310742_dell-vostro-v3481-core-i3-7020u-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636946309137070742_dell-vostro-v3481-core-i3-7020u-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636946309138780742_dell-vostro-v3481-core-i3-7020u-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636946617688640554_oppo-reno-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948950246561627_macbook-pro-13-touch-bar-2019-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948950246751627_macbook-pro-13-touch-bar-2019-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948950246801627_macbook-pro-13-touch-bar-2019-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948950247111627_macbook-pro-13-touch-bar-2019-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948952652077974_macbook-pro-15-touch-bar-2019-xam-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948952652297974_macbook-pro-15-touch-bar-2019-xam-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948952652427974_macbook-pro-15-touch-bar-2019-xam-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948952652837974_macbook-pro-15-touch-bar-2019-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948953542919202_macbook-pro-15-touch-bar-2019-bac-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948953542989195_macbook-pro-15-touch-bar-2019-bac-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636948953543029191_macbook-pro-15-touch-bar-2019-bac-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636951725534332796_ss-a80- vang-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636951725534644854_ss-a80- vang-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636955303939831698_oppo-reno-10x-zoom-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636958490178178811_dell-inspiron-5584-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636958490178646775_dell-inspiron-5584-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636958490178802763_dell-inspiron-5584-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636958490178802763_dell-inspiron-5584-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636958606923779709_dell-inspiron-5482-silver-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636958606923939709_dell-inspiron-5482-silver-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636958606924149709_dell-inspiron-5482-silver-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636958606924299709_dell-inspiron-5482-silver-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636958606924777673_dell-inspiron-5482-silver-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963822328452031_dell-vostro-v5581-70175957-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963822328452031_dell-vostro-v5581-70175957-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963822328608018_dell-vostro-v5581-70175957-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963822328919992_dell-vostro-v5581-70175957-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963822329075979_dell-vostro-v5581-70175957-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963829754202782_dell-inspiron-n5370-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963829754670767_dell-inspiron-n5370-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963829754670767_dell-inspiron-n5370-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963829754670767_dell-inspiron-n5370-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963846641363006_dell-inspiron-n3581-i3-7020-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963846642298928_dell-inspiron-n3581-i3-7020-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963846642298928_dell-inspiron-n3581-i3-7020-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963846642610902_dell-inspiron-n3581-i3-7020-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963846642766889_dell-inspiron-n3581-i3-7020-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963880699645250_dell-inspiron-n3480-bac-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963880700269198_dell-inspiron-n3480-bac-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963880700269198_dell-inspiron-n3480-bac-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963880700425185_dell-inspiron-n3480-bac-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963907378603710_dell-vostro-5481-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963907378603710_dell-vostro-5481-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963907378603710_dell-vostro-5481-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963907378759737_dell-vostro-5481-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963907380007953_dell-vostro-5481-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963912789534576_dell-3481-den-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963912789846560_dell-3481-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963912790002552_dell-3481-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963912790626520_dell-3481-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636963912790626520_dell-3481-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636964467415357187_dell-vostro-v3480-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636964467415357187_dell-vostro-v3480-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636964467415825151_dell-vostro-v3480-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636964467415981139_dell-vostro-v3480-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636964475047437963_dell-inspiron-n3580-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636964475047437963_dell-inspiron-n3580-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636964475047437963_dell-inspiron-n3580-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636964475047749939_dell-inspiron-n3580-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636973183082327703_samsung-galaxy-tab-a8-2019-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636973183082367607_samsung-galaxy-tab-a8-2019-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636973183082427463_samsung-galaxy-tab-a8-2019-den-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636973183085170863_samsung-galaxy-tab-a8-2019-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636977637533313571_dell-vostro-v3580-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636977637533781520_dell-vostro-v3580-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636977637536433231_dell-vostro-v3580-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636977637536433231_dell-vostro-v3580-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636977667337709615_dell-vostro-v3580i-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636977667337709615_dell-vostro-v3580i-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636977667341141285_dell-vostro-v3580i-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636977667341453255_dell-vostro-v3580i-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636991281947522345_macbook-air-13-2019-silver-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636991281947678337_macbook-air-13-2019-silver-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636991281947678337_macbook-air-13-2019-silver-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636991281947990321_macbook-air-13-2019-silver-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636991283780263790_macbook-air-13-2019-gold-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636991283780731763_macbook-air-13-2019-gold-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636991283780887754_macbook-air-13-2019-gold-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636994743728810745_xiaomi-mi-9t-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636994958321498457_xiaomi-redmi-7a-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/636995644032612351_xiaomi-mi-a3-xam-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637001065755397910_dell-v3581-den-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637001065755553898_dell-v3581-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637001065755709886_dell-v3581-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637001065755709886_dell-v3581-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637001065755709886_dell-v3581-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637002757583637894_samsung-galaxy-tab-s6-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637002757583717886_samsung-galaxy-tab-s6-xanh-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637002765551246478_samsung-galaxy-tab-s6-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637002765551402463_samsung-galaxy-tab-s6-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008129843485817_SS-S10e-green-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008129843825817_SS-S10e-green-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008129845765817_SS-S10e-green-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008587935229498_SS-note-10-glow-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008587935549690_SS-note-10-glow-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008587938711586_SS-note-10-glow-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008587939151850_SS-note-10-glow-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008587939942324_SS-note-10-glow-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008691895586121_SS-note-10-pl-glow-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008691896256121_SS-note-10-pl-glow-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008691896296121_SS-note-10-pl-glow-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008691896296121_SS-note-10-pl-glow-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637008702547566121_SS-note-10-pl-glow-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637012257236303478_dell-inspiron-n7591-bac-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637012257236343478_dell-inspiron-n7591-bac-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637012257236453478_dell-inspiron-n7591-bac-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637012880064673970_SS-a10s-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637019089920371539_macbook-pro-13-touch-bar-2019-xam-4-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637019089920771539_macbook-pro-13-touch-bar-2019-xam-3-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637019089920951539_macbook-pro-13-touch-bar-2019-xam-2-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637019089921181539_macbook-pro-13-touch-bar-2019-xam-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637027741626320955_ss-a30s-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637027741626632925_ss-a30s-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637027741626632925_ss-a30s-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637030967816506704_ss-a50s-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637030967816506704_ss-a50s-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637030967816819060_ss-a50s-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637030967816819060_ss-a50s-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637031273088898415_oppo-a9-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637037652463329577_11-do.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637037672778988772_11-pro-xanh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637037687763926758_11-pro-max-xanh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637037687765081535_11-pro-max-vang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637039011348629223_macbook-12-silver-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637039011349879085_macbook-12-silver-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637039015893343887_macbook-12-grey-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637039015893773918_macbook-12-grey-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637049168848152311_ss-a20s-xanh-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637049168848951724_ss-a20s-xanh-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637049168849121650_ss-a20s-xanh-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637049168849131639_ss-a20s-xanh-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637049168849441623_ss-a20s-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637057859885558677_oppo-a5-2020-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637060410960077373_xiaomi-redmi-note-8-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637060418361864075_xiaomi-redmi-note-8-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637060435932431657_xiaomi-redmi-note-8-pro-xanh-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637060441292208256_xiaomi-redmi-note-8-pro-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637063024309758682_oppo-reno2-den-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637063038223413617_oppo-reno2-f-xanh-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637063882537017599_ipad-wifi-2019-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637063882537486653_ipad-wifi-2019-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637063905215042663_ipad-wifi-4g-2019-vang-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637063905215368952_ipad-wifi-4g-2019-vang-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637063905215498838_ipad-wifi-4g-2019-vang-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637072701542091596_xiaomi-redmi-8a-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637102750658709593_samsung-galaxy-fold-den-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637102750659209597_samsung-galaxy-fold-den-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637102750659229623_samsung-galaxy-fold-den-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637102754985533985_samsung-galaxy-fold-den-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637102754985873870_samsung-galaxy-fold-den-0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637104705908003415_huawei-mediapad-m5-lite-101-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637104705908313430_huawei-mediapad-m5-lite-101-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637104705908963409_huawei-mediapad-m5-lite-101-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/637104705911913419_huawei-mediapad-m5-lite-101-4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/detail_product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/detail_product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/list_product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/list_product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/register.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/MenuDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/MenuDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/SlideDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/SlideDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/UserDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/db/DBConect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/db/DBConect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/detail_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/detail_order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/util/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/util/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/admin_slide.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/admin_slide.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/database/database.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/detail_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/detail_product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/dell-g3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/dell-g7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637012257236343478_dell-inspiron-n7591-bac-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/dell-ins-3567.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636700091911829287_HASP-Dell-Ins-3567(1).jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/dell-xps-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/dell-xps-15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636645880859300424_Xps-13-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/macbook-12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636330307796977473_800-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/macbook-air-13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636688207026676028_macbookair-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/macbook-air15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636778883213369758_macbook-air-13-2018-Gold-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/macbook-pro-13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636566245732810504_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/laptop/macbook-pro-15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636948953543279166_macbook-pro-15-touch-bar-2019-bac-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/tablet/ipad-2018.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636663192821960051_ipad-2018-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/tablet/ipad-2019.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637063882537486653_ipad-wifi-2019-vang-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/tablet/ipad-air-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906798511080738_ipad-air-3-gold-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/tablet/ipad-mini-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636906894411490099_ipad-mini-5-gold-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/tablet/ipad-pro-11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827396793045864_ipad-pro-11-wi-fi-xam-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/tablet/tab-a10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/tablet/tab-a8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636973183082447415_samsung-galaxy-tab-a8-2019-den-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/tablet/tab-s5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/img/tablet/tab-s6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/637002757583807877_samsung-galaxy-tab-s6-xanh-1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/info_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/info_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/lib/bootstrap/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/lib/bootstrap/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/list_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/list_product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/pay.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/slideshow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/slideshow.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/detail_product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/detail_product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/list_product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/list_product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/register.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/MenuDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/MenuDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/SlideDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/SlideDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/UserDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/db/DBConect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/db/DBConect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/util/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/util/Util.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/detail_product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/detail_product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/list_product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/list_product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/register.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/MenuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/MenuDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/SlideDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/SlideDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/db/DBConect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/db/DBConect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/detail_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/detail_order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/util/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin_slide.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin_slide.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/database/webmobile.sql" beforeDir="false" afterPath="$PROJECT_DIR$/web/database/webmobile.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/detail_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/detail_product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/dell-g3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/dell-g7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/637012257236343478_dell-inspiron-n7591-bac-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/dell-ins-3567.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636700091911829287_HASP-Dell-Ins-3567(1).jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/dell-xps-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/dell-xps-15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636645880859300424_Xps-13-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/macbook-12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636330307796977473_800-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/macbook-air-13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636688207026676028_macbookair-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/macbook-air15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636778883213369758_macbook-air-13-2018-Gold-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/macbook-pro-13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636566245732810504_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/laptop/macbook-pro-15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636948953543279166_macbook-pro-15-touch-bar-2019-bac-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/tablet/ipad-2018.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636663192821960051_ipad-2018-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/tablet/ipad-2019.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/637063882537486653_ipad-wifi-2019-vang-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/tablet/ipad-air-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636906798511080738_ipad-air-3-gold-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/tablet/ipad-mini-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636906894411490099_ipad-mini-5-gold-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/tablet/ipad-pro-11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/img/phone/636827999346152175_ipad-pro-11-wi-fi-xam-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/tablet/tab-a10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/tablet/tab-a8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/636973183082447415_samsung-galaxy-tab-a8-2019-den-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/tablet/tab-s5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/tablet/tab-s6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/phone/637002757583807877_samsung-galaxy-tab-s6-xanh-1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/info_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/info_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/lib/bootstrap/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/lib/bootstrap/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/list_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/list_product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pay.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/slideshow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/slideshow.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_mobile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/web_mobile.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_mobile.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/web_mobile.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_mobile.iws" beforeDir="false" afterPath="$PROJECT_DIR$/web_mobile.iws" afterDir="false" />
     </list>
@@ -62,17 +841,54 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="webmobile@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="webmobile@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="webmobile@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="webmobile: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="jsf" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="CSS File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/web/admin_slide.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JspContextManager">
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/web/admin_slide.jsp" context-file="file://$PROJECT_DIR$/web/admin.jsp" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -87,9 +903,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crawler4j-master" />
+    <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/jdbc-drivers/MySQL Connector/J/5.1.47/mysql-connector-java-5.1.47.jar" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -98,9 +916,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="database.data.csv.formats" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -137,8 +955,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SlideDAOImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="vn.edu.nlu.fit.dao.SlideDAOImpl" />
+    <configuration name="SlideDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vn.edu.nlu.fit.dao.SlideDAO" />
       <module name="web_mobile" />
       <extension name="coverage">
         <pattern>
@@ -226,16 +1044,35 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.SlideDAO" />
       <item itemvalue="Application.DBConect" />
-      <item itemvalue="Application.SlideDAOImpl" />
       <item itemvalue="Tomcat Server.Tomcat" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SlideDAOImpl" />
         <item itemvalue="Application.DBConect" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@339ae4e4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@339ae4e4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6b28855" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -257,6 +1094,13 @@
       <workItem from="1574313738982" duration="2435000" />
       <workItem from="1574349536141" duration="623000" />
       <workItem from="1574356313850" duration="163000" />
+      <workItem from="1574577845693" duration="24149000" />
+      <workItem from="1574794428288" duration="1533000" />
+      <workItem from="1574796372358" duration="4567000" />
+      <workItem from="1574808363045" duration="28071000" />
+      <workItem from="1574910685785" duration="3970000" />
+      <workItem from="1574928736496" duration="1580000" />
+      <workItem from="1575005929382" duration="10219000" />
     </task>
     <servers />
   </component>

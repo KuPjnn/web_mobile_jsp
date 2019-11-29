@@ -1,7 +1,6 @@
 package vn.edu.nlu.fit.controller;
 
 import vn.edu.nlu.fit.db.DBConect;
-import vn.edu.nlu.fit.util.Util;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

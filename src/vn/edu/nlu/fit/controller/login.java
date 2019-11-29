@@ -2,6 +2,7 @@ package vn.edu.nlu.fit.controller;
 
 import vn.edu.nlu.fit.dao.UserDAOImpl;
 import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.util.Util;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpSession;
@@ -11,32 +12,33 @@ import java.sql.SQLException;
 @WebServlet("/login")
 public class login extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-
-    }
-
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
         String user = request.getParameter("username");
         String pass = request.getParameter("password");
 
-        User u = new User(user, pass);
+        String link = request.getParameter("link");
 
+        System.out.println(link);
         try {
-            if (new UserDAOImpl().checkLogin(user, pass)) {
+            User u = new UserDAOImpl().getUser(user);
+            boolean validate = new UserDAOImpl().checkLogin(user, pass);
+            if (u != null && validate) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", u);
-                response.sendRedirect("home");
+
+                response.sendRedirect(Util.fullPath(link));
             } else {
-                request.setAttribute("err", "Sai tên hoặc mật khẩu !");
-                request.getRequestDispatcher("home").forward(request, response);
+                response.sendRedirect(Util.fullPath(link));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
 
+    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) {
     }
 }

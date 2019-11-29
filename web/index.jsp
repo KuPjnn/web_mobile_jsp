@@ -22,9 +22,9 @@
     <link rel="stylesheet" href="<%=Util.fullPath("lib/fontawesome/css/all.css")%>">
 
     <link rel="stylesheet" href="<%=Util.fullPath("css/style.css")%>">
+
 </head>
 <body>
-
 <%--=================   HEADER   ==============--%>
 <%@include file="header.jsp" %>
 <%-----------------------------------------------%>
@@ -50,18 +50,21 @@
                         rs.beforeFirst();
                         while (rs.next()) {
                             if (i <= 8 && rs.getString(5).equalsIgnoreCase("DT")) {
-
                     %>
                     <div class="frame col-md-3 col-6">
                         <div class="product_item">
                             <div class="figure figure-img">
                                 <a href="<%=Util.fullPath("detail_product?detail="+rs.getString(6))%>">
-                                    <img class="img-fluid align-content-center" src="<%=rs.getString(3)%>" alt="img">
+                                    <%
+                                        String img = rs.getString(3);
+                                        String[] arrImg = img.split("~");
+                                    %>
+                                    <img class="img-fluid align-content-center" src="<%=arrImg[0]%>" alt="img">
                                 </a>
                             </div>
                             <h5 class="product_name"><a
                                     href="<%=Util.fullPath("detail_product?detail="+rs.getString(6))%>">
-                                <%=rs.getString(4) + " " + rs.getString(1)%>
+                                <%=rs.getString(1)%>
                             </a></h5>
                             <span class="product_price"><%=Util.convertPrice(rs.getDouble(2))%></span>
                         </div>
@@ -88,12 +91,16 @@
                         <div class="product_item">
                             <div class="figure figure-img">
                                 <a href="<%=Util.fullPath("detail_product?detail="+rs.getString(6))%>">
-                                    <img class="img-fluid" src="<%=rs.getString(3)%>" alt="img">
+                                    <%
+                                        String img = rs.getString(3);
+                                        String[] arrImg = img.split("~");
+                                    %>
+                                    <img class="img-fluid" src="<%=arrImg[0]%>" alt="img">
                                 </a>
                             </div>
                             <h5 class="product_name"><a
                                     href="<%=Util.fullPath("detail_product?detail="+rs.getString(6))%>">
-                                <%=rs.getString(4) + " " + rs.getString(1)%>
+                                <%=rs.getString(1)%>
                             </a></h5>
                             <span class="product_price"><%=Util.convertPrice(rs.getDouble(2))%></span>
                         </div>
@@ -120,12 +127,16 @@
                         <div class="product_item">
                             <div class="figure figure-img">
                                 <a href="<%=Util.fullPath("detail_product?detail="+rs.getString(6))%>">
-                                    <img class="img-fluid" src="<%=rs.getString(3)%>" alt="img">
+                                    <%
+                                        String img = rs.getString(3);
+                                        String[] arrImg = img.split("~");
+                                    %>
+                                    <img class="img-fluid" src="<%=arrImg[0]%>" alt="img">
                                 </a>
                             </div>
                             <h5 class="product_name"><a
                                     href="<%=Util.fullPath("detail_product?detail="+rs.getString(6))%>">
-                                <%=rs.getString(4) + " " + rs.getString(1)%>
+                                <%=rs.getString(1)%>
                             </a></h5>
                             <span class="product_price"><%=Util.convertPrice(rs.getDouble(2))%></span>
                         </div>

@@ -10,7 +10,9 @@
                     <h4 class="card-title text-center font-weight-bold">Đăng ký</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<%=Util.fullPath("register")%>" method="GET" class="form-regis">
+                    <form action="<%=Util.fullPath("register")%>" method="POST" class="form-regis">
+
+                        <input type="hidden" name="linkRegister" value="<%=Util.urlRedirect(request)%>">
                         <div class="form-label-group mb-4 mt-5">
                             <input name="user_register" type="text" id="inputUser" class="form-control"
                                    placeholder="Nhập tên đăng nhập"

@@ -73,15 +73,4 @@ public class Product {
         this.total = total;
     }
 
-    @Override
-    public String toString() {
-        return "Product :" +
-                "id_product='" + id_product + '\'' +
-                ", id_items='" + id_items + '\'' +
-                ", id_supplier='" + id_supplier + '\'' +
-                ", product_name='" + product_name + '\'' +
-                ", img='" + img + '\'' +
-                ", price=" + price +
-                ", total=" + total;
-    }
 }

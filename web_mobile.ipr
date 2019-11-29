@@ -13,6 +13,14 @@
       </root>
     </artifact>
   </component>
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="webmobile@localhost" uuid="1f345c2a-3d7b-403b-9da1-3c1fca6bddc0">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/webmobile</jdbc-url>
+    </data-source>
+  </component>
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
@@ -148,10 +156,45 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/out/artifacts/web_mobile/database/webmobile.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/web/database/webmobile.sql" dialect="MySQL" />
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/web/admin_slide.jsp" value="file://$PROJECT_DIR$/web" />
+      </map>
+    </option>
+  </component>
+  <component name="dataSourceStorageLocal">
+    <data-source name="webmobile@localhost" uuid="1f345c2a-3d7b-403b-9da1-3c1fca6bddc0">
+      <database-info product="MySQL" version="5.5.5-10.4.6-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )" dbms="MARIADB" exact-version="10.4.6" exact-driver-version="5.1">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="@" />
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+  </component>
   <component name="libraryTable">
+    <library name="jstl">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/web/WEB-INF/lib" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib" recursive="false" />
+    </library>
     <library name="lib">
       <CLASSES>
         <root url="file://D:/TomCat/apache-tomcat-8.5.42/lib" />
