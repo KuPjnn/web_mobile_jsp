@@ -33,4 +33,9 @@ public class Util {
 
         return pri;
     }
+
+    public static String splitImg(String listLink) {
+        String[] link = listLink.split("~");
+        return link[0];
+    }
 }

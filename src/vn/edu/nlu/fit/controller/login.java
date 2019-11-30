@@ -15,7 +15,7 @@ public class login extends javax.servlet.http.HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
-        String user = request.getParameter("username");
+               String user = request.getParameter("username");
         String pass = request.getParameter("password");
 
         String link = request.getParameter("link");

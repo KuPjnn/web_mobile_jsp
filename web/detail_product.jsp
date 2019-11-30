@@ -111,7 +111,9 @@
                 <div align="center">
                     <form action="pay.jsp" class="">
                         <button class="btn_buy col-md-5 buy_now mt-1" type="submit">Mua ngay</button>
-                        <button class="btn_add col-md-5 add_shop_cart mt-1" type="button">Thêm vào giỏ</button>
+                        <a href="<%=Util.fullPath("add?id=" + detail.getString(6))%>">
+                            <button class="btn_add col-md-5 add_shop_cart mt-1" type="button">Thêm vào giỏ</button>
+                        </a>
                     </form>
                 </div>
             </div>

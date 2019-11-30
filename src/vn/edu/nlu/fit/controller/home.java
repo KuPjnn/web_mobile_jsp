@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,20 +16,18 @@ import java.sql.Statement;
 @WebServlet("/home")
 public class home extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         try {
-            Statement statement = DBConect.connectMySQL();
-
             String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
                     " FROM product,items,supplier\n" +
                     " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER\n" +
                     " ORDER BY RAND ( );";
 
-            ResultSet resultSet = statement.executeQuery(product);
+            PreparedStatement statement = DBConect.getPreparedStatement(product);
+
+            ResultSet resultSet = statement.executeQuery();
 
             request.setAttribute("resultSet", resultSet);
 

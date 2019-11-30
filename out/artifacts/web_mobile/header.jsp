@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-md-4 col-12 login">
                             <a id="shopping_cart" class="fas fa-shopping-cart float-right mt-3 ml-5"
-                               href="cart.jsp"></a>
+                               href="<%=Util.fullPath("show_cart")%>"></a>
                             <%
                                 User ss = (User) session.getAttribute("user");
                                 if (ss != null) {

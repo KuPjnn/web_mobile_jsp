@@ -1,12 +1,8 @@
-package vn.edu.nlu.fit.controller.card;
+package vn.edu.nlu.fit.controller.cart;
 
-import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
-import vn.edu.nlu.fit.dao.ProductDAO;
 import vn.edu.nlu.fit.dao.ProductDAOImpl;
 import vn.edu.nlu.fit.model.Cart;
-import vn.edu.nlu.fit.model.ListCArt;
-import vn.edu.nlu.fit.model.Product;
-import vn.edu.nlu.fit.util.Util;
+import vn.edu.nlu.fit.model.ListCart;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 @WebServlet("/add")
 public class add extends HttpServlet {
@@ -31,10 +26,10 @@ public class add extends HttpServlet {
             String id_product = request.getParameter("id");
             Cart item = new Cart(new ProductDAOImpl().getProduct(id_product), 1);
 
-            ListCArt listCArt = (ListCArt) session.getAttribute("list_cart");
+            ListCart listCArt = (ListCart) session.getAttribute("list_cart");
 
             if (listCArt == null)
-                listCArt = new ListCArt();
+                listCArt = new ListCart();
             if (!listCArt.list_cart.isEmpty()) {
                 for (Cart product : listCArt.list_cart) {
                     if (product.getPro().getId_product().equals(id_product)) {

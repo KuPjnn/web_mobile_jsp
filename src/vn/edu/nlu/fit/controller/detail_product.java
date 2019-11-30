@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -24,29 +25,31 @@ public class detail_product extends HttpServlet {
         try {
 
             /*thong tin san pham*/
-            Statement stProduct = DBConect.connectMySQL();
             String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
                     " FROM product,items,supplier\n" +
                     " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER " +
-                    "AND product.ID_PRODUCT=" + "\'" + detail + "\'";
-            ResultSet detailProduct = stProduct.executeQuery(product);
+                    "AND product.ID_PRODUCT= ?;";
+            PreparedStatement stProduct = DBConect.getPreparedStatement(product);
+            stProduct.setString(1, detail);
+            ResultSet detailProduct = stProduct.executeQuery();
             request.setAttribute("detailProduct", detailProduct);
 
             /*Cau hinh san pham*/
-            Statement stConf = DBConect.connectMySQL();
-            String conf = "SELECT * FROM configuration WHERE configuration.ID_PRODUCT=" + "\'" + detail + "\'";
-            ResultSet configuration = stConf.executeQuery(conf);
+            String conf = "SELECT * FROM configuration WHERE configuration.ID_PRODUCT= ?;";
+            PreparedStatement stConf = DBConect.getPreparedStatement(conf);
+            stConf.setString(1, detail);
+            ResultSet configuration = stConf.executeQuery();
             request.setAttribute("configuration", configuration);
 
             /*Binh luan san pham*/
-            Statement stCom = DBConect.connectMySQL();
             String com = "SELECT DISTINCT `comment`.ID_COMMENT,`user`.FULLNAME,`comment`.ID_PRODUCT,`comment`.CONTENT,`comment`.DATE_COMMENT\n" +
-                    "FROM `comment`,`user` WHERE `comment`.USER_NAME=`user`.USER_NAME AND `comment`.ID_PRODUCT=" + "\'" + detail + "\'";
-            ResultSet comment = stCom.executeQuery(com);
+                    "FROM `comment`,`user` WHERE `comment`.USER_NAME=`user`.USER_NAME AND `comment`.ID_PRODUCT= ?; ";
+            PreparedStatement stCom = DBConect.getPreparedStatement(com);
+            stCom.setString(1, detail);
+            ResultSet comment = stCom.executeQuery();
             request.setAttribute("comment", comment);
 
             /*San pham tuong tu*/
-            Statement stSame = DBConect.connectMySQL();
             String same = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
                     "FROM product,items,supplier\n" +
                     "WHERE \n" +
@@ -54,11 +57,15 @@ public class detail_product extends HttpServlet {
                     "AND \n" +
                     "product.ID_SUPPLIER=supplier.ID_SUPPLIER\n" +
                     "AND\n" +
-                    "product.ID_SUPPLIER =(SELECT product.ID_SUPPLIER FROM product WHERE product.ID_PRODUCT =" + "\'" + detail + "\') \n" +
+                    "product.ID_SUPPLIER =(SELECT product.ID_SUPPLIER FROM product WHERE product.ID_PRODUCT = ?) " +
                     "AND \n" +
-                    "product.ID_ITEMS = (SELECT product.ID_ITEMS FROM product WHERE product.ID_PRODUCT =" + "\'" + detail + "\') \n" +
+                    "product.ID_ITEMS = (SELECT product.ID_ITEMS FROM product WHERE product.ID_PRODUCT = ?) " +
                     " ORDER BY RAND ( );";
-            ResultSet like = stSame.executeQuery(same);
+            PreparedStatement stSame = DBConect.getPreparedStatement(same);
+            stSame.setString(1, detail);
+            stSame.setString(2, detail);
+
+            ResultSet like = stSame.executeQuery();
             request.setAttribute("like", like);
 
             request.getRequestDispatcher("detail_product.jsp").forward(request, response);

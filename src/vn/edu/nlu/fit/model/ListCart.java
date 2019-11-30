@@ -1,4 +1,20 @@
 package vn.edu.nlu.fit.model;
 
-public class ListCArt {
+import java.util.ArrayList;
+
+public class ListCart {
+
+    public ArrayList<Cart> list_cart = new ArrayList<>();
+
+    public double totalPrice() {
+        double sum = 0;
+        if (list_cart.isEmpty()) return sum;
+        else {
+
+            for (Cart list : list_cart) {
+                sum += list.getPro().getPrice() * list.getTotal();
+            }
+        }
+        return sum;
+    }
 }
