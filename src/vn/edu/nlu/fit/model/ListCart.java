@@ -10,11 +10,11 @@ public class ListCart {
         double sum = 0;
         if (list_cart.isEmpty()) return sum;
         else {
-
             for (Cart list : list_cart) {
                 sum += list.getPro().getPrice() * list.getTotal();
             }
         }
         return sum;
     }
+
 }

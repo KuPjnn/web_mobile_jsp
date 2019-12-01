@@ -109,11 +109,12 @@
                     </h5>
                 </div>
                 <div align="center">
-                    <form action="pay.jsp" class="">
+                    <form action="pay.jsp" method="post">
                         <button class="btn_buy col-md-5 buy_now mt-1" type="submit">Mua ngay</button>
-                        <a href="<%=Util.fullPath("add?id=" + detail.getString(6))%>">
-                            <button class="btn_add col-md-5 add_shop_cart mt-1" type="button">Thêm vào giỏ</button>
-                        </a>
+                    </form>
+                    <form action="<%=Util.fullPath("add?id=" + detail.getString(6))%>" method="post">
+                        <button class="btn_add col-md-5 add_shop_cart mt-1" type="submit">Thêm vào giỏ</button>
+                        <input type="hidden" name="link_detail" value="<%=Util.urlRedirect(request)%>">
                     </form>
                 </div>
             </div>

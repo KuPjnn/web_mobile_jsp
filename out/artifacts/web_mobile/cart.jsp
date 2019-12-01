@@ -41,13 +41,17 @@
             <div class="col-md-8 col-12">
                 <%
                     ListCart list_item = (ListCart) request.getAttribute("list_cart");
+                    if (list_item == null) {
+                %>
+                <p>Chưa có sản phẩm</p>
+                <%
+                } else {
                     for (Cart item : list_item.list_cart) {
                 %>
                 <div class="product_cart row">
                     <div class="col-md-3 col-6">
                         <div>
-                            <input id="<%=item.getPro().getId_product()%>" onclick="updateTotalPrice()" type="checkbox"
-                                   name="select_product" checked>
+                            <input type="checkbox" name="select_product" checked>
                             <img width="100px" src="<%=Util.splitImg(item.getPro().getImg())%>" alt="img">
                         </div>
                     </div>
@@ -64,15 +68,17 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mt-4">
-                        <input class="btn btn-dark ml-3" type="button" name="delete_product" value="Xóa">
+                        <form action="<%=Util.fullPath("del?id_del=" + item.getPro().getId_product())%>" method="post">
+                            <input class="btn btn-dark ml-3" type="submit"
+                                   name="delete_product" value="Xóa">
+                            <input type="hidden" name="link_cart" value="<%=Util.urlRedirect(request)%>">
+                        </form>
                     </div>
                 </div>
-
-
                 <%
+                        }
                     }
                 %>
-
             </div>
             <div class="col-md-4 col-12">
                 <div class="product_total mt-5 mb-5">
@@ -96,17 +102,15 @@
 <%@include file="pay_online.jsp" %>
 <%----------------------------------------------%>
 
-
 </body>
-
-<script type="text/javascript">
+<%--<script type="text/javascript">
     var result =<%=list_item.totalPrice()%>;
     <% int i=0 ;%>
 
     function updateTotalPrice() {
         var checkbox = document.getElementById("<%=list_item.list_cart.get(i).getPro().getId_product()%>");
 
-        <%--for (var i = 0; i < <%=list_item.list_cart.size()%>; i++) {--%>
+        &lt;%&ndash;for (var i = 0; i < <%=list_item.list_cart.size()%>; i++) {&ndash;%&gt;
 
         if (checkbox[<%=i%>].checked === false) {
             alert(<%=i%>);
@@ -122,6 +126,5 @@
         // }
     }
 
-</script>
-
+</script>--%>
 </html>
