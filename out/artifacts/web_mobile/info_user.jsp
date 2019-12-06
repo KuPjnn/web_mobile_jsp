@@ -2,25 +2,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/logo/logo.png" type="image">
     <title>Thông tin cá nhân | Saitama</title>
-
-    <!--    JQUERY  -->
-    <script src="lib/jquery/jquery-3.2.1.slim.min.js"></script>
-
-    <!--    BOOTSTRAP   -->
-    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
-    <script src="lib/bootstrap/bootstrap.min.js"></script>
-    <script src="lib/bootstrap/popper.min.js"></script>
-
-    <!--    FONT AWESOME    -->
-    <link rel="stylesheet" href="lib/fontawesome/css/all.css">
-
-    <link rel="stylesheet" href="css/style.css">
+    <%@include file="headAllPage.jsp" %>
     <style>
         th {
             font-size: 18px;

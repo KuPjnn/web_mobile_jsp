@@ -6,14 +6,12 @@ public class Cart {
     private Product pro;
     private int total;
 
-
     public Cart(Product pro, int total) {
         this.pro = pro;
         this.total = total;
     }
 
     public Cart() {
-
     }
 
     public Product getPro() {

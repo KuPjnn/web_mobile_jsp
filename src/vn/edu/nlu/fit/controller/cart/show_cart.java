@@ -19,7 +19,9 @@ public class show_cart extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         ListCart listCart = (ListCart) session.getAttribute("list_cart");
-        request.setAttribute("list_cart", listCart);
+        if (listCart == null)
+            listCart = new ListCart();
+        session.setAttribute("list_cart", listCart);
         request.getRequestDispatcher("cart.jsp").forward(request, response);
     }
 }

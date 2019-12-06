@@ -4,28 +4,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>Giỏ hàng | Saitama</title>
-
-    <link rel="icon" href="<%=Util.fullPath("img/logo/logo.png")%>" type="image">
-
-    <!--    JQUERY  -->
-    <script src="<%=Util.fullPath("lib/jquery/jquery-3.2.1.slim.min.js")%>"></script>
-
-    <!--    BOOTSTRAP   -->
-    <link rel="stylesheet" href="<%=Util.fullPath("lib/bootstrap/bootstrap.min.css")%>">
-    <script src="<%=Util.fullPath("lib/bootstrap/bootstrap.min.js")%>"></script>
-    <script src="<%=Util.fullPath("lib/bootstrap/popper.min.js")%>"></script>
-
-    <!--    FONT AWESOME    -->
-    <link rel="stylesheet" href="<%=Util.fullPath("lib/fontawesome/css/all.css")%>">
-
-    <link rel="stylesheet" href="<%=Util.fullPath("css/style.css")%>">
-    <link rel="stylesheet" href="<%=Util.fullPath("css/giohang.css")%>">
+    <link rel="stylesheet" href="<%=Util.fullPath("css/cart.css")%>">
+    <%@include file="headAllPage.jsp" %>
 </head>
 <body>
 
@@ -40,10 +21,10 @@
         <div class="row">
             <div class="col-md-8 col-12">
                 <%
-                    ListCart list_item = (ListCart) request.getAttribute("list_cart");
-                    if (list_item == null) {
+                    ListCart list_item = (ListCart) session.getAttribute("list_cart");
+                    if (list_item.list_cart.isEmpty()) {
                 %>
-                <p>Chưa có sản phẩm</p>
+                <p style="font-size: 30px">Chưa có sản phẩm</p>
                 <%
                 } else {
                     for (Cart item : list_item.list_cart) {
@@ -64,7 +45,7 @@
                     <div class="col-md-3 col-6 mt-4">
                         <div class="input-group">
                             <span class="input-group-text">Số lượng</span>
-                            <input type="number" class="form-control" value="<%=item.getTotal()%>">
+                            <input type="number" class="form-control" min="1" value="<%=item.getTotal()%>">
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mt-4">
@@ -84,9 +65,27 @@
                 <div class="product_total mt-5 mb-5">
                     <p>Tổng tiền</p>
                     <span id="total"><%=Util.convertPrice(list_item.totalPrice())%></span>
+
+                    <%
+                        User user = (User) session.getAttribute("user");
+                        if (user == null) {
+                    %>
+                    <button onclick="alert('Bạn cần đăng nhập.')" class="btn m-auto" type="button">Đặt hàng
+                    </button>
+                    <%
+                    } else if (list_item.list_cart.size() == 0) {
+                    %>
+                    <button onclick="alert('Chưa có sản phẩm.')" class="btn m-auto" type="button">Đặt hàng
+                    </button>
+                    <%
+                    } else {
+                    %>
                     <button class="btn m-auto" type="submit" data-toggle="modal"
                             data-target="#payModal">Đặt hàng
                     </button>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </div>
@@ -99,32 +98,8 @@
 <%-----------------------------------------------%>
 
 <%--==============  MODAL PAY ONLINE    =======--%>
-<%@include file="pay_online.jsp" %>
+<%@include file="pay.jsp" %>
 <%----------------------------------------------%>
 
 </body>
-<%--<script type="text/javascript">
-    var result =<%=list_item.totalPrice()%>;
-    <% int i=0 ;%>
-
-    function updateTotalPrice() {
-        var checkbox = document.getElementById("<%=list_item.list_cart.get(i).getPro().getId_product()%>");
-
-        &lt;%&ndash;for (var i = 0; i < <%=list_item.list_cart.size()%>; i++) {&ndash;%&gt;
-
-        if (checkbox[<%=i%>].checked === false) {
-            alert(<%=i%>);
-            result = result - (<%=list_item.list_cart.get(i).getPro().getPrice()%> *
-            <%=list_item.list_cart.get(i).getTotal()%>)
-            document.getElementById('total').innerText = result;
-        } else if (checkbox[<%=i%>].checked === true) {
-            alert(<%=i%>);
-            result = result + (<%=list_item.list_cart.get(i).getPro().getPrice()%> *
-            <%=list_item.list_cart.get(i).getTotal()%>)
-            document.getElementById('total').innerText = result;
-        }
-        // }
-    }
-
-</script>--%>
 </html>

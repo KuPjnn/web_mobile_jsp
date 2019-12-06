@@ -1,79 +1,38 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/logo/logo.png" type="image">
-    <title>Thanh toán | Saitama</title>
 
-    <!--    JQUERY  -->
-    <script src="<%=Util.fullPath("lib/jquery/jquery-3.2.1.slim.min.js")%>"></script>
-
-    <!--    BOOTSTRAP   -->
-    <link rel="stylesheet" href="<%=Util.fullPath("lib/bootstrap/bootstrap.min.css")%>">
-    <script src="<%=Util.fullPath("lib/bootstrap/bootstrap.min.js")%>"></script>
-    <script src="<%=Util.fullPath("lib/bootstrap/popper.min.js")%>"></script>
-
-    <!--    FONT AWESOME    -->
-    <link rel="stylesheet" href="<%=Util.fullPath("lib/fontawesome/css/all.css")%>">
-
-    <link rel="stylesheet" href="<%=Util.fullPath("css/style.css")%>">
-    <link rel="stylesheet" href="<%=Util.fullPath("css/online.css")%>">
-</head>
-<body>
-
-<%--=================   HEADER   ==============--%>
-<%@include file="header.jsp" %>
-<%-----------------------------------------------%>
-
-<%--=================    BODY    ==============--%>
-<section id="main_body">
-    <div class="container ">
-        <div class="pt-3">
-            <p class="title_detail">Thanh toán online</p>
-        </div>
-        <div id="row">
-            <div class="col-md-6 col-12 mx-auto pb-5">
-                <form method="get" action="detail_order.jsp">
-                    <div class="card m-auto">
-                        <div class="card-header bg-dark">
-                            <p class="title_big text-center">Thông tin giao dịch</p>
+<%--=============   MODAL PAY INFO    ==============--%>
+<div class="modal fade" id="payModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content w-75 m-auto">
+            <div class="card-body">
+                <h4 class="card-title text-center font-weight-bold">Thanh toán</h4>
+                <form method="get" action="<%=Util.fullPath("pay")%>" class="form-signin">
+                    <div class="form-label-group mb-5 mt-5">
+                        <input name="address" type="text" id="name" class="form-control"
+                               placeholder="Nhập địa chỉ"
+                               autofocus>
+                    </div>
+                    <div class="form-label-group">
+                        <input name="phone" type="tel" id="phone" class="form-control"
+                               placeholder="Nhập số điện thoại"
+                        >
+                    </div>
+                    <div class="option_pay row mb-5">
+                        <div class="col-md-6 col-12">
+                            <input type="radio" name="pay" value="prepayment" id="prepayment"
+                                   class="pay-switch" checked>
+                            <label for="prepayment" class="pay_switch-label rounded">Trả trước</label>
                         </div>
-                        <div class="card-body">
-                            <li><b>Số tiền :</b> 12.000.000đ</li>
-                            <hr>
-                            <li><b>Nội dung thanh toán : </b> mua hàng</li>
-                            <hr>
-                            <h4 class="font-weight-bold text-center mt-5">Tài khoản</h4>
-                            <div class="form-label-group w-75 mx-auto my-5">
-                                <input type="text" id="name" class="form-control"
-                                       placeholder="Tên chủ tài khoản">
-                            </div>
-                            <div class="form-label-group w-75 mx-auto mb-5">
-                                <input type="tel" id="inputSTK" class="form-control"
-                                       placeholder="Số tài khoản">
-                            </div>
-                            <hr>
-                            <div align="center">
-                                <button class="btn btn_pay px-5" type="submit">Ok</button>
-                                <button class="btn font-weight-bold btn-secondary px-5" type="reset">Hủy</button>
-                            </div>
+                        <div class="col-md-6 col-12">
+                            <input type="radio" name="pay" value="pay_later" id="pay_later"
+                                   class="pay-switch">
+                            <label for="pay_later" class="pay_switch-label rounded">Trả sau</label>
                         </div>
                     </div>
+                    <button class="btn_pay btn btn-lg btn-block text-uppercase" type="submit">Thanh toán</button>
                 </form>
             </div>
         </div>
     </div>
-</section>
-<%-----------------------------------------------%>
-
-<%--=================   FOOTER    =============--%>
-<%@include file="footer.jsp" %>
-<%-----------------------------------------------%>
-
-
-</body>
-</html>
+</div>

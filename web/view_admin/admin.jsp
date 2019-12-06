@@ -6,19 +6,19 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/logo/logo.png" type="image">
+    <link rel="icon" href="../img/logo/logo.png" type="image">
     <title>Admin Page</title>
 
     <!--    JQUERY  -->
-    <script src="lib/jquery/jquery-3.2.1.slim.min.js"></script>
+    <script src="../lib/jquery/jquery-3.2.1.slim.min.js"></script>
     <!--    BOOTSTRAP   -->
-    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
-    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
+    <script src="../lib/bootstrap/bootstrap.min.js"></script>
 
     <!--    FONT AWESOME    -->
-    <link rel="stylesheet" href="lib/fontawesome/css/all.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <header id="admin_header">
@@ -28,7 +28,7 @@
                 <nav class="admin_header navbar">
                     <div class="col-md-2 col-3">
                         <a class="logo navbar-brand m-auto" href="#">
-                            <img class="img-fluid" width="50" src="img/logo/logo.svg" alt="logo">
+                            <img class="img-fluid" width="50" src="../img/logo/logo.svg" alt="logo">
                         </a>
                     </div>
                     <div class="col-md-7 col-9">
@@ -43,9 +43,9 @@
                     </div>
                     <div class="col-md-3 col12">
                         <ul class="login mt-3 float-right">
-                            <a class="mx-3 text-decoration-none" href="info_user.jsp"><i
+                            <a class="mx-3 text-decoration-none" href="../info_user.jsp"><i
                                     class="fa fa-user"></i>Admin</a>
-                            <a class="text-decoration-none" href="index.jsp">Đăng xuất</a>
+                            <a class="text-decoration-none" href="../index.jsp">Đăng xuất</a>
                         </ul>
                     </div>
                 </nav>

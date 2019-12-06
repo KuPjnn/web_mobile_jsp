@@ -15,22 +15,24 @@ public class login extends javax.servlet.http.HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
-               String user = request.getParameter("username");
+        String user = request.getParameter("username");
         String pass = request.getParameter("password");
 
         String link = request.getParameter("link");
+//        String[] linkRequestDispatcher = request.getParameter("linkDispatcher").split("/");
 
-        System.out.println(link);
+//        System.out.println(linkRequestDispatcher[2]);
         try {
             User u = new UserDAOImpl().getUser(user);
             boolean validate = new UserDAOImpl().checkLogin(user, pass);
             if (u != null && validate) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", u);
-
                 response.sendRedirect(Util.fullPath(link));
             } else {
                 response.sendRedirect(Util.fullPath(link));
+//                request.setAttribute("err", "Sai tên đăng nhập hoặc mật khẩu.");
+//                request.getRequestDispatcher(link).forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();

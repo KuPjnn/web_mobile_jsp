@@ -9,24 +9,34 @@
                 <!--=========   HEADER  =============-->
                 <div class="col-md-12">
                     <nav class="main_header navbar">
+                        <%--    BRAND   --%>
                         <div class="col-md-2 col-3">
                             <a class="logo navbar-brand" href="<%=Util.fullPath("home")%>">
                                 <img class="img-fluid" width="50" src="img/logo/logo.svg" alt="logo">
                             </a>
                         </div>
+                        <%--    SEARCH  --%>
                         <div class="col-md-6 col-9">
-                            <div class="search input-group mb-3">
-                                <input type="text" class="form-control"
-                                       placeholder="Nhập tên sản phẩm cần tìm...">
-                                <div class="input-group-append">
-                                    <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i>
-                                    </button>
+                            <form action="<%=Util.fullPath("list_product")%>" method="get">
+                                <div class="search input-group mb-3">
+                                    <input name="search" type="text" class="form-control"
+                                           placeholder="Nhập tên sản phẩm cần tìm...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
+                        <%--    LOGIN   --%>
                         <div class="col-md-4 col-12 login">
-                            <a id="shopping_cart" class="fas fa-shopping-cart float-right mt-3 ml-5"
-                               href="<%=Util.fullPath("show_cart")%>"></a>
+                            <%--    CART    --%>
+                            <div class="d-inline">
+                                <span></span>
+                                <a id="shopping_cart" class="fas fa-shopping-cart float-right mt-3 ml-5"
+                                   href="<%=Util.fullPath("show_cart")%>"></a>
+                            </div>
+                            <%--    LOGIN_LOGOUT    --%>
                             <%
                                 User ss = (User) session.getAttribute("user");
                                 if (ss != null) {

@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 public class ListCart {
 
-    public ArrayList<Cart> list_cart = new ArrayList<>();
+    public ArrayList<Cart> list_cart;
+
+    public ListCart() {
+        list_cart = new ArrayList<>();
+    }
 
     public double totalPrice() {
         double sum = 0;
@@ -16,5 +20,4 @@ public class ListCart {
         }
         return sum;
     }
-
 }

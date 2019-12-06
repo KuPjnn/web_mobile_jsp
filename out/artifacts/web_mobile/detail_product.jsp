@@ -3,29 +3,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/logo/logo.png" type="image">
     <title>Chi tiết sản phẩm | Saitama</title>
-
-    <!--    JQUERY  -->
-    <script src="lib/jquery/jquery-3.2.1.slim.min.js"></script>
-    <!--    BOOTSTRAP   -->
-    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
-    <script src="lib/bootstrap/bootstrap.min.js"></script>
-
-    <!--    FONT AWESOME    -->
-    <link rel="stylesheet" href="lib/fontawesome/css/all.css">
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/chitietsanpham.css">
-    <link rel="stylesheet" href="css/slideshow.css">
-
+    <link rel="stylesheet" href="<%=Util.fullPath("css/detail_product.css")%>">
+    <%@include file="headAllPage.jsp" %>
 </head>
 <body>
-
+<%@include file="backToTop.jsp" %>
 <%--=================   HEADER   ==============--%>
 <%@include file="header.jsp" %>
 <%-----------------------------------------------%>
@@ -43,6 +26,7 @@
             while (detail.next()) {
         %>
         <div class="row">
+
             <div class="col-md-7 col-12">
                 <div class="img_product_detail" align="center">
 
@@ -109,15 +93,19 @@
                     </h5>
                 </div>
                 <div align="center">
-                    <form action="pay.jsp" method="post">
-                        <button class="btn_buy col-md-5 buy_now mt-1" type="submit">Mua ngay</button>
+                    <form class="d-inline" action="<%=Util.fullPath("add?id=" + detail.getString(6)+"&btn=buynow")%>"
+                          method="post">
+                        <button class="btn_buy col-md-5 buy_now mt-1" type="submit">Mua ngay
+                        </button>
                     </form>
-                    <form action="<%=Util.fullPath("add?id=" + detail.getString(6))%>" method="post">
+                    <form class="d-inline" action="<%=Util.fullPath("add?id=" + detail.getString(6))%>"
+                          method="post">
                         <button class="btn_add col-md-5 add_shop_cart mt-1" type="submit">Thêm vào giỏ</button>
                         <input type="hidden" name="link_detail" value="<%=Util.urlRedirect(request)%>">
                     </form>
                 </div>
             </div>
+            <%--========    Thông số sản phẩm   =============--%>
             <div class="col-md-5 col-12">
                 <div>
                     <h4 class="mt-5">Thông số kĩ thuật</h4>
@@ -143,6 +131,7 @@
                     %>
                 </div>
             </div>
+            <%-------------------------------------------------%>
         </div>
         <%
             }
@@ -152,12 +141,27 @@
             <h3>Nhận xét sản phẩm</h3>
         </div>
         <div class="product_evaluation">
-            <form method="get">
+
+            <form action="" method="get">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control"
                            placeholder="Viết đánh giá ...">
                     <div class="input-group-append">
+                        <%
+                            User user = (User) session.getAttribute("user");
+                            if (user == null) {
+                        %>
+                        <button type="button" onclick="alert('Bạn cần đăng nhập để sử dụng chức băng bình luận')"
+                                class="btn_evaluation btn btn-dark">Bình luận
+                        </button>
+                        <%
+                        } else {
+                        %>
                         <button class="btn_evaluation btn btn-dark" type="submit">Bình luận</button>
+                        <%
+                            }
+                        %>
+
                     </div>
                 </div>
             </form>
@@ -223,7 +227,11 @@
 <%@include file="footer.jsp" %>
 <%-----------------------------------------------%>
 
-<%--=================   SLIDE    =============--%>
+<%--============    PAY     ===================--%>
+<%@include file="pay.jsp" %>
+<%-----------------------------------------------%>
+
+<%--=========   SLIDE IMG PRODUCT    ==========--%>
 <style type="text/css">
     .carousel-indicators .carousel-indicators img {
         max-width: 100px;
@@ -252,7 +260,6 @@
 <script type="text/javascript">
     document.documentElement.setAttribute("lang", "en");
     document.documentElement.removeAttribute("class");
-
     axe.run(function (err, results) {
         console.log(results.violations);
     });

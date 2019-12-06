@@ -1,38 +1,90 @@
+<%@ page import="vn.edu.nlu.fit.model.ListCart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Thanh toán | Saitama</title>
+    <%@include file="headAllPage.jsp" %>
+    <style>
+        body {
+            margin: auto;
+        }
 
-<%--=============   MODAL PAY ONLINE    ==============--%>
-<div class="modal fade" id="payModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <!-- Modal content-->
-        <div class="modal-content w-75 m-auto">
-            <div class="card-body">
-                <h4 class="card-title text-center font-weight-bold">Thanh toán</h4>
-                <form action="pay.jsp" class="form-signin">
-                    <div class="form-label-group mb-5 mt-5">
-                        <input type="text" id="name" class="form-control"
-                               placeholder="Nhập địa chỉ"
-                               autofocus>
-                    </div>
-                    <div class="form-label-group">
-                        <input type="tel" id="phone" class="form-control"
-                               placeholder="Nhập số điện thoại"
-                        >
-                    </div>
-                    <div class="option_pay row mb-5">
-                        <div class="col-md-6 col-12">
-                            <input type="radio" name="pay" value="prepayment" id="prepayment"
-                                   class="pay-switch" checked>
-                            <label for="prepayment" class="pay_switch-label rounded">Trả sau</label>
+        .title_big {
+            font-size: 25px;
+            color: #ff6700;
+            font-weight: bold;
+        }
+
+        li, b {
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<%--=================   HEADER   ==============--%>
+<%@include file="header.jsp" %>
+<%-----------------------------------------------%>
+
+<%--=================    BODY    ==============--%>
+<section id="main_body">
+    <div class="container ">
+        <div class="pt-3">
+            <p class="title_detail">Thanh toán online</p>
+        </div>
+        <div id="row">
+            <div class="col-md-6 col-12 mx-auto pb-5">
+                <form method="get" action="<%=Util.fullPath("pay_online")%>">
+                    <div class="card m-auto">
+                        <div class="card-header bg-dark">
+                            <p class="title_big text-center">Thông tin giao dịch</p>
                         </div>
-                        <div class="col-md-6 col-12">
-                            <input type="radio" name="pay" value="pay_later" id="pay_later"
-                                   class="pay-switch">
-                            <label for="pay_later" class="pay_switch-label rounded">Trả trước</label>
+                        <%
+                            String info = (String) request.getAttribute("info");
+                        %>
+                        <input type="hidden" name="info" value="<%=info%>">
+
+                        <div class="card-body">
+                            <%
+                                ListCart listCart = (ListCart) session.getAttribute("list_cart");
+                            %>
+                            <li><b>Số tiền :</b><%=Util.convertPrice(listCart.totalPrice())%>
+                            </li>
+                            <hr>
+                            <li><b>Nội dung thanh toán : </b> mua hàng</li>
+                            <hr>
+                            <h4 class="font-weight-bold text-center mt-5">Tài khoản</h4>
+                            <div class="form-label-group w-75 mx-auto my-5">
+                                <input name="name_atm" type="text" id="name" class="form-control"
+                                       placeholder="Tên chủ tài khoản">
+                            </div>
+                            <div class="form-label-group w-75 mx-auto mb-5">
+                                <input name="number_atm" type="number" id="inputSTK" class="form-control"
+                                       placeholder="Số tài khoản">
+                            </div>
+                            <hr>
+                            <div align="center">
+                                <button class="btn btn_pay px-5" type="submit">Ok</button>
+                                <a class="btn font-weight-bold btn-secondary px-5"
+                                   href="<%=Util.fullPath("show_cart")%>">
+                                    Hủy
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <button class="btn_pay btn btn-lg btn-block text-uppercase" type="submit">Thanh toán</button>
                 </form>
             </div>
         </div>
     </div>
-</div>
+</section>
+<%-----------------------------------------------%>
+
+<%--=================   FOOTER    =============--%>
+<%@include file="footer.jsp" %>
+<%-----------------------------------------------%>
+
+
+</body>
+</html>

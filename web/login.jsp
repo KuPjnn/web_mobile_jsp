@@ -11,6 +11,7 @@
                     <h4 class="text-center font-weight-bold">Đăng nhập</h4>
                 </div>
                 <div class="card-body">
+
                     <form action="<%=Util.fullPath("login")%>" method="post" class="form-signin">
 
                         <input type="hidden" name="link" value="<%=Util.urlRedirect(request)%>">
@@ -25,17 +26,30 @@
                                    placeholder="Nhập mật khẩu"
                             >
                         </div>
-                        <div class="custom-control custom-checkbox mb-4">
+                        <%--<div class="custom-control custom-checkbox mb-4">
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
                             <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
-                        </div>
-                        <button class="btn_login btn btn-lg btn-block text-uppercase" type="submit">Đăng
-                            nhập
+                        </div>--%>
+
+                        <button type="submit" class="btn_login btn btn-lg btn-block text-uppercase">Đăng nhập
                         </button>
+                        <%
+                            if (session.getAttribute("user") == null) {
+                        %>
+
+                        <%
+                        } else {
+                        %>
+
+                        <%
+                            }
+                        %>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 

@@ -3,28 +3,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="<%=Util.fullPath("img/logo/logo.png")%>" type="image">
     <title>Trang chủ | Saitama</title>
-
-    <!--    JQUERY  -->
-    <script src="<%=Util.fullPath("lib/jquery/jquery-3.2.1.slim.min.js")%>"></script>
-
-    <!--    BOOTSTRAP   -->
-    <link rel="stylesheet" href="<%=Util.fullPath("lib/bootstrap/bootstrap.min.css")%>">
-    <script src="<%=Util.fullPath("lib/bootstrap/bootstrap.min.js")%>"></script>
-    <script src="<%=Util.fullPath("lib/bootstrap/popper.min.js")%>"></script>
-
-    <!--    FONT AWESOME    -->
-    <link rel="stylesheet" href="<%=Util.fullPath("lib/fontawesome/css/all.css")%>">
-
-    <link rel="stylesheet" href="<%=Util.fullPath("css/style.css")%>">
+    <%@include file="headAllPage.jsp" %>
 
 </head>
 <body>
+<%@include file="backToTop.jsp" %>
 <%--=================   HEADER   ==============--%>
 <%@include file="header.jsp" %>
 <%-----------------------------------------------%>
@@ -55,11 +39,8 @@
                         <div class="product_item">
                             <div class="figure figure-img">
                                 <a href="<%=Util.fullPath("detail_product?detail="+rs.getString(6))%>">
-                                    <%
-                                        String img = rs.getString(3);
-                                        String[] arrImg = img.split("~");
-                                    %>
-                                    <img class="img-fluid align-content-center" src="<%=arrImg[0]%>" alt="img">
+                                    <img class="img-fluid align-content-center"
+                                         src="<%=Util.splitImg(rs.getString(3))%>" alt="img">
                                 </a>
                             </div>
                             <h5 class="product_name"><a

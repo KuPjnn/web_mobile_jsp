@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.lang.annotation.Repeatable;
 import java.sql.SQLException;
 
 @WebServlet("/add")
@@ -26,9 +27,9 @@ public class add extends HttpServlet {
             HttpSession session = request.getSession();
 
             String linkSendRequest = request.getParameter("link_detail");
-            System.out.println(linkSendRequest);
 
             String id_product = request.getParameter("id");
+            String btn_buy_now = request.getParameter("btn");
             Cart item = new Cart(new ProductDAOImpl().getProduct(id_product), 1);
 
             ListCart listCArt = (ListCart) session.getAttribute("list_cart");
@@ -50,7 +51,10 @@ public class add extends HttpServlet {
                 }
             }
             session.setAttribute("list_cart", listCArt);
-            response.sendRedirect(Util.fullPath(linkSendRequest));
+            if (btn_buy_now == null)
+                response.sendRedirect(Util.fullPath(linkSendRequest));
+            if (btn_buy_now != null)
+                response.sendRedirect(Util.fullPath("show_cart"));
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

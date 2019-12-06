@@ -3,28 +3,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/logo/logo.png" type="image">
     <title>Danh sách sản phẩm | Saitama</title>
-
-    <!--    JQUERY  -->
-    <script src="lib/jquery/jquery-3.2.1.slim.min.js"></script>
-
-    <!--    BOOTSTRAP   -->
-    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
-    <script src="lib/bootstrap/bootstrap.min.js"></script>
-    <script src="lib/bootstrap/popper.min.js"></script>
-
-    <!--    FONT AWESOME    -->
-    <link rel="stylesheet" href="lib/fontawesome/css/all.css">
-
-    <link rel="stylesheet" href="css/style.css">
+    <%@include file="headAllPage.jsp" %>
 </head>
 <body>
-
+<%@include file="backToTop.jsp" %>
 <%--=================   HEADER   ==============--%>
 <%@include file="header.jsp" %>
 <%-----------------------------------------------%>
@@ -43,6 +26,12 @@
                 <div class="row">
                     <%
                         ResultSet rs = (ResultSet) request.getAttribute("resultSet");
+                        rs.last();
+                        if (rs.getRow() == 0) {
+                    %>
+                    <div class="display-4 m-auto" style="height: 55vh">Không có kết quả phù hợp</div>
+                    <%
+                        }
                         rs.beforeFirst();
                         while (rs.next()) {
                     %>
