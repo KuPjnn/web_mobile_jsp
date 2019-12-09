@@ -28,7 +28,7 @@
         <div class="row">
 
             <div class="col-md-7 col-12">
-                <div class="img_product_detail" align="center">
+                <div id="add_cart" class="img_product_detail" align="center">
 
                     <div id="thumbnails-product" class="carousel slide carousel-fade carousel-thumbnails bg-white"
                          data-ride="carousel"
@@ -93,14 +93,16 @@
                     </h5>
                 </div>
                 <div align="center">
-                    <form class="d-inline" action="<%=Util.fullPath("add?id=" + detail.getString(6)+"&btn=buynow")%>"
+                    <form class="d-inline"
+                          action="<%=Util.fullPath("add?id=" + detail.getString(6)+"&btn=buynow")%>"
                           method="post">
                         <button class="btn_buy col-md-5 buy_now mt-1" type="submit">Mua ngay
                         </button>
                     </form>
-                    <form class="d-inline" action="<%=Util.fullPath("add?id=" + detail.getString(6))%>"
+                    <form class="d-inline" action="<%=Util.fullPath("add?id=" + detail.getString(6))+"#add_cart"%>"
                           method="post">
-                        <button class="btn_add col-md-5 add_shop_cart mt-1" type="submit">Thêm vào giỏ</button>
+                        <button class="btn_add col-md-5 add_shop_cart mt-1" type="submit">Thêm vào giỏ
+                        </button>
                         <input type="hidden" name="link_detail" value="<%=Util.urlRedirect(request)%>">
                     </form>
                 </div>
@@ -141,10 +143,14 @@
             <h3>Nhận xét sản phẩm</h3>
         </div>
         <div class="product_evaluation">
-
-            <form action="" method="get">
+            <form action="<%=Util.fullPath("comment")%>" method="get">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control"
+                    <input type="hidden" name="link" value="<%=Util.urlRedirect(request)%>">
+                    <%
+                        detail.first();
+                    %>
+                    <input type="hidden" name="id" value="<%=detail.getString(6)%>">
+                    <input name="comment" type="text" class="form-control"
                            placeholder="Viết đánh giá ...">
                     <div class="input-group-append">
                         <%
@@ -161,7 +167,6 @@
                         <%
                             }
                         %>
-
                     </div>
                 </div>
             </form>
@@ -175,6 +180,16 @@
                     <p>Bởi : <%=comment.getString(2)%>
                     </p>
                     <span><%=comment.getString(4)%></span>
+                    <%
+                        if (user != null && user.getUser_name().equals(comment.getString(1))) {
+                    %>
+                    <a href="del_comment?id_comment=<%=comment.getInt(6) + "&link="+ Util.urlRedirect(request)%>"
+                       class="float-right" style="color: #000 !important;">Xóa</a>
+                    <%--                    <a class="float-right pr-4">Sửa</a>--%>
+                    <%
+                        }
+                    %>
+
                 </div>
                 <%
                     }

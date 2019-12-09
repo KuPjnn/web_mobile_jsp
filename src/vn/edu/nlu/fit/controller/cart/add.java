@@ -37,10 +37,14 @@ public class add extends HttpServlet {
             if (listCArt == null)
                 listCArt = new ListCart();
             if (!listCArt.list_cart.isEmpty()) {
+                int check = 0;
                 for (Cart product : listCArt.list_cart) {
+                    check++;
                     if (product.getPro().getId_product().equals(id_product)) {
                         product.setTotal(product.getTotal() + 1);
-                    } else {
+                        break;
+                    }
+                    if (check == listCArt.list_cart.size()) {
                         listCArt.list_cart.add(item);
                         break;
                     }

@@ -44,13 +44,24 @@
                     </div>
                     <div class="col-md-3 col-6 mt-4">
                         <div class="input-group">
-                            <span class="input-group-text">Số lượng</span>
-                            <input type="number" class="form-control" min="1" value="<%=item.getTotal()%>">
+                            <div class="input-group-append">
+                                <a href="minus_quality?id_product=<%=item.getPro().getId_product()+"&link="+Util.urlRedirect(request)%>"
+                                   class="btn btn-dark rounded-left">
+                                    <i style="color: #fff" class="fas fa-minus"></i>
+                                </a>
+                            </div>
+                            <input type="text" class="form-control" min="1" value="<%=item.getTotal()%>" disabled>
+                            <div class="input-group-append">
+                                <a href="add_quality?id_product=<%=item.getPro().getId_product()+"&link="+Util.urlRedirect(request)%>"
+                                   class="btn btn-dark">
+                                    <i style="color: #fff" class="fas fa-plus"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mt-4">
                         <form action="<%=Util.fullPath("del?id_del=" + item.getPro().getId_product())%>" method="post">
-                            <input class="btn btn-dark ml-3" type="submit"
+                            <input onclick="" class="btn btn-dark ml-3" type="submit"
                                    name="delete_product" value="Xóa">
                             <input type="hidden" name="link_cart" value="<%=Util.urlRedirect(request)%>">
                         </form>

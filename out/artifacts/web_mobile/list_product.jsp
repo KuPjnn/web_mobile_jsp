@@ -18,7 +18,6 @@
 
         <!--==========  PRODUCT LIsT    ==========-->
         <div class="product">
-            <!--=============   SMART PHONE ==================-->
             <div class="smart_phone">
                 <div class="pt-3">
                     <p class="tilte">Danh sách sản phẩm</p>
@@ -35,7 +34,7 @@
                         rs.beforeFirst();
                         while (rs.next()) {
                     %>
-                    <div class="col-md-3 col-6">
+                    <div id="<%=rs.getString(6)%>" class="col-md-3 col-6">
                         <div class="product_item">
                             <div class="figure figure-img">
 
@@ -61,8 +60,14 @@
             </div>
 
         </div>
+        <ul class="pagination d-block mx-auto">
+            <li class="btn btn-dark mx-2"><a href="#" style="color: #ff6700">1</a></li>
+            <li class="btn btn-dark mx-2"><a href="#" style="color: #ff6700">2</a></li>
+            <li class="btn btn-dark mx-2"><a href="#" style="color: #ff6700">3</a></li>
+        </ul>
     </div>
 </section>
+
 <%-----------------------------------------------%>
 
 <%--=================   FOOTER    =============--%>

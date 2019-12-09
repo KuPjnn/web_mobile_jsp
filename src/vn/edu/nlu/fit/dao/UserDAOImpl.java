@@ -27,7 +27,6 @@ public class UserDAOImpl implements UserDAO {
             preparedStatement.setString(6, user.getPrivileges());
             preparedStatement.executeUpdate();
             return true;
-
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

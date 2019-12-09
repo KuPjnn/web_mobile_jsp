@@ -42,8 +42,8 @@ public class detail_product extends HttpServlet {
             request.setAttribute("configuration", configuration);
 
             /*Binh luan san pham*/
-            String com = "SELECT DISTINCT `comment`.ID_COMMENT,`user`.FULLNAME,`comment`.ID_PRODUCT,`comment`.CONTENT,`comment`.DATE_COMMENT\n" +
-                    "FROM `comment`,`user` WHERE `comment`.USER_NAME=`user`.USER_NAME AND `comment`.ID_PRODUCT= ?; ";
+            String com = "SELECT DISTINCT `comment`.USER_NAME,`user`.FULLNAME,`comment`.ID_PRODUCT,`comment`.CONTENT,`comment`.DATE_COMMENT, `comment`.ID_COMMENT\n" +
+                    " FROM `comment`,`user` WHERE `comment`.USER_NAME=`user`.USER_NAME AND `comment`.ID_PRODUCT= ?; ";
             PreparedStatement stCom = DBConect.getPreparedStatement(com);
             stCom.setString(1, detail);
             ResultSet comment = stCom.executeQuery();

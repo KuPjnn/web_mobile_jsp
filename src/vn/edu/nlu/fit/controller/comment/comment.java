@@ -1,4 +1,4 @@
-package vn.edu.nlu.fit.controller;
+package vn.edu.nlu.fit.controller.comment;
 
 import vn.edu.nlu.fit.db.DBConect;
 import vn.edu.nlu.fit.model.User;
@@ -35,20 +35,6 @@ public class comment extends HttpServlet {
                 ps.setString(1, user.getUser_name());
                 ps.setString(2, idProduct);
                 ps.setString(3, content);
-                ps.executeUpdate();
-                response.sendRedirect(Util.fullPath(link));
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        if (user != null) {
-            String id_comment = request.getParameter("id_comment");
-            String delComment = "DELETE FROM `webmobile`.`comment` WHERE `ID_COMMENT` = ?";
-            try {
-                PreparedStatement ps = DBConect.getPreparedStatement(delComment);
-                ps.setInt(1, Integer.parseInt(id_comment));
                 ps.executeUpdate();
                 response.sendRedirect(Util.fullPath(link));
             } catch (ClassNotFoundException e) {
