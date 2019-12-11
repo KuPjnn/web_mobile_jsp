@@ -34,7 +34,7 @@ tbody th {
     margin: auto;
 }
 
-#admin_body a {
+#admin_body .nav-item {
     background-color: #ffa500;
     padding: 20px 10px;
     font-weight: bold;
@@ -43,13 +43,13 @@ tbody th {
     text-decoration: none;
 }
 
-#admin_body a:hover {
+#admin_body .nav-item:hover {
     color: #000;
     cursor: pointer;
 }
 
-#admin_body a.active,
-#admin_body a.active i {
+#admin_body .nav-item.active,
+#admin_body .nav-item.active i {
     background-color: #ff6700;
     color: #000;
 }
@@ -69,4 +69,3 @@ tbody th {
     position: sticky;
     top: 0;
 }
-

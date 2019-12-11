@@ -22,7 +22,7 @@ public class home extends HttpServlet {
 
             String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
                     " FROM product,items,supplier\n" +
-                    " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER\n" +
+                    " WHERE product.ACTIVE=1 AND product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER\n" +
                     " ORDER BY RAND ( );";
 
             PreparedStatement statement = DBConect.getPreparedStatement(product);

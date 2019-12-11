@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ProductDAOImpl implements ProductDAO {
+public class ProductDAOImpl implements IProductDAO {
     @Override
     public Product getProduct(String ID_PRODUCT) throws SQLException, ClassNotFoundException {
 
@@ -51,8 +51,33 @@ public class ProductDAOImpl implements ProductDAO {
             double price = rs.getDouble(5);
             String img = rs.getString(6);
             int total = rs.getInt(7);
-            list.add(new Product(id_product, id_item, id_supplier, product_name, price, img, total));
+            int active = rs.getInt(8);
+            list.add(new Product(id_product, id_item, id_supplier, product_name, price, img, total,active));
         }
         return list;
+    }
+
+    @Override
+    public boolean hideProduct(String id_product) throws SQLException, ClassNotFoundException {
+        boolean hide = false;
+        String hi = "UPDATE `webmobile`.`product` SET `ACTIVE` = 0 WHERE `ID_PRODUCT` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(hi);
+        ps.setString(1, id_product);
+        int i = ps.executeUpdate();
+        if (i == 1)
+            hide = true;
+        return hide;
+    }
+
+    @Override
+    public boolean activeProduct(String id_product) throws SQLException, ClassNotFoundException {
+        boolean active = false;
+        String hi = "UPDATE `webmobile`.`product` SET `ACTIVE` = 1 WHERE `ID_PRODUCT` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(hi);
+        ps.setString(1, id_product);
+        int i = ps.executeUpdate();
+        if (i == 1)
+            active = true;
+        return active;
     }
 }

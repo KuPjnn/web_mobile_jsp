@@ -1,13 +1,14 @@
 package vn.edu.nlu.fit.model;
 
 public class Product {
-    String id_product, id_items, id_supplier, product_name, img;
-    double price, total;
+    private String id_product, id_items, id_supplier, product_name, img;
+    private double price;
+    private int total, active;
 
     public Product() {
     }
 
-    public Product(String id_product, String id_items, String id_supplier, String product_name, double price, String img, double total) {
+    public Product(String id_product, String id_items, String id_supplier, String product_name, double price, String img, int total, int active) {
         this.id_product = id_product;
         this.id_items = id_items;
         this.id_supplier = id_supplier;
@@ -15,6 +16,7 @@ public class Product {
         this.img = img;
         this.price = price;
         this.total = total;
+        this.active = active;
     }
 
     public String getId_product() {
@@ -65,12 +67,19 @@ public class Product {
         this.price = price;
     }
 
-    public double getTotal() {
+    public int getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
+    public void setTotal(int total) {
         this.total = total;
     }
 
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
 }

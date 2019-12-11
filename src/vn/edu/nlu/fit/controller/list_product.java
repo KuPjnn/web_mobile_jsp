@@ -25,7 +25,7 @@ public class list_product extends HttpServlet {
         try {
             String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
                     " FROM product,items,supplier\n" +
-                    " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER";
+                    " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1 ";
             if (supplier != null) {
                 product += " AND supplier.NAME_SUPPLIER= ? AND items.ID_ITEMS= ?";
             }

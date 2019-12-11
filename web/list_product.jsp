@@ -63,11 +63,9 @@
         <ul class="pagination d-block mx-auto">
             <li class="btn btn-dark mx-2"><a href="#" style="color: #ff6700">1</a></li>
             <li class="btn btn-dark mx-2"><a href="#" style="color: #ff6700">2</a></li>
-            <li class="btn btn-dark mx-2"><a href="#" style="color: #ff6700">3</a></li>
         </ul>
     </div>
 </section>
-
 <%-----------------------------------------------%>
 
 <%--=================   FOOTER    =============--%>

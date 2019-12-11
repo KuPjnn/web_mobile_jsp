@@ -17,6 +17,7 @@
         border: none;
         box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 1);
     }
+
     .carousel-thumbnails .carousel-indicators li.active {
         border-bottom: 4px solid #ff6700;
     }
@@ -29,7 +30,8 @@
             int index = 0;
             List<Slide> listSlide = new SlideDAOImpl().getSlide();
             for (Slide sl : listSlide) {
-                if (index == 0) {
+                if (sl.getActive() == 1) {
+                    if (index == 0) {
         %>
         <div class="carousel-item active">
             <img class="img-fluid d-block" src="<%=sl.getImg()%>" alt="slide">
@@ -41,8 +43,9 @@
             <img class="img-fluid d-block" src="<%=sl.getImg()%>" alt="slide">
         </div>
         <%
+                    }
+                    index++;
                 }
-                index++;
             }
         %>
     </div>
@@ -56,28 +59,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-    <%--==============  THUMNAIl    ================--%>
-<%--    <ol class="carousel-indicators">
-        <%
-            index = 0;
-            for (Slide sl : listSlide) {
-                if (index == 0) {
-        %>
-        <li data-target="#slide_show" data-slide-to="<%=index%>" class="active">
-            <img class="d-block w-100" src="<%=sl.getImg()%>" class="img-fluid">
-        </li>
-        <%
-        } else {
-        %>
-        <li data-target="#slide_show" data-slide-to="<%=index%>">
-            <img class="d-block w-100" src="<%=sl.getImg()%>" class="img-fluid">
-        </li>
-        <%
-                }
-                index++;
-            }
-        %>
-    </ol>--%>
+
 </div>
 
 <script type="text/javascript">

@@ -5,7 +5,6 @@
 <head>
     <title>Trang chủ | Saitama</title>
     <%@include file="headAllPage.jsp" %>
-
 </head>
 <body>
 <%@include file="backToTop.jsp" %>
@@ -79,10 +78,11 @@
                                     <img class="img-fluid" src="<%=arrImg[0]%>" alt="img">
                                 </a>
                             </div>
-                            <h5 class="product_name"><a
-                                    href="<%=Util.fullPath("detail_product?detail="+rs.getString(6))%>">
-                                <%=rs.getString(1)%>
-                            </a></h5>
+                            <h5 class="product_name">
+                                <a href="<%=Util.fullPath("detail_product?detail=" + rs.getString(6))%>">
+                                    <%=rs.getString(1)%>
+                                </a>
+                            </h5>
                             <span class="product_price"><%=Util.convertPrice(rs.getDouble(2))%></span>
                         </div>
                     </div>

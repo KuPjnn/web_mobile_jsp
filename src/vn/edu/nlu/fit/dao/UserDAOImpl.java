@@ -1,6 +1,5 @@
 package vn.edu.nlu.fit.dao;
 
-
 import vn.edu.nlu.fit.db.DBConect;
 import vn.edu.nlu.fit.model.User;
 
@@ -10,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAOImpl implements UserDAO {
+public class UserDAOImpl implements IUserDAO {
     @Override
     public boolean addUser(User obj) {
         User user = obj;
@@ -68,7 +67,7 @@ public class UserDAOImpl implements UserDAO {
         if (rs != null && row == 1) {
             rs.first();
             u.setUser_name(rs.getString(1));
-            u.setPassword("");
+            u.setPassword(rs.getString(2));
             u.setFull_name(rs.getString(3));
             u.setEmail(rs.getString(4));
             u.setPhone(rs.getString(5));
@@ -79,7 +78,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List<User> list() throws SQLException, ClassNotFoundException {
+    public List<User> listUser() throws SQLException, ClassNotFoundException {
 
         List<User> list = new ArrayList<>();
 

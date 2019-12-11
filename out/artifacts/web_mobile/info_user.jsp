@@ -26,56 +26,74 @@
             <div class="col-md-9 mx-auto">
                 <div class="card m-auto">
                     <div class="card-body">
-                        <div class="table-responsive ">
-                            <table class="table m-auto ">
-                                <tr>
-                                    <th>Tên đăng nhập:</th>
-                                    <th><input type="text" class="form-control" value="hoangvanlong" disabled=>
-                                    </th>
-                                    <th>
-                                        <button class="btn btn-dark" style="padding: 5px 20px" disabled>X
-                                        </button>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>Họ và tên:</th>
-                                    <th><input type="text" class="form-control" value="Hoang Van Long" disabled></th>
-                                    <th>
-                                        <button class="btn btn-dark">Sửa</button>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>Email:</th>
-                                    <th><input type="email" class="form-control" value="hvl@gmail.com" disabled></th>
-                                    <th>
-                                        <button class="btn btn-dark">Sửa</button>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>SĐT:</th>
-                                    <th><input type="tel" class="form-control" value="0123456789" disabled>
-                                    <th>
-                                        <button class="btn btn-dark">Sửa</button>
-                                    </th>
-                                </tr>
+                        <div class="table-responsive">
+                            <%
+                                User user = (User) session.getAttribute("user");
+                                if (user != null) {
+                            %>
+                            <table class="table m-auto">
+                                <form>
+                                    <tr>
+                                        <th>Tên đăng nhập:</th>
+                                        <th><input name="user_name" type="text" class="form-control"
+                                                   value="<%=user.getUser_name()%>" disabled=>
+                                        </th>
+                                        <th>
+                                            <button class="btn btn-dark" style="padding: 5px 20px" disabled>X
+                                            </button>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Họ và tên:</th>
+                                        <th><input name="full_name" type="text" class="form-control"
+                                                   value="<%=user.getFull_name()%>"
+                                                   disabled></th>
+                                        <th>
+                                            <button class="btn btn-dark">Sửa</button>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Email:</th>
+                                        <th><input name="email" type="email" class="form-control"
+                                                   value="<%=user.getEmail()%>"
+                                                   disabled>
+                                        </th>
+                                        <th>
+                                            <button class="btn btn-dark">Sửa</button>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>SĐT:</th>
+                                        <th><input name="phone" type="tel" class="form-control"
+                                                   value="<%=user.getPhone()%>"
+                                                   disabled>
+                                        <th>
+                                            <button class="btn btn-dark">Sửa</button>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th align="center">
+                                            <input class="btn btn_pay px-5 w-100" type="submit" value="Cập nhật">
+                                        </th>
+                                    </tr>
+                                </form>
+
                                 <tr>
                                     <th>Mật khẩu:</th>
-                                    <th><input id="changePass" type="password" class="form-control" value="0123456789"
-                                               disabled>
                                     <th>
-                                        <button class="btn btn-dark" data-toggle="modal"
+                                        <button class="btn btn-dark px-5 w-100" data-toggle="modal"
                                                 data-target="#changePassModal">
-                                            Sửa
+                                            Đổi mật khẩu
                                         </button>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th align="center">
-                                        <input class="btn btn_pay px-5 w-100" type="submit" value="Cập nhật">
                                     </th>
                                 </tr>
                             </table>
+
+                            <%
+                                }
+                            %>
+
                         </div>
                     </div>
                 </div>

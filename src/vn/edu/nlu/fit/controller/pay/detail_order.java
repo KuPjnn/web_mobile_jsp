@@ -21,11 +21,9 @@ public class detail_order extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         HttpSession session = request.getSession();
 
         String select = "SELECT * FROM `webmobile`.`bill` WHERE ID_BILL = (SELECT MAX(id_bill) FROM bill)";
-
 
         try {
             PreparedStatement preparedStatement = DBConect.getPreparedStatement(select);

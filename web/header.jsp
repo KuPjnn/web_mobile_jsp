@@ -42,7 +42,7 @@
                                 if (ss != null) {
                             %>
                             <ul class="login mt-3 float-right">
-                                <a class="mx-2 text-decoration-none" href="info_user.jsp">
+                                <a class="mx-2 text-decoration-none" href="<%=Util.fullPath("info")%>">
                                     <i class="fa fa-user" style="font-size: 25px; color: #fff"></i>
                                     <%=ss.getFull_name()%>
                                 </a>
