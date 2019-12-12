@@ -9,8 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAOImpl implements IUserDAO {
-    @Override
+public class UserDAO {
     public boolean addUser(User obj) {
         User user = obj;
 
@@ -34,7 +33,6 @@ public class UserDAOImpl implements IUserDAO {
         return false;
     }
 
-    @Override
     public boolean checkLogin(String user, String pass) throws SQLException, ClassNotFoundException {
 
         String query = "SELECT * FROM `user` WHERE USER_NAME= ? AND `PASSWORD`= ?;";
@@ -52,7 +50,6 @@ public class UserDAOImpl implements IUserDAO {
         return false;
     }
 
-    @Override
     public User getUser(String userName) throws SQLException, ClassNotFoundException {
 
         String query = "SELECT * FROM `user` WHERE USER_NAME=?;";
@@ -77,7 +74,6 @@ public class UserDAOImpl implements IUserDAO {
         return u;
     }
 
-    @Override
     public List<User> listUser() throws SQLException, ClassNotFoundException {
 
         List<User> list = new ArrayList<>();

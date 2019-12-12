@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <nav class="admin_header navbar">
                     <div class="col-md-2 col-3">
-                        <a class="logo navbar-brand m-auto" href="#">
+                        <a class="logo navbar-brand m-auto" href="<%=Util.fullPath("admin/")%>">
                             <img class="img-fluid" width="50" src="<%=Util.fullPath("/img/logo/logo.svg")%>" alt="logo">
                         </a>
                     </div>

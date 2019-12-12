@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class BillDAOImpl implements IBillDAO {
-    @Override
+public class BillDAO {
     public List<Bill> listBill() throws SQLException, ClassNotFoundException {
         List<Bill> list = new ArrayList<>();
         String bill = "SELECT * FROM `webmobile`.`bill`";
@@ -30,7 +29,6 @@ public class BillDAOImpl implements IBillDAO {
         return list;
     }
 
-    @Override
     public Bill getBill(String id_bill) throws SQLException, ClassNotFoundException {
 
         Bill bill = new Bill();

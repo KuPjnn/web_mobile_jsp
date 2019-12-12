@@ -1,6 +1,6 @@
 package vn.edu.nlu.fit.controller.admin;
 
-import vn.edu.nlu.fit.dao.SlideDAOImpl;
+import vn.edu.nlu.fit.dao.SlideDAO;
 import vn.edu.nlu.fit.model.Slide;
 
 import javax.servlet.ServletException;
@@ -23,20 +23,22 @@ public class admin_slide extends HttpServlet {
             String action = request.getParameter("action");
             String id_slide = request.getParameter("id_slide");
             if (action == null) {
-                List<Slide> list_slide = new SlideDAOImpl().getSlide();
+                List<Slide> list_slide = new SlideDAO().getSlide();
                 request.setAttribute("list_slide", list_slide);
                 request.getRequestDispatcher("admin_slide.jsp").forward(request, response);
+
             } else if (action != null && id_slide != null && action.equals("hide")) {
-                boolean hide = new SlideDAOImpl().hideSlide(id_slide);
+                boolean hide = new SlideDAO().hideSlide(id_slide);
                 if (hide == true)
                     response.sendRedirect("slide");
+
             } else if (action != null && id_slide != null && action.equals("active")) {
-                boolean active = new SlideDAOImpl().active(id_slide);
-                if (active == true) {
+                boolean active = new SlideDAO().active(id_slide);
+                if (active == true)
                     response.sendRedirect("slide");
-                }
+
             } else if (action != null && id_slide != null && action.equals("del")) {
-                boolean del = new SlideDAOImpl().delSlide(id_slide);
+                boolean del = new SlideDAO().delSlide(id_slide);
                 if (del == true)
                     response.sendRedirect("slide");
             }

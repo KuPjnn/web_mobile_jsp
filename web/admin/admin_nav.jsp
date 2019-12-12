@@ -2,10 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav class="col-md-2 d-md-block bg-light mt-1">
     <div class="nav nav-pills flex-column ">
-        <a class="nav-item" href="admin.jsp">
+        <%--<a class="nav-item" href="<%=Util.fullPath("admin/")%>">
             <i class="far fa-smile-beam"></i>
             Welcome
-        </a>
+        </a>--%>
         <a class="nav-item" href="<%=Util.fullPath("admin/user")%>">
             <i class="fa fa-user"></i>
             Người dùng
@@ -14,7 +14,7 @@
             <i class="fa fa-cart-arrow-down"></i>
             Đơn hàng
         </a>
-        <a class="nav-item" href="admin_items.jsp">
+        <a class="nav-item" href="<%=Util.fullPath("admin/items")%>">
             <i class="fas fa-dumpster"></i>
             Hàng hóa
         </a>

@@ -1,6 +1,6 @@
 package vn.edu.nlu.fit.controller;
 
-import vn.edu.nlu.fit.dao.UserDAOImpl;
+import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.model.User;
 import vn.edu.nlu.fit.util.Util;
 
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 @WebServlet("/register")
 public class register extends HttpServlet {
@@ -30,9 +29,9 @@ public class register extends HttpServlet {
         String link = request.getParameter("linkRegister");
         User user = new User(userName, password, fullName, email, phone, role);
         try {
-            User getUser = new UserDAOImpl().getUser(userName);
+            User getUser = new UserDAO().getUser(userName);
 
-            if (getUser == null && password.equalsIgnoreCase(rePassword) && new UserDAOImpl().addUser(user)) {
+            if (getUser == null && password.equalsIgnoreCase(rePassword) && new UserDAO().addUser(user)) {
                 response.sendRedirect(Util.fullPath(link));
             } else {
                 System.out.println("Loi dang ki");

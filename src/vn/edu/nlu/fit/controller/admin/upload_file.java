@@ -1,7 +1,6 @@
 package vn.edu.nlu.fit.controller.admin;
 
-import vn.edu.nlu.fit.dao.SlideDAOImpl;
-import vn.edu.nlu.fit.model.Slide;
+import vn.edu.nlu.fit.dao.SlideDAO;
 import vn.edu.nlu.fit.util.UploadFile;
 
 import javax.servlet.ServletException;
@@ -27,7 +26,7 @@ public class upload_file extends HttpServlet {
             fileName = new File(fileName).getName();
             part.write(UploadFile.getFolderUpload("slide").getAbsolutePath() + File.separator + fileName);
             try {
-                boolean upload = new SlideDAOImpl().uploadSlide(fileName);
+                boolean upload = new SlideDAO().uploadSlide(fileName);
                 if (upload == true)
                     request.getRequestDispatcher("slide").forward(request, response);
             } catch (SQLException e) {

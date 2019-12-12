@@ -1,5 +1,5 @@
 <%@ page import="vn.edu.nlu.fit.model.Slide" %>
-<%@ page import="vn.edu.nlu.fit.dao.SlideDAOImpl" %>
+<%@ page import="vn.edu.nlu.fit.dao.SlideDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <style type="text/css">
@@ -28,7 +28,7 @@
     <div class="carousel-inner" role="listbox">
         <%
             int index = 0;
-            List<Slide> listSlide = new SlideDAOImpl().getSlide();
+            List<Slide> listSlide = new SlideDAO().getSlide();
             for (Slide sl : listSlide) {
                 if (sl.getActive() == 1) {
                     if (index == 0) {

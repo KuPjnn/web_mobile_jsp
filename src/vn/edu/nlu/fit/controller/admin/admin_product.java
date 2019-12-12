@@ -1,7 +1,6 @@
 package vn.edu.nlu.fit.controller.admin;
 
-import vn.edu.nlu.fit.dao.IProductDAO;
-import vn.edu.nlu.fit.dao.ProductDAOImpl;
+import vn.edu.nlu.fit.dao.ProductDAO;
 import vn.edu.nlu.fit.model.Product;
 
 import javax.servlet.ServletException;
@@ -25,16 +24,15 @@ public class admin_product extends HttpServlet {
             String action = request.getParameter("action");
             String id_product = request.getParameter("id_product");
             if (action == null) {
-                IProductDAO productDAO = new ProductDAOImpl();
-                List<Product> list = productDAO.listProduct();
+                List<Product> list = new ProductDAO().listProduct();
                 request.setAttribute("list", list);
                 request.getRequestDispatcher("admin_product.jsp").forward(request, response);
             } else if (action != null && id_product != null && action.equals("hide")) {
-                boolean hide = new ProductDAOImpl().hideProduct(id_product);
+                boolean hide = new ProductDAO().hideProduct(id_product);
                 if (hide == true)
                     response.sendRedirect("product");
             } else if (action != null && id_product != null && action.equals("active")) {
-                boolean active = new ProductDAOImpl().activeProduct(id_product);
+                boolean active = new ProductDAO().activeProduct(id_product);
                 if (active == true) {
                     response.sendRedirect("product");
                 }

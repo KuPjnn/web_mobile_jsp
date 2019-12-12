@@ -1,6 +1,6 @@
 package vn.edu.nlu.fit.controller;
 
-import vn.edu.nlu.fit.dao.UserDAOImpl;
+import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.model.User;
 import vn.edu.nlu.fit.util.Util;
 
@@ -23,8 +23,8 @@ public class login extends javax.servlet.http.HttpServlet {
 
 //        System.out.println(linkRequestDispatcher[2]);
         try {
-            User u = new UserDAOImpl().getUser(user);
-            boolean validate = new UserDAOImpl().checkLogin(user, pass);
+            User u = new UserDAO().getUser(user);
+            boolean validate = new UserDAO().checkLogin(user, pass);
             if (u != null && validate) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", u);

@@ -1,6 +1,6 @@
 package vn.edu.nlu.fit.controller.admin;
 
-import vn.edu.nlu.fit.dao.UserDAOImpl;
+import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.model.User;
 
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class admin_user extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<User> list_user = new UserDAOImpl().listUser();
+            List<User> list_user = new UserDAO().listUser();
             request.setAttribute("list_user", list_user);
             request.getRequestDispatcher("admin_user.jsp").forward(request, response);
         } catch (SQLException e) {

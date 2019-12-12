@@ -20,7 +20,7 @@
             <div class="col-md-9 ml-sm-auto col-lg-10 tab-content">
                 <div id="admin_slideshow" class="card mt-1 tab-pane active">
                     <div class="card-header">Slideshow
-                        <button onclick="" class="btn btn-danger ml-xl-5" data-toggle="modal"
+                        <button class="btn btn-danger ml-xl-5" data-toggle="modal"
                                 data-target="#addSlide">Thêm Sildeshow
                         </button>
                     </div>
@@ -49,7 +49,6 @@
                                 <th>
                                     <%
                                         if (s.getActive() == 1) {
-
                                     %>
                                     <a href="slide?action=hide&id_slide=<%=s.getId()%>"
                                        class="__icon mt-5">
@@ -66,7 +65,8 @@
                                     %>
                                 </th>
                                 <th>
-                                    <a href="slide?action=del&id_slide=<%=s.getId()%>" class="__icon mt-5">
+                                    <a onclick="return confirm('Xóa slide <%=s.getId()%>')"
+                                       href="slide?action=del&id_slide=<%=s.getId()%>" class="__icon mt-5">
                                         <i style="color: #000" class="fa fa-trash"></i>
                                     </a>
                                 </th>

@@ -10,9 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SlideDAOImpl implements ISlideDAO {
+public class SlideDAO {
 
-    @Override
     public List<Slide> getSlide() throws SQLException, ClassNotFoundException {
         List<Slide> list = new ArrayList<>();
 
@@ -30,7 +29,6 @@ public class SlideDAOImpl implements ISlideDAO {
         return list;
     }
 
-    @Override
     public boolean hideSlide(String id_slide) throws SQLException, ClassNotFoundException {
         boolean result = false;
         String hide = "UPDATE `webmobile`.`slide` SET `ACTIVE` = 0 WHERE `ID_SLIDE` = ?";
@@ -42,7 +40,6 @@ public class SlideDAOImpl implements ISlideDAO {
         return result;
     }
 
-    @Override
     public boolean active(String id_slide) throws SQLException, ClassNotFoundException {
         boolean result = false;
         String hide = "UPDATE `webmobile`.`slide` SET `ACTIVE` = 1 WHERE `ID_SLIDE` = ?";
@@ -54,19 +51,6 @@ public class SlideDAOImpl implements ISlideDAO {
         return result;
     }
 
-    @Override
-    public boolean uploadSlide(String slide) throws SQLException, ClassNotFoundException {
-        boolean upload = false;
-        String up = "INSERT INTO `webmobile`.`slide`(`IMG_SLIDE`, `ACTIVE`) VALUES (?, 1)";
-        PreparedStatement ps = DBConect.getPreparedStatement(up);
-        ps.setString(1, Util.fullPath("img/slide/" + slide));
-        int index = ps.executeUpdate();
-        if (index == 1)
-            upload = true;
-        return upload;
-    }
-
-    @Override
     public boolean delSlide(String id_slide) throws SQLException, ClassNotFoundException {
         boolean result = false;
         String hide = "DELETE FROM `webmobile`.`slide` WHERE `ID_SLIDE` = ?";
@@ -76,5 +60,16 @@ public class SlideDAOImpl implements ISlideDAO {
         if (index == 1)
             result = true;
         return result;
+    }
+
+    public boolean uploadSlide(String slide) throws SQLException, ClassNotFoundException {
+        boolean upload = false;
+        String up = "INSERT INTO `webmobile`.`slide`(`IMG_SLIDE`, `ACTIVE`) VALUES (?, 1)";
+        PreparedStatement ps = DBConect.getPreparedStatement(up);
+        ps.setString(1, Util.fullPath("img/slide/" + slide));
+        int index = ps.executeUpdate();
+        if (index == 1)
+            upload = true;
+        return upload;
     }
 }

@@ -11,7 +11,7 @@
  Target Server Version : 100406
  File Encoding         : 65001
 
- Date: 11/12/2019 18:42:29
+ Date: 12/12/2019 22:51:17
 */
 
 SET NAMES utf8mb4;
@@ -303,15 +303,16 @@ DROP TABLE IF EXISTS `items`;
 CREATE TABLE `items`  (
   `ID_ITEMS` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ITEMS_NAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ACTIVE` int(1) NOT NULL,
   PRIMARY KEY (`ID_ITEMS`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of items
 -- ----------------------------
-INSERT INTO `items` VALUES ('DT', 'Điện thoại');
-INSERT INTO `items` VALUES ('LT', 'Laptop');
-INSERT INTO `items` VALUES ('MTB', 'Máy tính bảng');
+INSERT INTO `items` VALUES ('DT', 'Điện thoại', 1);
+INSERT INTO `items` VALUES ('LT', 'Laptop', 1);
+INSERT INTO `items` VALUES ('MTB', 'Máy tính bảng', 1);
 
 -- ----------------------------
 -- Table structure for product
@@ -503,7 +504,7 @@ CREATE TABLE `slide`  (
   `IMG_SLIDE` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ACTIVE` int(1) NOT NULL,
   PRIMARY KEY (`ID_SLIDE`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of slide
@@ -511,29 +512,29 @@ CREATE TABLE `slide`  (
 INSERT INTO `slide` VALUES (1, 'http://localhost:8080/web_mobile/img/slide/banner-web-lap-1.jpg', 1);
 INSERT INTO `slide` VALUES (2, 'http://localhost:8080/web_mobile/img/slide/xiaomi-air-2-1.jpg', 1);
 INSERT INTO `slide` VALUES (3, 'http://localhost:8080/web_mobile/img/slide/tuyendung.jpg', 1);
-INSERT INTO `slide` VALUES (22, 'http://localhost:8080/web_mobile/img/slide/100M.png', 0);
 
 -- ----------------------------
 -- Table structure for supplier
 -- ----------------------------
 DROP TABLE IF EXISTS `supplier`;
 CREATE TABLE `supplier`  (
-  `ID_SUPPLIER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ID_SUPPLIER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `NAME_SUPPLIER` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ACTIVE` int(1) NOT NULL,
   PRIMARY KEY (`ID_SUPPLIER`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of supplier
 -- ----------------------------
-INSERT INTO `supplier` VALUES ('APP', 'Apple');
-INSERT INTO `supplier` VALUES ('ASU', 'Asus');
-INSERT INTO `supplier` VALUES ('DEL', 'Dell');
-INSERT INTO `supplier` VALUES ('HP', 'HP');
-INSERT INTO `supplier` VALUES ('HUA', 'Huawei');
-INSERT INTO `supplier` VALUES ('OPP', 'Oppo');
-INSERT INTO `supplier` VALUES ('SAM', 'Samsung');
-INSERT INTO `supplier` VALUES ('XIA', 'Xiaomi');
+INSERT INTO `supplier` VALUES ('APP', 'Apple', 1);
+INSERT INTO `supplier` VALUES ('ASU', 'Asus', 1);
+INSERT INTO `supplier` VALUES ('DEL', 'Dell', 1);
+INSERT INTO `supplier` VALUES ('HP', 'HP', 1);
+INSERT INTO `supplier` VALUES ('HUA', 'Huawei', 1);
+INSERT INTO `supplier` VALUES ('OPP', 'Oppo', 1);
+INSERT INTO `supplier` VALUES ('SAM', 'Samsung', 1);
+INSERT INTO `supplier` VALUES ('XIA', 'Xiaomi', 1);
 
 -- ----------------------------
 -- Table structure for user

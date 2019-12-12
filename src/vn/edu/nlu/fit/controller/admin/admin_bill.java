@@ -1,6 +1,6 @@
 package vn.edu.nlu.fit.controller.admin;
 
-import vn.edu.nlu.fit.dao.BillDAOImpl;
+import vn.edu.nlu.fit.dao.BillDAO;
 import vn.edu.nlu.fit.model.Bill;
 
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class admin_bill extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<Bill> list = new BillDAOImpl().listBill();
+            List<Bill> list = new BillDAO().listBill();
             request.setAttribute("list", list);
             request.getRequestDispatcher("admin_bill.jsp").forward(request, response);
 

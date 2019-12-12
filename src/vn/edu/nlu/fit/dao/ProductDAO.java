@@ -8,8 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ProductDAOImpl implements IProductDAO {
-    @Override
+public class ProductDAO {
     public Product getProduct(String ID_PRODUCT) throws SQLException, ClassNotFoundException {
 
         String query = "SELECT * FROM `product` WHERE ID_PRODUCT=?";
@@ -34,7 +33,6 @@ public class ProductDAOImpl implements IProductDAO {
         return pro;
     }
 
-    @Override
     public ArrayList<Product> listProduct() throws SQLException, ClassNotFoundException {
 
         ArrayList<Product> list = new ArrayList<>();
@@ -52,12 +50,11 @@ public class ProductDAOImpl implements IProductDAO {
             String img = rs.getString(6);
             int total = rs.getInt(7);
             int active = rs.getInt(8);
-            list.add(new Product(id_product, id_item, id_supplier, product_name, price, img, total,active));
+            list.add(new Product(id_product, id_item, id_supplier, product_name, price, img, total, active));
         }
         return list;
     }
 
-    @Override
     public boolean hideProduct(String id_product) throws SQLException, ClassNotFoundException {
         boolean hide = false;
         String hi = "UPDATE `webmobile`.`product` SET `ACTIVE` = 0 WHERE `ID_PRODUCT` = ?";
@@ -69,7 +66,6 @@ public class ProductDAOImpl implements IProductDAO {
         return hide;
     }
 
-    @Override
     public boolean activeProduct(String id_product) throws SQLException, ClassNotFoundException {
         boolean active = false;
         String hi = "UPDATE `webmobile`.`product` SET `ACTIVE` = 1 WHERE `ID_PRODUCT` = ?";

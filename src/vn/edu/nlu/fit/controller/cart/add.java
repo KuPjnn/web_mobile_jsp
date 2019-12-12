@@ -1,6 +1,6 @@
 package vn.edu.nlu.fit.controller.cart;
 
-import vn.edu.nlu.fit.dao.ProductDAOImpl;
+import vn.edu.nlu.fit.dao.ProductDAO;
 import vn.edu.nlu.fit.model.Cart;
 import vn.edu.nlu.fit.model.ListCart;
 import vn.edu.nlu.fit.util.Util;
@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.lang.annotation.Repeatable;
 import java.sql.SQLException;
 
 @WebServlet("/add")
@@ -30,7 +29,7 @@ public class add extends HttpServlet {
 
             String id_product = request.getParameter("id");
             String btn_buy_now = request.getParameter("btn");
-            Cart item = new Cart(new ProductDAOImpl().getProduct(id_product), 1);
+            Cart item = new Cart(new ProductDAO().getProduct(id_product), 1);
 
             ListCart listCArt = (ListCart) session.getAttribute("list_cart");
 

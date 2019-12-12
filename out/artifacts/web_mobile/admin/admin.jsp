@@ -16,7 +16,15 @@
             <%@include file="admin_nav.jsp" %>
             <%-------------------------------------%>
             <div class="col-md-9 ml-sm-auto col-lg-10 tab-content">
-                <div align="center" class="pt-5 display-1">Welcome Admin Page</div>
+                <%
+                    String welcome = (String) request.getAttribute("welcome");
+                    if (welcome != null) {
+                %>
+                <div align="center" class="pt-5 display-1"><%=welcome%>
+                </div>
+                <%
+                    }
+                %>
             </div>
         </div>
     </div>
