@@ -10,30 +10,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
-    public boolean addUser(User obj) {
+    public boolean addUser(User obj) throws SQLException, ClassNotFoundException {
         User user = obj;
-
-        try {
-            String query = "INSERT INTO `user` (USER_NAME, PASSWORD, FULLNAME, EMAIL, PHONE, PRIVILEGES) VALUES " +
-                    " (?,?,?,?,?,?); ";
-            PreparedStatement preparedStatement = DBConect.getPreparedStatement(query);
-            preparedStatement.setString(1, user.getUser_name());
-            preparedStatement.setString(2, user.getPassword());
-            preparedStatement.setString(3, user.getFull_name());
-            preparedStatement.setString(4, user.getEmail());
-            preparedStatement.setString(5, user.getPhone());
-            preparedStatement.setString(6, user.getPrivileges());
-            preparedStatement.executeUpdate();
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return false;
+        boolean add = false;
+        String query = "INSERT INTO `user` (USER_NAME, PASSWORD, FULLNAME, EMAIL, PHONE, PRIVILEGES) VALUES " +
+                " (?,?,?,?,?,?); ";
+        PreparedStatement preparedStatement = DBConect.getPreparedStatement(query);
+        preparedStatement.setString(1, user.getUser_name());
+        preparedStatement.setString(2, user.getPassword());
+        preparedStatement.setString(3, user.getFull_name());
+        preparedStatement.setString(4, user.getEmail());
+        preparedStatement.setString(5, user.getPhone());
+        preparedStatement.setString(6, user.getPrivileges());
+        int row = preparedStatement.executeUpdate();
+        if (row == 1)
+            add = true;
+        return add;
     }
 
     public boolean checkLogin(String user, String pass) throws SQLException, ClassNotFoundException {
+
+        boolean check = false;
 
         String query = "SELECT * FROM `user` WHERE USER_NAME= ? AND `PASSWORD`= ?;";
 
@@ -44,15 +41,14 @@ public class UserDAO {
 
         resultSet.last();
         int row = resultSet.getRow();
-        if (resultSet != null && row == 1) {
-            return true;
-        }
-        return false;
+        if (resultSet != null && row == 1)
+            check = true;
+        return check;
     }
 
     public User getUser(String userName) throws SQLException, ClassNotFoundException {
 
-        String query = "SELECT * FROM `user` WHERE USER_NAME=?;";
+        String query = "SELECT * FROM `user` WHERE USER_NAME = ?;";
         PreparedStatement preparedStatement = DBConect.getPreparedStatement(query);
         preparedStatement.setString(1, userName);
         ResultSet rs = preparedStatement.executeQuery();

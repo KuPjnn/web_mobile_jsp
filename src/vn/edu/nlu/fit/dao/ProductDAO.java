@@ -76,4 +76,48 @@ public class ProductDAO {
             active = true;
         return active;
     }
+
+    public boolean delProduct(String id) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+        String del = "DELETE FROM `webmobile`.`product` WHERE `ID_PRODUCT` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(del);
+        ps.setString(1, id);
+        int index = ps.executeUpdate();
+        if (index == 1)
+            result = true;
+        return result;
+    }
+
+    public boolean addProduct(String id_product, String id_items, String id_supplier, String name_pro,
+                              double price, String img, int total, int active) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+        String add = "INSERT INTO `webmobile`.`product`(`ID_PRODUCT`, `ID_ITEMS`, `ID_SUPPLIER`, `PRODUCT_NAME`, `PRICE`, `IMG`, `TOTAL`,`ACTIVE`) " +
+                " VALUES (?, ?, ?, ?, ?, ?, ?,?)";
+
+        PreparedStatement ps = DBConect.getPreparedStatement(add);
+        ps.setString(1, id_product);
+        ps.setString(2, id_items);
+        ps.setString(3, id_supplier);
+        ps.setString(4, name_pro);
+        ps.setDouble(5, price);
+        ps.setString(6, img);
+        ps.setInt(7, total);
+        ps.setInt(8, active);
+
+        int row = ps.executeUpdate();
+        if (row == 1)
+            result = true;
+        return result;
+    }
+
+    public boolean addConfigure(String id_pro, String display, String cam_font, String cam_back, String ram, String rom,
+                                String cpu, String gpu, String battery, String os, String sim) throws SQLException, ClassNotFoundException {
+        boolean addConf = false;
+        String add = "";
+        PreparedStatement ps = DBConect.getPreparedStatement(add);
+        int row = ps.executeUpdate();
+        if (row == 1)
+            addConf = true;
+        return addConf;
+    }
 }

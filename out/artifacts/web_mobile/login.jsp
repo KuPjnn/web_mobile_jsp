@@ -14,7 +14,8 @@
 
                     <form action="<%=Util.fullPath("login")%>" method="post" class="form-signin">
 
-                        <input type="hidden" name="link" value="<%=Util.urlRedirect(request)%>">
+                        <input type="hidden" name="link"
+                               value="<%=Util.urlRedirect(request)%>">
 
                         <div class="form-label-group mb-5 mt-5">
                             <input name="username" type="text" id="inputEmail" class="form-control"
@@ -33,18 +34,6 @@
 
                         <button type="submit" class="btn_login btn btn-lg btn-block text-uppercase">Đăng nhập
                         </button>
-                        <%
-                            if (session.getAttribute("user") == null) {
-                        %>
-
-                        <%
-                        } else {
-                        %>
-
-                        <%
-                            }
-                        %>
-
                     </form>
                 </div>
             </div>

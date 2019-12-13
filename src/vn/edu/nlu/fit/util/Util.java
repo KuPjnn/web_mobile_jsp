@@ -13,13 +13,18 @@ public class Util {
 
     public static String urlRedirect(HttpServletRequest request) {
         String u = (String) request.getAttribute("javax.servlet.forward.request_uri");
-        String url = null;
+        String url = "";
         if (u != null)
             url = u.replace("/web_mobile/", "");
 
-        String parameter = request.getQueryString();
-
-        if (parameter != null)
+        String parameterAddressBar = request.getQueryString();
+        String parameter = "";
+        if (parameterAddressBar != null) {
+            String str = parameterAddressBar.replace("login=false", "");
+            if (str != "")
+                parameter = str.replace("&", "");
+        }
+        if (parameter != "")
             url += "?" + parameter;
         return url;
     }

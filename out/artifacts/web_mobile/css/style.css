@@ -19,6 +19,12 @@ button, input {
     outline: none;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .btn_regis,
 .btn_login,
 .btn_pay {

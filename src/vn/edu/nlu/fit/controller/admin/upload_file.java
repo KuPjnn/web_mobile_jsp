@@ -27,8 +27,9 @@ public class upload_file extends HttpServlet {
             part.write(UploadFile.getFolderUpload("slide").getAbsolutePath() + File.separator + fileName);
             try {
                 boolean upload = new SlideDAO().uploadSlide(fileName);
-                if (upload == true)
+                if (upload == true) {
                     request.getRequestDispatcher("slide").forward(request, response);
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {

@@ -1,7 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="vn.edu.nlu.fit.util.Util" %>
 <%@ page import="vn.edu.nlu.fit.model.Item" %>
-<%@ page import="vn.edu.nlu.fit.dao.MenuDAO" %>
 <%@ page import="vn.edu.nlu.fit.model.Menu" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

@@ -4,6 +4,7 @@ import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.model.User;
 import vn.edu.nlu.fit.util.Util;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -19,9 +20,6 @@ public class login extends javax.servlet.http.HttpServlet {
         String pass = request.getParameter("password");
 
         String link = request.getParameter("link");
-//        String[] linkRequestDispatcher = request.getParameter("linkDispatcher").split("/");
-
-//        System.out.println(linkRequestDispatcher[2]);
         try {
             User u = new UserDAO().getUser(user);
             boolean validate = new UserDAO().checkLogin(user, pass);
@@ -30,9 +28,13 @@ public class login extends javax.servlet.http.HttpServlet {
                 session.setAttribute("user", u);
                 response.sendRedirect(Util.fullPath(link));
             } else {
-                response.sendRedirect(Util.fullPath(link));
-//                request.setAttribute("err", "Sai tên đăng nhập hoặc mật khẩu.");
-//                request.getRequestDispatcher(link).forward(request, response);
+                String url = "";
+                if (link.matches(".*\\?{1}.*")) {
+                    url = link + "&login=false";
+                } else {
+                    url = link + "?login=false";
+                }
+                response.sendRedirect(Util.fullPath(url));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -41,6 +43,7 @@ public class login extends javax.servlet.http.HttpServlet {
         }
     }
 
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) {
+    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
     }
 }

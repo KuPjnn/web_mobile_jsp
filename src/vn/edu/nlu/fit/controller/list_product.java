@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class list_product extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String supplier = request.getParameter("supplier");
+        /*String supplier = request.getParameter("supplier");
 
         String search = request.getParameter("search");
         String[] arr = null;
@@ -42,6 +42,86 @@ public class list_product extends HttpServlet {
                 preparedStatement.setString(1, "%" + search + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
             request.setAttribute("resultSet", resultSet);
+
+            request.getRequestDispatcher("list_product.jsp").forward(request, response);
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
+        int page = 0;
+        String checkPage = "";
+        if (request.getParameter("page") == null) page = 1;
+        else {
+            page = Integer.parseInt(request.getParameter("page"));
+        }
+        String supplier = request.getParameter("supplier");
+
+        String search = request.getParameter("search");
+        if (search == "")
+            search = "<>";
+
+        String[] arr = null;
+        String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
+                " FROM product,items,supplier\n" +
+                " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1 ";
+
+        String count = "SELECT COUNT(product.ID_PRODUCT)\n" +
+                " FROM product,items,supplier\n" +
+                " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1  ";
+        try {
+            if (supplier != null) {
+                arr = supplier.split("_");
+                product += " AND supplier.NAME_SUPPLIER= ? AND items.ID_ITEMS= ? LIMIT " + (page - 1) * 16 + ",16";
+                PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
+                preparedStatement.setString(1, arr[1]);
+                preparedStatement.setString(2, arr[0]);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                request.setAttribute("resultSet", resultSet);
+
+                count += "AND supplier.NAME_SUPPLIER= ? AND items.ID_ITEMS= ?";
+                PreparedStatement pre = DBConect.getPreparedStatement(count);
+
+                pre.setString(1, arr[1]);
+                pre.setString(2, arr[0]);
+
+                ResultSet cc = pre.executeQuery();
+                cc.beforeFirst();
+                cc.next();
+                int total = cc.getInt(1);
+                checkPage = "false" + "_" + total;
+                request.setAttribute("total", checkPage);
+            } else if (search != null) {
+                product += " AND product.PRODUCT_NAME LIKE ? LIMIT " + (page - 1) * 16 + ",16";
+                PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
+                preparedStatement.setString(1, "%" + search + "%");
+                ResultSet resultSet = preparedStatement.executeQuery();
+                request.setAttribute("resultSet", resultSet);
+
+                count += " AND product.PRODUCT_NAME LIKE ?";
+                PreparedStatement pre = DBConect.getPreparedStatement(count);
+                pre.setString(1, "%" + search + "%");
+                ResultSet cc = pre.executeQuery();
+                cc.beforeFirst();
+                cc.next();
+                int total = cc.getInt(1);
+                checkPage = search + "_" + total;
+                request.setAttribute("total", checkPage);
+            } else {
+                product += " LIMIT " + (page - 1) * 16 + ",16";
+                PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                request.setAttribute("resultSet", resultSet);
+
+                PreparedStatement pre = DBConect.getPreparedStatement(count);
+                ResultSet cc = pre.executeQuery();
+                cc.beforeFirst();
+                cc.next();
+                int total = cc.getInt(1);
+                checkPage = "true" + "_" + total;
+                request.setAttribute("total", checkPage);
+            }
 
             request.getRequestDispatcher("list_product.jsp").forward(request, response);
 

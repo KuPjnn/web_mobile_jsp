@@ -20,7 +20,9 @@
                             <form action="<%=Util.fullPath("list_product")%>" method="get">
                                 <div class="search input-group mb-3">
                                     <input name="search" type="text" class="form-control"
-                                           placeholder="Nhập tên sản phẩm cần tìm...">
+                                           placeholder="Nhập tên sản phẩm cần tìm..." required=""
+                                           oninvalid="this.setCustomValidity('Bạn chưa nhập tên sản phẩm')"
+                                           oninput="setCustomValidity('')">
                                     <div class="input-group-append">
                                         <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i>
                                         </button>
@@ -44,9 +46,10 @@
                             <ul class="login mt-3 float-right">
                                 <a class="mx-2 text-decoration-none" href="<%=Util.fullPath("info")%>">
                                     <i class="fa fa-user" style="font-size: 25px; color: #fff"></i>
-                                    <%=ss.getFull_name()%>
+                                    <%=ss.getFull_name()%> <%--Tên người dùng--%>
                                 </a>
-                                <a class="text-decoration-none" href="logout">Đăng xuất</a>
+                                <a onclick="return confirm('Bạn có thực sự muốn đăng xuất?')"
+                                   class="text-decoration-none" href="logout">Đăng xuất</a>
                             </ul>
                             <%
                             } else {
@@ -54,7 +57,7 @@
                             <a class="float-right mt-3"
                                href="" data-toggle="modal"
                                data-target="#regisModal">Đăng kí</a>
-                            <a class="float-right mt-3"
+                            <a id="login" class="float-right mt-3"
                                href="" data-toggle="modal"
                                data-target="#loginModal">Đăng nhập</a>
                             <%
@@ -75,3 +78,17 @@
 
 <!--============== MODAL REGIS ==============-->
 <%@include file="register.jsp" %>
+
+<script>
+    <%
+        String err = request.getParameter("login");
+        if(err != null && err.equals("false")) {
+    %>
+    window.alert('sai tên đăng nhập hoặc mật khẩu.');
+    $(document).ready(function () {
+        $('#login').trigger('click');
+    });
+    <%
+        }
+    %>
+</script>

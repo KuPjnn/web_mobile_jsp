@@ -33,9 +33,25 @@ public class admin_product extends HttpServlet {
                     response.sendRedirect("product");
             } else if (action != null && id_product != null && action.equals("active")) {
                 boolean active = new ProductDAO().activeProduct(id_product);
-                if (active == true) {
+                if (active == true)
                     response.sendRedirect("product");
-                }
+
+            } else if (action != null && id_product != null && action.equals("del")) {
+                boolean del = new ProductDAO().delProduct(id_product);
+                if (del == true)
+                    response.sendRedirect("product");
+            } else if (action != null && id_product != null && action.equals("add")) {
+                String id_pro = request.getParameter("");
+                String id_items = request.getParameter("");
+                String id_supplier = request.getParameter("");
+                String name = request.getParameter("");
+                double price = Double.parseDouble(request.getParameter(""));
+                String img = request.getParameter("");
+                int total = Integer.parseInt(request.getParameter(""));
+                int active = Integer.parseInt(request.getParameter(""));
+                boolean add = new ProductDAO().addProduct(id_pro, id_items, id_supplier, name, price, img, total, active);
+                if (add == true)
+                    response.sendRedirect("product");
             }
         } catch (SQLException e) {
             e.printStackTrace();

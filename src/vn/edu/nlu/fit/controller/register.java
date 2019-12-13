@@ -31,7 +31,7 @@ public class register extends HttpServlet {
         try {
             User getUser = new UserDAO().getUser(userName);
 
-            if (getUser == null && password.equalsIgnoreCase(rePassword) && new UserDAO().addUser(user)) {
+            if (getUser.getUser_name() == null && password.equalsIgnoreCase(rePassword) && new UserDAO().addUser(user)) {
                 response.sendRedirect(Util.fullPath(link));
             } else {
                 System.out.println("Loi dang ki");
