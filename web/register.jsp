@@ -43,7 +43,8 @@
                                    placeholder="Nhập số điện thoại"
                             >
                         </div>
-                        <button class="btn_regis btn btn-lg btn-block text-uppercase" type="submit">Đăng
+                        <button id="submitRegis" class="btn_regis btn btn-lg btn-block text-uppercase" type="submit">
+                            Đăng
                             ký
                         </button>
                     </form>

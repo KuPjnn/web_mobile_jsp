@@ -27,7 +27,65 @@ public class SupplierDAO {
         return list;
     }
 
-    public Supplier getSupplier(String id) {
-        return null;
+    public Supplier getSupplier(String id) throws SQLException, ClassNotFoundException {
+        Supplier supplier = new Supplier();
+        String query = "SELECT * FROM `supplier` WHERE SUPPLIER.ID_SUPPLIER = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(query);
+        ps.setString(1, id);
+        ResultSet rs = ps.executeQuery();
+        rs.last();
+        int row = rs.getRow();
+        if (row == 1) {
+            supplier.setId(rs.getString(1));
+            supplier.setName(rs.getString(2));
+            supplier.setActive(rs.getInt(3));
+        }
+        return supplier;
+    }
+
+
+    public boolean hideSupplier(String id) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+        String hide = "UPDATE `webmobile`.`supplier` SET `ACTIVE` = 0 WHERE `ID_SUPPLIER` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(hide);
+        ps.setString(1, id);
+        int index = ps.executeUpdate();
+        if (index == 1)
+            result = true;
+        return result;
+    }
+
+    public boolean activeSupplier(String id) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+        String hide = "UPDATE `webmobile`.`supplier` SET `ACTIVE` = 1 WHERE `ID_SUPPLIER` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(hide);
+        ps.setString(1, id);
+        int index = ps.executeUpdate();
+        if (index == 1)
+            result = true;
+        return result;
+    }
+
+    public boolean delSupplier(String id) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+        String del = "DELETE FROM `webmobile`.`supplier` WHERE `ID_SUPPLIER` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(del);
+        ps.setString(1, id);
+        int index = ps.executeUpdate();
+        if (index == 1)
+            result = true;
+        return result;
+    }
+
+    public boolean addSupplier(String id, String name) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+        String add = "INSERT INTO `webmobile`.`supplier`(`ID_SUPPLIER`, `NAME_SUPPLIER`, `ACTIVE`) VALUES (?, ?, 1)";
+        PreparedStatement ps = DBConect.getPreparedStatement(add);
+        ps.setString(1, id.toUpperCase());
+        ps.setString(2, name);
+        int index = ps.executeUpdate();
+        if (index == 1)
+            result = true;
+        return result;
     }
 }

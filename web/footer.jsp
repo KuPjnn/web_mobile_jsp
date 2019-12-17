@@ -57,3 +57,120 @@
         </div>
     </div>
 </footer>
+
+<script type="text/javascript">
+    /*=============      Login      ====================*/
+    $(document).ready(function () {
+        $('#submitLogin').click(function (e) {
+            e.preventDefault();
+
+            var name = $('#username').val();
+            var pass = $('#password').val();
+
+            if (name == '' || pass == '') {
+                Swal.fire({
+                    title: 'Vui lòng nhập đầy đủ thông tin!',
+                    confirmButtonColor: '#ff6700',
+                    // showCancelButton: true,
+                });
+            } else
+                $.ajax({
+                    url: '<%=Util.fullPath("login")%>',
+                    type: 'POST',
+                    data: { /*Dữ liệu post lên server*/
+                        username: name,
+                        password: pass
+                    },
+                    success: function (result) { /*Thành công thì thực hiện function(success)*/
+                        if (result == 'true') {
+                            Swal.fire({
+                                title: 'Đăng nhập thành công!',
+                                confirmButtonColor: '#ff6700'
+                            }).then((result) => {
+                                if (result.value) {
+                                    location.reload();
+                                }
+                            })
+                        } else {
+                            Swal.fire({
+                                title: 'Sai tên đăng nhập hoặc mật khẩu!',
+                                confirmButtonColor: '#ff6700',
+                            });
+                        }
+                    },
+                    error: function (error) { /*Lỗi thì thực hiện function(error)*/
+                        console.log(error);
+                    }
+                })
+        });
+    });
+    /*===========          Register       =============*/
+
+    $(document).ready(function () {
+        $('#submitRegis').click(function (e) {
+                e.preventDefault();
+                var username = $('#inputUser').val();
+                var pass = $('#inputPass').val();
+                var rePass = $('#inputPass').val();
+                var fullname = $('#inputName').val();
+                var mail = $('#inputMail').val();
+                var phone = $('#inputPhone').val();
+                if (username == '' || pass == '' || rePass == '' || fullname == '' || mail == '' || phone == '') {
+                    Swal.fire({
+                        title: 'Vui lòng nhập đầy đủ thông tin!',
+                        confirmButtonColor: '#ff6700',
+                    });
+                } else {
+                    $.ajax({
+                        url: '<%=Util.fullPath("register")%>',
+                        type: 'POST',
+                        data: { /*Dữ liệu post lên server*/
+                            user_register: username,
+                            pass_register: pass,
+                            rePass_register: rePass,
+                            name_register: fullname,
+                            mail_register: mail,
+                            phone_register: phone
+                        },
+                        success: function (msg) { /*Thành công thì thực hiện function(success)*/
+                            if (msg == 'true') {
+                                Swal.fire({
+                                    title: 'Đăng kí thành công!',
+                                    confirmButtonColor: '#ff6700'
+                                }).then((result) => {
+                                    if (result.value) {
+                                        $("#regisModal").modal('hide');
+                                        // location.reload();
+                                    }
+                                })
+                            } else {
+                                Swal.fire({
+                                    title: 'Sai thông tin đăng kí!',
+                                    confirmButtonColor: '#ff6700',
+                                });
+                            }
+                        },
+                        error: function (error) { /*Lỗi thì thực hiện function(error)*/
+                            console.log(error);
+                        }
+                    })
+                }
+            }
+        );
+    });
+
+    /*===========          Logout       =============*/
+    function logout() {
+        swal.fire({
+            title: 'Bạn có thực sự mốn đăng xuất!',
+            showCancelButton: true,
+            confirmButtonText: 'Đăng xuất',
+            cancelButtonText: 'Hủy',
+            confirmButtonColor: '#ff6700',
+            preConfirm: () => {
+                fetch(`<%=Util.fullPath("logout")%>`);
+                window.location.href = "<%=Util.fullPath("home")%>";
+            }
+        });
+    }
+</script>

@@ -5,17 +5,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Admin Page</title>
+    <title>Admin Slides</title>
     <%@include file="../headAllPage.jsp" %>
     <link rel="stylesheet" href="<%=Util.fullPath("css/admin.css")%>">
 </head>
 <body>
-<%@include file="admin_header.jsp" %>
+<%@include file="include/admin_header.jsp" %>
 <div id="admin_body">
     <div class="container-fluid">
         <div class="row">
             <%--=======     INCLUB NAV      =========--%>
-            <%@include file="admin_nav.jsp" %>
+            <%@include file="include/admin_nav.jsp" %>
             <%-------------------------------------%>
             <div class="col-md-9 ml-sm-auto col-lg-10 tab-content">
                 <div id="admin_slideshow" class="card mt-1 tab-pane active">
@@ -44,7 +44,8 @@
                                 <th><%=s.getId()%>
                                 </th>
                                 <th>
-                                    <img class="img-fluid img-thumbnail" src="<%=s.getImg()%>" width="300px">
+                                    <img class="img-fluid img-thumbnail" src="data:image/png;base64,<%=s.getImg()%>"
+                                         width="300px">
                                 </th>
                                 <th>
                                     <%
@@ -94,13 +95,27 @@
                     <h4 class="text-center font-weight-bold">Thêm slide mới</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<%=Util.fullPath("admin/upload_file")%>" method="post" enctype="multipart/form-data">
-                        <input class="form-control-file" type="file" name="file" size="50"/>
+                    <form action="<%=Util.fullPath("admin/slide")%>" method="post" enctype="multipart/form-data">
+                        <div class="custom-file my-3">
+                            <input id="custom_file" name="file" type="file" class="custom-file-input" size="50"
+                                   multiple>
+                            <label class="custom-file-label" for="custom_file">Chọn ảnh slide show</label>
+                        </div>
                         <br>
-                        <input class="btn btn-dark" type="submit" value="Thêm"/>
+                        <div class="w-50 mx-auto">
+                            <input class="btn btn-danger w-100" type="submit" value="Thêm"/>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    /*Hiển thị tên file được chọn*/
+    $(".custom-file-input").on("change", function () {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+</script>

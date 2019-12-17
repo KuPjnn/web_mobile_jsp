@@ -19,21 +19,25 @@ public class admin_items extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/plain");
         try {
             String action = request.getParameter("action");
             String id_items = request.getParameter("id_items");
+            String name_items = request.getParameter("name_items");
+
             if (action == null) {
                 List<Item> list = new ItemsDAO().listItems();
                 request.setAttribute("list", list);
                 request.getRequestDispatcher("admin_items.jsp").forward(request, response);
 
-            } else if (action != null && id_items != null && action.equals("add")) {
-                String id = request.getParameter("id_items");
-                String name = request.getParameter("name_items");
-                boolean add = new ItemsDAO().addItems(id, name);
-                if (add == true)
-                    response.sendRedirect("items");
+            } else if (name_items != null && id_items != null && action.equals("add")) {
+                boolean add = new ItemsDAO().addItems(id_items, name_items);
 
+                if (add == true) {
+                    response.getWriter().write("Thêm " + name_items + " thành công.");
+                } else {
+                    response.getWriter().write("Lỗi thêm " + name_items);
+                }
             } else if (action != null && id_items != null && action.equals("hide")) {
                 boolean hide = new ItemsDAO().hideItems(id_items);
                 if (hide == true)
@@ -48,6 +52,9 @@ public class admin_items extends HttpServlet {
                 boolean del = new ItemsDAO().delItems(id_items);
                 if (del == true)
                     response.sendRedirect("items");
+            } else {
+                response.setContentType("text/plain");
+                response.getWriter().write("Else cuoi cung nek | action " + action);
             }
         } catch (SQLException e) {
             e.printStackTrace();

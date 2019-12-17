@@ -17,6 +17,7 @@ public class register extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
+        response.setContentType("text/plain");
 
         String userName = request.getParameter("user_register");
         String password = request.getParameter("pass_register");
@@ -26,16 +27,14 @@ public class register extends HttpServlet {
         String phone = request.getParameter("phone_register");
         String role = "kh";
 
-        String link = request.getParameter("linkRegister");
         User user = new User(userName, password, fullName, email, phone, role);
         try {
             User getUser = new UserDAO().getUser(userName);
 
             if (getUser.getUser_name() == null && password.equalsIgnoreCase(rePassword) && new UserDAO().addUser(user)) {
-                response.sendRedirect(Util.fullPath(link));
+                response.getWriter().write("true");
             } else {
-                System.out.println("Loi dang ki");
-                response.sendRedirect(Util.fullPath(link));
+                response.getWriter().write("false");
             }
         } catch (SQLException e) {
             e.printStackTrace();

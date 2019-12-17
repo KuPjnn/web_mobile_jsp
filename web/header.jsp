@@ -1,6 +1,6 @@
-<%@ page import="vn.edu.nlu.fit.dao.MenuDAO" %>
-<%@ page import="java.util.List" %>
 <%@ page import="vn.edu.nlu.fit.model.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.nlu.fit.model.ListCart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header id="main_header">
     <div id="header_style">
@@ -34,9 +34,14 @@
                         <div class="col-md-4 col-12 login">
                             <%--    CART    --%>
                             <div class="d-inline">
-                                <span></span>
                                 <a id="shopping_cart" class="fas fa-shopping-cart float-right mt-3 ml-5"
-                                   href="<%=Util.fullPath("show_cart")%>"></a>
+                                   href="<%=Util.fullPath("show_cart")%>">
+                                    <span style="font-size: 0.85rem; position: absolute; right: 0; top: 5px"
+                                          class="badge badge-dark">
+                                        <% ListCart cart = (ListCart) session.getAttribute("list_cart");%>
+                                    <%=cart != null ? cart.list_cart.size() : 0%>
+                                    </span>
+                                </a>
                             </div>
                             <%--    LOGIN_LOGOUT    --%>
                             <%
@@ -48,8 +53,7 @@
                                     <i class="fa fa-user" style="font-size: 25px; color: #fff"></i>
                                     <%=ss.getFull_name()%> <%--Tên người dùng--%>
                                 </a>
-                                <a onclick="return confirm('Bạn có thực sự muốn đăng xuất?')"
-                                   class="text-decoration-none" href="logout">Đăng xuất</a>
+                                <a onclick="return logout()" href="#" class="text-decoration-none">Đăng xuất</a>
                             </ul>
                             <%
                             } else {
@@ -78,17 +82,3 @@
 
 <!--============== MODAL REGIS ==============-->
 <%@include file="register.jsp" %>
-
-<script>
-    <%
-        String err = request.getParameter("login");
-        if(err != null && err.equals("false")) {
-    %>
-    window.alert('sai tên đăng nhập hoặc mật khẩu.');
-    $(document).ready(function () {
-        $('#login').trigger('click');
-    });
-    <%
-        }
-    %>
-</script>

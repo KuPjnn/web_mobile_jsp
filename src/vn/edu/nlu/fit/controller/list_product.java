@@ -65,11 +65,13 @@ public class list_product extends HttpServlet {
         String[] arr = null;
         String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
                 " FROM product,items,supplier\n" +
-                " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1 ";
+                " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1 " +
+                " AND items.ACTIVE=1 AND supplier.ACTIVE=1 ";
 
         String count = "SELECT COUNT(product.ID_PRODUCT)\n" +
                 " FROM product,items,supplier\n" +
-                " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1  ";
+                " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1 " +
+                " AND items.ACTIVE=1 AND supplier.ACTIVE=1 ";
         try {
             if (supplier != null) {
                 arr = supplier.split("_");
@@ -80,7 +82,7 @@ public class list_product extends HttpServlet {
                 ResultSet resultSet = preparedStatement.executeQuery();
                 request.setAttribute("resultSet", resultSet);
 
-                count += "AND supplier.NAME_SUPPLIER= ? AND items.ID_ITEMS= ?";
+                count += " AND supplier.NAME_SUPPLIER= ? AND items.ID_ITEMS= ?";
                 PreparedStatement pre = DBConect.getPreparedStatement(count);
 
                 pre.setString(1, arr[1]);

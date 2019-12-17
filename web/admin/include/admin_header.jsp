@@ -10,21 +10,11 @@
                             <img class="img-fluid" width="50" src="<%=Util.fullPath("/img/logo/logo.svg")%>" alt="logo">
                         </a>
                     </div>
-                    <div class="col-md-7 col-9">
-                        <div class=" navbar-nav m-auto">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm......">
-                                <div class="input-group-append">
-                                    <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md-3 col12">
                         <ul class="login mt-3 float-right">
-                            <a class="mx-3 text-decoration-none" href="../info_user.jsp"><i
-                                    class="fa fa-user"></i>Admin</a>
-                            <a class="text-decoration-none" href="../index.jsp">Đăng xuất</a>
+                            <a class="mx-5 text-decoration-none" href="<%=Util.fullPath("info")%>"><i
+                                    class="fa fa-user"></i> admin</a>
+                            <a class="text-decoration-none" href="<%=Util.fullPath("home")%>">Đăng xuất</a>
                         </ul>
                     </div>
                 </nav>

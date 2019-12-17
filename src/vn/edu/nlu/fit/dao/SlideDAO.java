@@ -1,13 +1,19 @@
 package vn.edu.nlu.fit.dao;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import vn.edu.nlu.fit.db.DBConect;
 import vn.edu.nlu.fit.model.Slide;
-import vn.edu.nlu.fit.util.Util;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 public class SlideDAO {
@@ -22,7 +28,7 @@ public class SlideDAO {
         ResultSet rs = st.executeQuery();
         while (rs.next()) {
             int id = rs.getInt(1);
-            String img = rs.getString(2);
+            String img = Base64.getEncoder().encodeToString(rs.getBytes(2));
             int active = rs.getInt(3);
             list.add(new Slide(id, img, active));
         }
@@ -62,14 +68,22 @@ public class SlideDAO {
         return result;
     }
 
-    public boolean uploadSlide(String slide) throws SQLException, ClassNotFoundException {
+    public boolean uploadSlide(HttpServletRequest request) throws SQLException, ClassNotFoundException, IOException, FileUploadException {
+
         boolean upload = false;
-        String up = "INSERT INTO `webmobile`.`slide`(`IMG_SLIDE`, `ACTIVE`) VALUES (?, 1)";
-        PreparedStatement ps = DBConect.getPreparedStatement(up);
-        ps.setString(1, Util.fullPath("img/slide/" + slide));
-        int index = ps.executeUpdate();
-        if (index == 1)
-            upload = true;
+        if (ServletFileUpload.isMultipartContent(request)) {
+            List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+            for (FileItem item : multiparts) {
+                if (!item.isFormField()) {
+                    String up = "INSERT INTO `webmobile`.`slide`(`IMG_SLIDE`, `ACTIVE`) VALUES (?, 1)";
+                    PreparedStatement ps = DBConect.getPreparedStatement(up);
+                    ps.setBlob(1, item.getInputStream());
+                    int index = ps.executeUpdate();
+                    if (index == 1)
+                        upload = true;
+                }
+            }
+        }
         return upload;
     }
 }

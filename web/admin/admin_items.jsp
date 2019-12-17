@@ -6,22 +6,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Admin Page</title>
+    <title>Admin Items</title>
     <%@include file="../headAllPage.jsp" %>
     <link rel="stylesheet" href="<%=Util.fullPath("css/admin.css")%>">
 </head>
 <body>
-<%@include file="admin_header.jsp" %>
+<%@include file="include/admin_header.jsp" %>
 <div id="admin_body">
     <div class="container-fluid">
         <div class="row">
             <%--=======     INCLUB NAV      =========--%>
-            <%@include file="admin_nav.jsp" %>
+            <%@include file="include/admin_nav.jsp" %>
             <%-------------------------------------%>
             <div class="col-md-9 ml-sm-auto col-lg-10 tab-content">
                 <div id="admin_hanghoa" class="card mt-1 tab-pane active">
                     <div class="card-header">Hàng hóa
-                        <button class="btn btn-danger ml-xl-5" data-toggle="modal"
+                        <button id="add_new_items" class="btn btn-danger ml-xl-5" data-toggle="modal"
                                 data-target="#addItem">Thêm hàng hóa
                         </button>
                     </div>
@@ -32,6 +32,7 @@
                                 <th>ID</th>
                                 <th>Tên</th>
                                 <th>Hiện thị</th>
+                                <th>Xem thông tin</th>
                                 <th>Xóa</th>
                             </tr>
                             </thead>
@@ -63,7 +64,15 @@
                                     <%
                                         }
                                     %>
-
+                                </th>
+                                <th>
+                                    <button class="btn btn-danger info_items" data-toggle="modal"
+                                            data-target="#addItem">Xem
+                                        <div style="display: none" class="id_items"><%=item.getId()%>
+                                        </div>
+                                        <div style="display: none" class="name_items"><%=item.getName()%>
+                                        </div>
+                                    </button>
                                 </th>
                                 <th>
                                     <a onclick="return confirm('Xóa mặt hàng : <%=item.getName()%>')"
@@ -88,25 +97,106 @@
 </body>
 </html>
 
-
 <%--==========      MODAL ADD NEW ITEMS     =================--%>
 <div class="modal fade" id="addItem" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content m-auto">
             <div class="card">
                 <div class="card-header bg-light">
-                    <h4 class="text-center font-weight-bold">Thêm mặt hàng mới</h4>
+                    <h4 id="title_addItem" class="text-center font-weight-bold">Thêm mặt hàng mới</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<%=Util.fullPath("admin/items")%>" method="post">
-                        <input type="hidden" name="action" value="add">
-                        <input class="form-control my-3" type="text" name="id_items" placeholder="ID mặt hàng"/>
-                        <input class="form-control" type="text" name="name_items" placeholder="Tên mặt hàng "/>
+                    <form id="formAddNewItems"
+                    <%--                            action="<%=Util.fullPath("admin/items")%>" method="post"--%>
+                    >
+                        <input id="action" type="hidden" name="action" value="add">
+                        <div class="input-group my-3">
+                            <input id="id_items" class="form-control" type="text" name="id_items"
+                                   placeholder="ID thương hiệu" min="0"/>
+                            <div class="input-group-append">
+                                <a class="input-group-text" data-toggle="tooltip" title="ID mặt hàng">
+                                    <i class="fas fa-info-circle text-dark"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="input-group my-3">
+                            <input id="name_items" class="form-control" type="text" name="name_items"
+                                   placeholder="Tên thương hiệu"/>
+                            <div class="input-group-append">
+                                <a class="input-group-text" data-toggle="tooltip" title="Tên mặt hàng">
+                                    <i class="fas fa-info-circle text-dark"></i>
+                                </a>
+                            </div>
+                        </div>
                         <br>
-                        <input class="btn btn-dark d-block w-100 mx-auto" type="submit" value="Thêm"/>
+                        <button id="btnSubmitAddNewItems" class="btn btn-danger d-block w-100 mx-auto" type="submit"
+                                value="Thêm">Thêm
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+<script>
+    $('#btnSubmitAddNewItems').click(function (e) {
+        e.preventDefault();
+        var id_items = $('#id_items').val();
+        var name_items = $('#name_items').val();
+        var action = $('#action').val();
+        $.ajax({
+            url: '<%=Util.fullPath("admin/items")%>',
+            type: 'POST',
+            data: { /*Dữ liệu post lên server*/
+                action: action,
+                id_items: id_items,
+                name_items: name_items
+            },
+            success: function (result) {
+                alert(result);
+                location.reload();
+                $('#addItem').modal('hide');
+
+            },
+            error: function (error) {
+                alert(error);
+            }
+        })
+    });
+</script>
+
+<script>
+
+    /*====================      BTN ADD NEW ITEMS       ==============================*/
+    $("#add_new_items").click(function () {
+        $("#title_addItem").html("Thông tin mặt hàng!");
+        $("#btnSubmitAddNewItems").attr("style", "visibility: visible;");
+
+        $('#formAddNewItems input[name=id_items]').prop("disabled", false);
+        $('#formAddNewItems input[name=id_items]').val("");
+        $('#formAddNewItems input[name=name_items]').prop("disabled", false);
+        $('#formAddNewItems input[name=name_items]').val("");
+    });
+
+    /*=====================     BTN SHOW INFO ITEMS     ==============================*/
+    $(".info_items").click(function () {
+        $("#title_addItem").html("Thông tin mặt hàng!");
+        $("#btnSubmitAddNewItems").attr("style", "visibility: hidden;");
+
+        var id_items = $(this).find(".id_items").html();
+        var name_items = $(this).find(".name_items").html();
+
+        $('#formAddNewItems input[name=id_items]').prop("disabled", true);
+        $('#formAddNewItems input[name=id_items]').val(id_items);
+        $('#formAddNewItems input[name=name_items]').prop("disabled", true);
+        $('#formAddNewItems input[name=name_items]').val(name_items);
+    });
+
+</script>

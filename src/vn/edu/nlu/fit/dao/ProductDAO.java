@@ -1,12 +1,19 @@
 package vn.edu.nlu.fit.dao;
 
+import org.apache.commons.collections.iterators.ObjectArrayIterator;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import vn.edu.nlu.fit.db.DBConect;
 import vn.edu.nlu.fit.model.Product;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductDAO {
     public Product getProduct(String ID_PRODUCT) throws SQLException, ClassNotFoundException {
@@ -80,11 +87,18 @@ public class ProductDAO {
     public boolean delProduct(String id) throws SQLException, ClassNotFoundException {
         boolean result = false;
         String del = "DELETE FROM `webmobile`.`product` WHERE `ID_PRODUCT` = ?";
-        PreparedStatement ps = DBConect.getPreparedStatement(del);
-        ps.setString(1, id);
-        int index = ps.executeUpdate();
-        if (index == 1)
-            result = true;
+        String del_configure = "DELETE FROM `webmobile`.`configuration` WHERE `ID_PRODUCT` = ?";
+
+        PreparedStatement conf = DBConect.getPreparedStatement(del_configure);
+        conf.setString(1, id);
+        int row = conf.executeUpdate();
+        if (row == 1) {
+            PreparedStatement ps = DBConect.getPreparedStatement(del);
+            ps.setString(1, id);
+            int index = ps.executeUpdate();
+            if (index == 1)
+                result = true;
+        }
         return result;
     }
 
@@ -113,11 +127,42 @@ public class ProductDAO {
     public boolean addConfigure(String id_pro, String display, String cam_font, String cam_back, String ram, String rom,
                                 String cpu, String gpu, String battery, String os, String sim) throws SQLException, ClassNotFoundException {
         boolean addConf = false;
-        String add = "";
+        String add = "INSERT INTO `webmobile`.`configuration`(`ID_PRODUCT`, `DISPLAY`, `CAMERA_FRONT`, `CAMERA_BACK`, `RAM`, `ROM`, `CPU`, `GPU`, `BATTERY`, `OS`, `SIM`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement ps = DBConect.getPreparedStatement(add);
+        ps.setString(1, id_pro);
+        ps.setString(2, display);
+        ps.setString(3, cam_font);
+        ps.setString(4, cam_back);
+        ps.setString(5, ram);
+        ps.setString(6, rom);
+        ps.setString(7, cpu);
+        ps.setString(8, gpu);
+        ps.setString(9, battery);
+        ps.setString(10, os);
+        ps.setString(11, sim);
         int row = ps.executeUpdate();
         if (row == 1)
             addConf = true;
         return addConf;
     }
+
+    public String uploadImgProduct(HttpServletRequest request) throws Exception {
+        String upload = "";
+
+        if (ServletFileUpload.isMultipartContent(request)) {
+            List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+
+            System.out.println("truoc for");
+            for (FileItem item : multiparts) {
+                System.out.println("trc if");
+                if (!item.isFormField()) {
+                    String name = new File(item.getName()).getName();
+                    System.out.println("dang for" + item.getName());
+                    item.write(new File("D:\\Intellij\\web_mobile\\web\\img\\slide" + File.separator + name));
+                }
+            }
+        }
+        return upload;
+    }
+
 }

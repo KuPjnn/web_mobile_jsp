@@ -59,8 +59,8 @@ public class detail_product extends HttpServlet {
                     "AND\n" +
                     "product.ID_SUPPLIER =(SELECT product.ID_SUPPLIER FROM product WHERE product.ID_PRODUCT = ?) " +
                     "AND \n" +
-                    "product.ID_ITEMS = (SELECT product.ID_ITEMS FROM product WHERE product.ID_PRODUCT = ?) " +
-                    " ORDER BY RAND ( );";
+                    "product.ID_ITEMS = (SELECT product.ID_ITEMS FROM product WHERE product.ID_PRODUCT = ?) "
+                    + " ORDER BY RAND ( );";
             PreparedStatement stSame = DBConect.getPreparedStatement(same);
             stSame.setString(1, detail);
             stSame.setString(2, detail);

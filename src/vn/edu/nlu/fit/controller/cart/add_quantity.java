@@ -11,23 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/minus_quality")
-public class minus_quality extends HttpServlet {
+@WebServlet("/add_quantity")
+public class add_quantity extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String minus = request.getParameter("id_product");
+        String add = request.getParameter("id_product");
 
-        String link = request.getParameter("link");
         HttpSession session = request.getSession();
         ListCart listCart = (ListCart) session.getAttribute("list_cart");
         for (Cart item : listCart.list_cart) {
-            if (item.getPro().getId_product().equals(minus) && item.getTotal() > 1) {
-                item.setTotal(item.getTotal() - 1);
+            if (item.getPro().getId_product().equals(add)) {
+                item.setTotal(item.getTotal() + 1);
             }
         }
-        response.sendRedirect(link);
     }
 }

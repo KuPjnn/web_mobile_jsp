@@ -32,7 +32,7 @@
                 <div class="product_cart row">
                     <div class="col-md-3 col-6">
                         <div>
-                            <input type="checkbox" name="select_product" checked>
+                            <%--<input type="checkbox" name="select_product" checked>--%>
                             <img width="100px" src="<%=Util.splitImg(item.getPro().getImg())%>" alt="img">
                         </div>
                     </div>
@@ -45,26 +45,27 @@
                     <div class="col-md-3 col-6 mt-4">
                         <div class="input-group">
                             <div class="input-group-append">
-                                <a href="minus_quality?id_product=<%=item.getPro().getId_product()+"&link="+Util.urlRedirect(request)%>"
-                                   class="btn btn-dark rounded-left">
-                                    <i style="color: #fff" class="fas fa-minus"></i>
+                                <a class="minus_quantity btn rounded-left">
+                                    <input class="id_product_minus" name="id_product_minus"
+                                           value="<%=item.getPro().getId_product()%>" type="hidden">
+                                    <i style="color: #000" class="fas fa-minus"></i>
                                 </a>
                             </div>
-                            <input type="text" class="form-control" min="1" value="<%=item.getTotal()%>" disabled>
+                            <span type="number" class="form-control rounded text-center"><%=item.getTotal()%></span>
                             <div class="input-group-append">
-                                <a href="add_quality?id_product=<%=item.getPro().getId_product()+"&link="+Util.urlRedirect(request)%>"
-                                   class="btn btn-dark">
-                                    <i style="color: #fff" class="fas fa-plus"></i>
+                                <a id="add_quantity" class="add_quantity btn">
+                                    <input class="id_product_add" name="id_product_add"
+                                           value="<%=item.getPro().getId_product()%>" type="hidden">
+                                    <i style="color: #000" class="fas fa-plus"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mt-4">
-                        <form action="<%=Util.fullPath("del?id_del=" + item.getPro().getId_product())%>" method="post">
-                            <input onclick="" class="btn btn-dark ml-3" type="submit"
-                                   name="delete_product" value="Xóa">
-                            <input type="hidden" name="link_cart" value="<%=Util.urlRedirect(request)%>">
-                        </form>
+                        <a class="delete_product btn ml-3" type="submit" name="delete_product">
+                            <i style="color: #000" class="fa fa-trash"></i>
+                            <input type="hidden" class="id_del" value="<%=item.getPro().getId_product()%>">
+                        </a>
                     </div>
                 </div>
                 <%
@@ -73,20 +74,22 @@
                 %>
             </div>
             <div class="col-md-4 col-12">
-                <div class="product_total mt-5 mb-5">
+                <div class="product_total mb-5">
                     <p>Tổng tiền</p>
-                    <span id="total"><%=Util.convertPrice(list_item.totalPrice())%></span>
+                    <span id="total" class="d-block my-4"><%=Util.convertPrice(list_item.totalPrice())%></span>
 
                     <%
                         User user = (User) session.getAttribute("user");
                         if (user == null) {
                     %>
-                    <button onclick="alert('Bạn cần đăng nhập.')" class="btn m-auto" type="button">Đặt hàng
+                    <button onclick="Swal.fire({ title: 'Bạn chưa đăng nhập!', confirmButtonColor: '#ff6700',})"
+                            class="btn m-auto" type="button">Đặt hàng
                     </button>
                     <%
                     } else if (list_item.list_cart.size() == 0) {
                     %>
-                    <button onclick="alert('Chưa có sản phẩm.')" class="btn m-auto" type="button">Đặt hàng
+                    <button onclick="Swal.fire({ title: 'Chưa có sản phẩm!', confirmButtonColor: '#ff6700',})"
+                            class="btn m-auto" type="button">Đặt hàng
                     </button>
                     <%
                     } else {
@@ -114,3 +117,59 @@
 
 </body>
 </html>
+
+<script>
+    /*=============     MINUS QUANTITY      ====================*/
+    $(".minus_quantity").click(function () {
+        var id_product = $(this).find(".id_product_minus").val();
+        $.ajax({
+            url: "<%=Util.fullPath("minus_quantity")%>",
+            type: "get",
+            data: {
+                id_product: id_product
+            },
+            success: function () {
+                window.location.reload();
+            },
+            error: function (error) {
+                alert(error)
+            }
+        });
+    });
+
+    /*===========       ADD QUANTITY        ==================*/
+    $(".add_quantity").click(function () {
+        var id_product = $(this).find(".id_product_add").val();
+        $.ajax({
+            url: "<%=Util.fullPath("add_quantity")%>",
+            type: "get",
+            data: {
+                id_product: id_product
+            },
+            success: function () {
+                window.location.reload();
+            },
+            error: function (error) {
+                alert(error)
+            }
+        });
+    });
+
+    /*==============        DELETE  PRODUCT         ===================*/
+    $(".delete_product").click(function () {
+        var id_product = $(this).find(".id_del").val();
+        $.ajax({
+            url: "<%=Util.fullPath("del")%>",
+            type: "post",
+            data: {
+                id_del: id_product
+            },
+            success: function () {
+                window.location.reload();
+            },
+            error: function (error) {
+                alert(error);
+            }
+        });
+    });
+</script>

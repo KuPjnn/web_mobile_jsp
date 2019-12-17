@@ -1,5 +1,6 @@
 <%@ page import="vn.edu.nlu.fit.model.Slide" %>
 <%@ page import="vn.edu.nlu.fit.dao.SlideDAO" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <style type="text/css">
@@ -32,15 +33,16 @@
             for (Slide sl : listSlide) {
                 if (sl.getActive() == 1) {
                     if (index == 0) {
+
         %>
         <div class="carousel-item active">
-            <img class="img-fluid d-block" src="<%=sl.getImg()%>" alt="slide">
+            <img class="img-fluid d-block" src="data:image/png;base64,<%=sl.getImg()%>" alt="slide">
         </div>
         <%
         } else {
         %>
         <div class="carousel-item">
-            <img class="img-fluid d-block" src="<%=sl.getImg()%>" alt="slide">
+            <img class="img-fluid d-block" src="data:image/png;base64,<%=sl.getImg()%>" alt="slide">
         </div>
         <%
                     }
@@ -62,11 +64,11 @@
 
 </div>
 
-<script type="text/javascript">
-    document.documentElement.setAttribute("lang", "en");
-    document.documentElement.removeAttribute("class");
-
-    axe.run(function (err, results) {
-        console.log(results.violations);
-    });
-</script>
+<%--<script type="text/javascript">--%>
+<%--    // document.documentElement.setAttribute("lang", "en");--%>
+<%--    // document.documentElement.removeAttribute("class");--%>
+<%--    //--%>
+<%--    // axe.run(function (err, results) {--%>
+<%--    //     console.log(results.violations);--%>
+<%--    // });--%>
+<%--</script>--%>

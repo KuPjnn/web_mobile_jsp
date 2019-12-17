@@ -7,17 +7,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Admin Page</title>
+    <title>Admin Bill</title>
     <%@include file="../headAllPage.jsp" %>
     <link rel="stylesheet" href="<%=Util.fullPath("css/admin.css")%>">
 </head>
 <body>
-<%@include file="admin_header.jsp" %>
+<%@include file="include/admin_header.jsp" %>
 <div id="admin_body">
     <div class="container-fluid">
         <div class="row">
             <%--=======     INCLUB NAV      =========--%>
-            <%@include file="admin_nav.jsp" %>
+            <%@include file="include/admin_nav.jsp" %>
             <%-------------------------------------%>
             <div class="col-md-9 ml-sm-auto col-lg-10 tab-content">
                 <div id="admin_donhang" class="card mt-1 tab-pane active">
@@ -61,15 +61,16 @@
                                     <%
                                         if (bill.getStatus().equals("Chưa thanh toán")) {
                                     %>
-                                    <button onclick="" class="border-0 btn-outline-light rounded-circle ml-3">
+                                    <a href="<%=Util.fullPath("admin/bill?action=active&id="+bill.getId())%>"
+                                       class="border-0 rounded-circle ml-3">
                                         <i style="color: #000" class="far fa-check-circle"></i>
-                                    </button>
+                                    </a>
                                     <%
                                     } else {
                                     %>
-                                    <button onclick="" class="border-0 btn-outline-light rounded-circle ml-3">
+                                    <a onclick="" class="border-0 rounded-circle ml-3">
                                         <i style="color: #ff6700" class="far fa-check-circle"></i>
-                                    </button>
+                                    </a>
                                     <%
                                         }
                                     %>

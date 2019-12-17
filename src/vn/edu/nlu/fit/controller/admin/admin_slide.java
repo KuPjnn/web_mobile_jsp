@@ -1,9 +1,11 @@
 package vn.edu.nlu.fit.controller.admin;
 
+import org.apache.commons.fileupload.FileUploadException;
 import vn.edu.nlu.fit.dao.SlideDAO;
 import vn.edu.nlu.fit.model.Slide;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,9 +15,23 @@ import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet("/admin/slide")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+        maxFileSize = 1024 * 1024 * 50, // 50MB
+        maxRequestSize = 1024 * 1024 * 50) // 50MB
 public class admin_slide extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        response.setContentType("text/plain");
+        try {
+            boolean upload = new SlideDAO().uploadSlide(request);
+            if (upload == true)
+                response.sendRedirect("slide");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (FileUploadException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

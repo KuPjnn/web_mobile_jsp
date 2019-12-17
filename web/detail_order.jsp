@@ -87,9 +87,9 @@
                             <th>Sản phẩm:</th>
 
                             <td><%
-                                for (Cart cart : listCart.list_cart) {
+                                for (Cart carts : listCart.list_cart) {
                             %>
-                                <p><%=cart.getPro().getProduct_name() + " | " + cart.getTotal()%>
+                                <p><%=carts.getPro().getProduct_name() + " | " + Util.convertPrice(carts.getPro().getPrice()) + " | +" + carts.getTotal() %>
                                 </p>
                                 <%
                                     }

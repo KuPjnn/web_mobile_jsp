@@ -1,9 +1,12 @@
 package vn.edu.nlu.fit.model;
 
+import java.sql.Blob;
+
 public class Slide {
     private int id;
     private String img;
     private int active;
+
 
     public Slide() {
     }
@@ -38,3 +41,4 @@ public class Slide {
         this.active = active;
     }
 }
+

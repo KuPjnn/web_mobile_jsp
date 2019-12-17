@@ -99,12 +99,9 @@
                         <button class="btn_buy col-md-5 buy_now mt-1" type="submit">Mua ngay
                         </button>
                     </form>
-                    <form class="d-inline" action="<%=Util.fullPath("add?id=" + detail.getString(6))+"#add_cart"%>"
-                          method="post">
-                        <button class="btn_add col-md-5 add_shop_cart mt-1" type="submit">Thêm vào giỏ
-                        </button>
-                        <input type="hidden" name="link_detail" value="<%=Util.urlRedirect(request)%>">
-                    </form>
+                    <button class="btn_add col-md-5 add_shop_cart mt-1" type="submit">Thêm vào giỏ
+                        <input type="hidden" class="id_product" name="" value="<%=detail.getString(6)%>">
+                    </button>
                 </div>
             </div>
             <%--========    Thông số sản phẩm   =============--%>
@@ -272,13 +269,36 @@
         filter: invert(100%);
     }
 </style>
-<script type="text/javascript">
-    document.documentElement.setAttribute("lang", "en");
-    document.documentElement.removeAttribute("class");
-    axe.run(function (err, results) {
-        console.log(results.violations);
-    });
-</script>
 <%-----------------------------------------------%>
+
+<script type="text/javascript">
+    /*==========        SLIDE MINI SHOW     ==============*/
+    $(".btn_add").click(function () {
+        var id_product = $(this).find(".id_product").val();
+        $.ajax({
+            url: "<%=Util.fullPath("add")%>",
+            type: "get",
+            data: {
+                id: id_product
+            },
+            success: function () {
+                window.location.reload();
+            },
+            error: function (error) {
+                alert(error)
+            }
+        });
+    });
+    /*----------------------------------------------------*/
+
+    /*==========        SLIDE MINI SHOW     ==============*/
+    // document.documentElement.setAttribute("lang", "en");
+    // document.documentElement.removeAttribute("class");
+    // axe.run(function (err, results) {
+    //     console.log(results.violations);
+    // });
+    /*----------------------------------------------------*/
+
+</script>
 </body>
 </html>

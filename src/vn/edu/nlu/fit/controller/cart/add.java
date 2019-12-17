@@ -25,8 +25,6 @@ public class add extends HttpServlet {
         try {
             HttpSession session = request.getSession();
 
-            String linkSendRequest = request.getParameter("link_detail");
-
             String id_product = request.getParameter("id");
             String btn_buy_now = request.getParameter("btn");
             Cart item = new Cart(new ProductDAO().getProduct(id_product), 1);
@@ -54,8 +52,6 @@ public class add extends HttpServlet {
                 }
             }
             session.setAttribute("list_cart", listCArt);
-            if (btn_buy_now == null)
-                response.sendRedirect(Util.fullPath(linkSendRequest));
             if (btn_buy_now != null)
                 response.sendRedirect(Util.fullPath("show_cart"));
         } catch (SQLException e) {

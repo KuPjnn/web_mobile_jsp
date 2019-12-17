@@ -10,12 +10,16 @@
                 <form method="get" action="<%=Util.fullPath("pay")%>" class="form-signin">
                     <div class="form-label-group mb-5 mt-5">
                         <input name="address" type="text" id="name" class="form-control"
-                               placeholder="Nhập địa chỉ"
+                               placeholder="Nhập địa chỉ" required
+                               oninvalid="this.setCustomValidity('Bạn chưa nhập địa chỉ.')"
+                               oninput="setCustomValidity('')"
                                autofocus>
                     </div>
                     <div class="form-label-group">
-                        <input name="phone" type="tel" id="phone" class="form-control"
-                               placeholder="Nhập số điện thoại"
+                        <input name="phone" type="number" id="phone" class="form-control"
+                               placeholder="Nhập số điện thoại" minlength="123" required
+                               oninvalid="this.setCustomValidity('Bạn chưa nhập nhập số điện thoại.')"
+                               oninput="setCustomValidity('')"
                         >
                     </div>
                     <div class="option_pay row mb-5">

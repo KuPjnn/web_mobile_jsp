@@ -16,14 +16,11 @@ import java.io.IOException;
 public class del extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String link = request.getParameter("link_cart");
 
-        ListCart listCart = (ListCart) session.getAttribute("list_cart");
         String id_product = request.getParameter("id_del");
+        ListCart listCart = (ListCart) session.getAttribute("list_cart");
         listCart.list_cart.removeIf(item -> item.getPro().getId_product().equals(id_product));
-
         request.setAttribute("list_cart", listCart);
-        response.sendRedirect(Util.fullPath(link));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
