@@ -1,6 +1,8 @@
 <%@ page import="vn.edu.nlu.fit.model.Item" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.nlu.fit.model.Supplier" %><%--==========      MODAL ADD NEW ITEMS     =================--%>
+<%@ page import="vn.edu.nlu.fit.model.Supplier" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--==========      MODAL ADD NEW ITEMS     =================--%>
 <div class="modal fade" id="addProduct" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content m-auto">

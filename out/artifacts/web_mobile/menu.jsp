@@ -10,6 +10,7 @@
         <%
             List<Menu> listSupplier = (List<Menu>) request.getAttribute("listSupplier");
             List<Item> listItems = (List<Item>) request.getAttribute("listItems");
+            int i = 0;
             if (listItems != null) {
                 for (Item item : listItems) {
                     if (item.getActive() == 1) {
@@ -34,7 +35,6 @@
                     if (item.getId().equals("MTB")) {
                 %>
                 <i class="fas fa-tablet-alt"></i>
-
                 <%
                     }
                 %>
@@ -42,9 +42,9 @@
             </a>
             <div class="dropdown-menu w-100">
                 <%
-                    if (listSupplier != null && item.getId().equals("DT")) {
+                    if (listSupplier != null && item.getId().equals(listItems.get(i).getId())) {
                         for (Menu supplier : listSupplier) {
-                            if (supplier.getId_items().equalsIgnoreCase("DT")) {
+                            if (supplier.getId_items().equals(item.getId())) {
                 %>
                 <a class="dropdown-item"
                    href="<%=Util.fullPath("list_product?supplier=" + supplier.getId_items() + "_" + supplier.getSupplier_name())%>">
@@ -53,40 +53,14 @@
                 <%
                             }
                         }
-                    }
-                %>
-                <%
-                    if (listSupplier != null && item.getId().equals("MTB")) {
-                        for (Menu supplier : listSupplier) {
-                            if (supplier.getId_items().equalsIgnoreCase("MTB")) {
-                %>
-                <a class="dropdown-item"
-                   href="<%=Util.fullPath("list_product?supplier=" + supplier.getId_items() + "_" + supplier.getSupplier_name())%>">
-                    <%=supplier.getSupplier_name()%>
-                </a>
-                <%
-                            }
-                        }
-                    }
-                %>
-                <%
-                    if (listSupplier != null && item.getId().equals("LT")) {
-                        for (Menu supplier : listSupplier) {
-                            if (supplier.getId_items().equalsIgnoreCase("LT")) {
-                %>
-                <a class="dropdown-item"
-                   href="<%=Util.fullPath("list_product?supplier=" + supplier.getId_items() + "_" + supplier.getSupplier_name())%>">
-                    <%=supplier.getSupplier_name()%>
-                </a>
-                <%
-                            }
-                        }
+                        i++;
                     }
                 %>
             </div>
         </li>
         <%
                     }
+
                 }
             }
         %>
