@@ -32,6 +32,7 @@
                                 <th>ID</th>
                                 <th>Tên thương hiệu</th>
                                 <th>Hiển thị</th>
+                                <th>Sửa</th>
                                 <th>Xóa</th>
                             </tr>
                             </thead>
@@ -66,13 +67,60 @@
 
                                 </th>
                                 <th>
-                                    <a onclick="return confirm('Xóa mặt hàng : <%=item.getName()%>')"
+                                    <a data-toggle="modal"
+                                       data-target="#<%=item.getId()%>" href="supplier?action=active&id_supplier=<%=item.getId()%>">
+                                        <i style="color: #ff6700" class="fas fa-pen"></i>
+                                    </a>
+                                </th>
+                                <%--==========      MODAL Edit SUPPLIER     =================--%>
+                                <div class="modal fade" id="<%=item.getId()%>" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content m-auto">
+                                            <div class="card">
+                                                <div class="card-header bg-light">
+                                                    <h4 class="text-center font-weight-bold">Thêm thương hiệu mới</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form action="<%=Util.fullPath("admin/supplier")%>" method="post">
+                                                        <input type="hidden" name="action" value="edit">
+                                                        <div class="input-group my-3">
+                                                            <input class="form-control" type="text"
+                                                                   value="<%=item.getId()%>" min="0" required disabled/>
+                                                            <input class="form-control " type="text" name="id_supplier"
+                                                                   value="<%=item.getId()%>" min="0" style="display: none" />
+                                                            <div class="input-group-append">
+                                                                <a class="input-group-text" data-toggle="tooltip" title="ID thương hiệu">
+                                                                    <i class="fas fa-info-circle text-dark" ></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group my-3">
+                                                            <input class="form-control" type="text" name="name_supplier"
+                                                                   value="<%=item.getName()%>" required/>
+                                                            <div class="input-group-append">
+                                                                <a class="input-group-text" data-toggle="tooltip" title="Tên thương hiệu">
+                                                                    <i class="fas fa-info-circle text-dark"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <input class="btn btn-danger d-block w-100 mx-auto" type="submit" value="Sửa"/>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <th>
+                                    <a onclick="return confirm('Xóa thương hiệu : <%=item.getName()%>')"
                                        class="border-0 btn-outline-light rounded-circle"
                                        href="supplier?action=del&id_supplier=<%=item.getId()%>">
                                         <i style="color: #000" class="fa fa-trash"></i>
                                     </a>
                                 </th>
                             </tr>
+
+
                             <%
                                     }
                                 }
@@ -101,16 +149,16 @@
                         <input type="hidden" name="action" value="add">
                         <div class="input-group my-3">
                             <input class="form-control" type="text" name="id_supplier"
-                                   placeholder="ID thương hiệu" min="0"/>
+                                   placeholder="ID thương hiệu" min="0" required/>
                             <div class="input-group-append">
                                 <a class="input-group-text" data-toggle="tooltip" title="ID thương hiệu">
-                                    <i class="fas fa-info-circle text-dark"></i>
+                                    <i class="fas fa-info-circle text-dark" ></i>
                                 </a>
                             </div>
                         </div>
                         <div class="input-group my-3">
                             <input class="form-control" type="text" name="name_supplier"
-                                   placeholder="Tên thương hiệu"/>
+                                   placeholder="Tên thương hiệu" required/>
                             <div class="input-group-append">
                                 <a class="input-group-text" data-toggle="tooltip" title="Tên thương hiệu">
                                     <i class="fas fa-info-circle text-dark"></i>

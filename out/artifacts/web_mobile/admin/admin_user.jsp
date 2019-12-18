@@ -115,7 +115,7 @@
                                                                 <i class="fas fa-user text-dark"></i>
                                                             </a>
                                                         </div>
-                                                        <input class="form-control" type="text" id="inputName"
+                                                        <input class="form-control" type="text"
                                                                name="full_name" title="Full name"
                                                                value="<%=user.getFull_name()%>"/>
 
@@ -128,7 +128,7 @@
                                                                 <i class="fas fa-mail-bulk text-dark"></i>
                                                             </a>
                                                         </div>
-                                                        <input class="form-control" type="email" id="inputMail"
+                                                        <input class="form-control" type="email"
                                                                name="email" title="Email"
                                                                value="<%=user.getEmail()%>"/>
 
@@ -141,7 +141,7 @@
                                                                 <i class="fas fa-phone text-dark"></i>
                                                             </a>
                                                         </div>
-                                                        <input class="form-control" type="tel" id="inputPhone"
+                                                        <input class="form-control" type="tel"
                                                                name="phone" title="phone"
                                                                value="<%=user.getPhone()%>"/>
 
@@ -163,12 +163,20 @@
                                                             <div class="card card-body"
                                                                  style="border: none;padding: 0px;margin-left: 30px">
                                                                 <div class="custom-control-inline" style="">
-                                                                    <span class="m-3">  <input value="ad" type="radio"
-                                                                                               name="privileges" <%=user.getPrivileges().equals("ad") ? "checked" : ""%> />admin</span>
+                                                                    <span class="m-3">
+                                                                        <input value="ad" type="radio"
+                                                                               name="privileges"
+                                                                               id="ad<%=user.getUser_name()%>"
+                                                                                <%=user.getPrivileges().equals("ad") ? "checked" : ""%> />
+                                                                        <label for="ad<%=user.getUser_name()%>">Admin</label>
+                                                                    </span>
 
                                                                     <span class="m-3"> <input value="kh" type="radio"
                                                                                               name="privileges"
-                                                                            <%=user.getPrivileges().equals("kh") ? "checked" : ""%>/> Khách hàng</span>
+                                                                                              id="kh<%=user.getUser_name()%>"
+                                                                            <%=user.getPrivileges().equals("kh") ? "checked" : ""%>/>
+                                                                        <label for="kh<%=user.getUser_name()%>">Khách hàng</label>
+                                                                    </span>
                                                                 </div>
 
 

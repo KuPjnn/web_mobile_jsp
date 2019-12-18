@@ -43,7 +43,6 @@ public class SupplierDAO {
         return supplier;
     }
 
-
     public boolean hideSupplier(String id) throws SQLException, ClassNotFoundException {
         boolean result = false;
         String hide = "UPDATE `webmobile`.`supplier` SET `ACTIVE` = 0 WHERE `ID_SUPPLIER` = ?";
@@ -69,24 +68,8 @@ public class SupplierDAO {
     public boolean delSupplier(String id_supplier) throws SQLException, ClassNotFoundException {
         boolean result = false;
         String del_supplier = "DELETE FROM `webmobile`.`supplier` WHERE `ID_SUPPLIER` = ?";
-        String select_product = "SELECT ID_PRODUCT FROM product WHERE ID_SUPPLIER = ?";
-        String del_product = "DELETE FROM `webmobile`.`product` WHERE `ID_PRODUCT` IN(" + select_product + ")";
-        String del_configure = "DELETE FROM `webmobile`.`configuration` WHERE `ID_PRODUCT` IN(" + select_product + ")";
-        PreparedStatement ps = DBConect.getPreparedStatement(select_product);
-        ps.setString(1, id_supplier);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            /*Xóa cấu hình sản phẩm thuộc thuộc thương hiệu cần xóa*/
-            ps = DBConect.getPreparedStatement(del_configure);
-            ps.setString(1, id_supplier);
-            ps.executeUpdate();
-            /*Xóa Các sản phẩm thuộc thương hiệu cần xóa*/
-            ps = DBConect.getPreparedStatement(del_product);
-            ps.setString(1, id_supplier);
-            ps.executeUpdate();
-        }
         /*Xóa thương hiệu*/
-        ps = DBConect.getPreparedStatement(del_supplier);
+        PreparedStatement ps = DBConect.getPreparedStatement(del_supplier);
         ps.setString(1, id_supplier);
         int index = ps.executeUpdate();
         if (index == 1)
@@ -101,6 +84,18 @@ public class SupplierDAO {
         PreparedStatement ps = DBConect.getPreparedStatement(add);
         ps.setString(1, id.toUpperCase());
         ps.setString(2, name);
+        int index = ps.executeUpdate();
+        if (index == 1)
+            result = true;
+        return result;
+    }
+
+    public boolean editSupplier(String id, String name) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+        String edit = "UPDATE `webmobile`.`supplier` SET `NAME_SUPPLIER` = ? WHERE `ID_SUPPLIER` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(edit);
+        ps.setString(1, name);
+        ps.setString(2, id);
         int index = ps.executeUpdate();
         if (index == 1)
             result = true;

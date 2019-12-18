@@ -8,10 +8,10 @@
         <div class="modal-content m-auto">
             <div class="card">
                 <div class="card-header bg-light">
-                    <h4 class="text-center font-weight-bold">Thêm sản phẩm mới</h4>
+                    <h4 id="title_product" class="text-center font-weight-bold">Thêm sản phẩm mới</h4>
                 </div>
                 <div class="card-body">
-                    <form method="post" enctype="multipart/form-data">
+                    <form id="formAddProduct" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="action" value="add">
                         <%--ID mặt hàng--%>
                         <div class="input-group my-3">
@@ -83,13 +83,13 @@
                             <input name="file" type="file" class="custom-file-input" id="file" size="50" multiple>
                             <label class="custom-file-label" for="file">Ảnh sản phẩm</label>
                         </div>
-
                         <%--Cấu hình sản phẩm--%>
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a class="nav-link active text-dark" data-toggle="collapse"
                                    href="#collapseConfigure"
                                    role="button"
+                                   style="background: #fd7e14"
                                    aria-expanded="false" aria-controls="collapseConfigure">
                                     Cấu hình sản phẩm
                                 </a>
@@ -202,8 +202,8 @@
                                 </div>
                             </div>
                         </ul>
-                        <%--Hiển thị sản phẩm--%>
                         <hr>
+                        <%--Hiển thị sản phẩm--%>
                         <div class="form-check my-3">
                             <div class="custom-control custom-checkbox">
                                 <input name="active" value="1" type="checkbox" class="custom-control-input"
@@ -223,7 +223,72 @@
 </div>
 
 <script type="text/javascript">
+    var id_pro = "";
+    $("#add_pro").click(function () {
+        $("#title_product").html("Thêm sản phẩm!");
+        $("#btn_add_product").val("Thêm");
+        $('#formAddProduct input[name=file]').prop("disabled", false);
 
+        /* reset form*/
+        $('#formAddProduct select[name=id_items]').val("");
+        $('#formAddProduct select[name=id_supplier]').val("");
+        $('#formAddProduct input[name=product_name]').val("");
+        $('#formAddProduct input[name=price]').val("");
+        $('#formAddProduct input[name=total]').val("");
+        $('#formAddProduct input[name=active]').prop('checked', false);
+    });
+
+
+    $(".edit_product").click(function () {
+        $("#title_product").html("Sửa sản phẩm!");
+        $("#btn_add_product").val("Sửa");
+
+        /*get giá trị của các input trong nút edit_product*/
+        var id_items = $(this).find(".id_items").val();
+        var id_supplier = $(this).find(".id_supplier").val();
+        id_pro = $(this).find(".id_product").val();
+        var name_product = $(this).find(".name_product").val();
+        var price = $(this).find(".price").val();
+        var total = $(this).find(".total").val();
+        var active = $(this).find(".active").val();
+
+        var display = $(this).find(".display").val();
+        var camera_font = $(this).find(".camera_font").val();
+        var camera_back = $(this).find(".camera_back").val();
+        var ram = $(this).find(".ram").val();
+        var rom = $(this).find(".rom").val();
+        var cpu = $(this).find(".cpu").val();
+        var gpu = $(this).find(".cpu").val();
+        var battery = $(this).find(".battery").val();
+        var os = $(this).find(".os").val();
+        var sim = $(this).find(".sim").val();
+
+        // $('#formAddProduct input[name=product_name]').prop("disabled", true);
+        $('#formAddProduct input[name=file]').prop("disabled", true);
+
+        $('#formAddProduct select[name=id_items]').val(id_items);
+        $('#formAddProduct select[name=id_supplier]').val(id_supplier);
+        $('#formAddProduct input[name=product_name]').val(name_product);
+        $('#formAddProduct input[name=price]').val(price);
+        $('#formAddProduct input[name=total]').val(total);
+
+        $('#formAddProduct input[name=display]').val(display);
+        $('#formAddProduct input[name=camera_font]').val(camera_font);
+        $('#formAddProduct input[name=camera_back]').val(camera_back);
+        $('#formAddProduct input[name=ram]').val(ram);
+        $('#formAddProduct input[name=rom]').val(rom);
+        $('#formAddProduct input[name=cpu]').val(cpu);
+        $('#formAddProduct input[name=gpu]').val(gpu);
+        $('#formAddProduct input[name=battery]').val(battery);
+        $('#formAddProduct input[name=os]').val(os);
+        $('#formAddProduct input[name=sim]').val(sim);
+        if (active == 1) {
+            $('#formAddProduct input[name=active]').prop('checked', true);
+        }
+    });
+</script>
+
+<script type="text/javascript">
     /*==============        Ajax request servlet add product     ==============*/
     $(document).ready(function () {
         $('#btn_add_product').click(function (e) {
@@ -254,12 +319,15 @@
                 });
             } else {
                 var formData = new FormData(); /*New form data để gửi dữ liệu đi lên servlet*/
-                var file = [];
-                for (var i = 0; i < $("#file")[0].files.length; i++) {
-                    file.push($("#file")[0].files[i]);
-                }
-                for (var k = 0; k < file.length; k++) {
-                    formData.append("file", file[k]);
+
+                if ($(this).val() == 'Thêm') {
+                    var file = [];
+                    for (var i = 0; i < $("#file")[0].files.length; i++) {
+                        file.push($("#file")[0].files[i]);
+                    }
+                    for (var k = 0; k < file.length; k++) {
+                        formData.append("file", file[k]);
+                    }
                 }
                 formData.append("id_items", id_items);
                 formData.append("id_supplier", id_supplier);
@@ -277,14 +345,20 @@
                 formData.append("gpu", gpu);
                 formData.append("pin", pin);
                 formData.append("sim", sim);
+                formData.append("id_product", id_pro);
+
 
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://localhost:8080/web_mobile/admin/upload_product", true);
+                if ($(this).val() == 'Thêm') {
+                    xhr.open("POST", "http://localhost:8080/web_mobile/admin/upload_product", true);
+                } else {
+                    xhr.open("POST", "http://localhost:8080/web_mobile/admin/update_product", true);
+                }
                 xhr.send(formData);
 
                 xhr.onload = function (e) {
                     if (this.status == 200) {
-                        // alert(this.responseText);
+                        alert(this.responseText);
                         window.location.reload();
                     }
                 };

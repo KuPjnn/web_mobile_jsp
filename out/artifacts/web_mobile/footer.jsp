@@ -173,4 +173,10 @@
             }
         });
     }
+
+    /*=======================================*/
+    // document.write('<img style="position:fixed;z-index:9999;top:0;left:0" src="img/snow/top-left.png"/>' +
+    //     '<img style="position:fixed;z-index:9999;top:0;right:0" src="img/snow/top-right.png"/>' +
+    //     '<img style="position:fixed;z-index:9999;bottom:0px;left:30px" src="img/snow/bottom-left.png"/>');
+    <%--<script type="text/javascript" src="js/snow.js"></script>--%>
 </script>

@@ -109,42 +109,9 @@ public class UserDAO {
 
     public boolean delUser(String username) throws SQLException, ClassNotFoundException {
         boolean del = false;
-
-        String select_bill = "SELECT * FROM `webmobile`.`bill` WHERE `USER_NAME` = ?";
-        String del_detail_order = "DELETE FROM `webmobile`.`detail_order` WHERE `ID_BILL` IN(SELECT `ID_BILL` FROM `webmobile`.`bill` WHERE `USER_NAME` = ?)";
-        String del_bill = "DELETE FROM `webmobile`.`bill` WHERE `USER_NAME` = ?";
-        String select_comment = "SELECT * FROM `webmobile`.`comment` WHERE `USER_NAME` = ?";
-        String del_comment = "DELETE FROM `webmobile`.`comment` WHERE `ID_COMMENT` IN(SELECT `ID_COMMENT` FROM `webmobile`.`comment` WHERE `USER_NAME` = ?)";
-        String del_user = "DELETE FROM `webmobile`.`user` WHERE `USER_NAME` = ?";
-
-        /*select bill*/
-        PreparedStatement ps = DBConect.getPreparedStatement(select_bill);
-        ps.setString(1, username);
-        ResultSet rs_bill = ps.executeQuery();
-        rs_bill.beforeFirst();
-        if (rs_bill.next()) {
-            /*Xóa detail order*/
-            ps = DBConect.getPreparedStatement(del_detail_order);
-            ps.setString(1, username);
-            ps.executeUpdate();
-            /*Xóa bill*/
-            ps = DBConect.getPreparedStatement(del_bill);
-            ps.setString(1, username);
-            ps.executeUpdate();
-        }
-        /*select comment*/
-        ps = DBConect.getPreparedStatement(select_comment);
-        ps.setString(1, username);
-        ResultSet rs_comment = ps.executeQuery();
-        rs_comment.beforeFirst();
-        if (rs_comment.next()) {
-            /*Xóa comment*/
-            ps = DBConect.getPreparedStatement(del_comment);
-            ps.setString(1, username);
-            ps.executeUpdate();
-        }
         /*Xóa user*/
-        ps = DBConect.getPreparedStatement(del_user);
+        String del_user = "DELETE FROM `webmobile`.`user` WHERE `USER_NAME` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(del_user);
         ps.setString(1, username);
         int row = ps.executeUpdate();
         if (row == 1)

@@ -26,7 +26,6 @@ public class admin_product extends HttpServlet {
         try {
             String action = request.getParameter("action");
             String id_product = request.getParameter("id_product");
-            System.out.println(action + " " + id_product);
 
             if (action == null) {
                 List<Product> list = new ProductDAO().listProduct();

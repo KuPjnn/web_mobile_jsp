@@ -38,9 +38,9 @@ public class pay_online extends HttpServlet {
             preparedStatement.setInt(1, number_atm);
             preparedStatement.setString(2, name);
             ResultSet rs = preparedStatement.executeQuery();
-            rs.first();
+            rs.last();
             int index = rs.getRow();
-
+            rs.first();
             if (rs != null && index == 1) {
                 if (rs.getDouble(3) >= listCart.totalPrice()) {
                     User user = (User) session.getAttribute("user");

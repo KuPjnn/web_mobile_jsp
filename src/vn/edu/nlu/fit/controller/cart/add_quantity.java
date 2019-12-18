@@ -23,7 +23,7 @@ public class add_quantity extends HttpServlet {
         HttpSession session = request.getSession();
         ListCart listCart = (ListCart) session.getAttribute("list_cart");
         for (Cart item : listCart.list_cart) {
-            if (item.getPro().getId_product().equals(add)) {
+            if (item.getPro().getId_product().equals(add) && item.getTotal() < item.getPro().getTotal()) {
                 item.setTotal(item.getTotal() + 1);
             }
         }

@@ -50,4 +50,16 @@ public class BillDAO {
         }
         return bill;
     }
+
+    public boolean activeBill(int id_bill) throws SQLException, ClassNotFoundException {
+        boolean active = false;
+        String sql = "UPDATE `webmobile`.`bill` SET `STATUS` = ? WHERE `ID_BILL` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(sql);
+        ps.setString(1, "Đã thanh toán");
+        ps.setInt(2, id_bill);
+        int row = ps.executeUpdate();
+        if (row == 1)
+            active = true;
+        return active;
+    }
 }

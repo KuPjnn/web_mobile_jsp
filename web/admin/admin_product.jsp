@@ -1,6 +1,8 @@
 <%@ page import="vn.edu.nlu.fit.model.Product" %>
 <%@ page import="vn.edu.nlu.fit.util.Util" %>
 <%@ page import="java.util.List" %>
+<%@ page import="vn.edu.nlu.fit.model.Configure" %>
+<%@ page import="vn.edu.nlu.fit.dao.ConfigureDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -16,11 +18,11 @@
         <div class="row">
             <%--=======     INCLUB NAV      =========--%>
             <%@include file="include/admin_nav.jsp" %>
-            <%-------------------------------------%>
+            <%-----------------------------------------%>
             <div class="col-md-9 ml-sm-auto col-lg-10 tab-content">
                 <div id="admin_sanpham" class="card mt-1 row">
                     <div class="card-header">Sản phẩm
-                        <button class="btn btn-danger ml-5" data-toggle="modal"
+                        <button id="add_pro" class="btn btn-danger ml-5" data-toggle="modal"
                                 data-target="#addProduct">Thêm sản phẩm
                         </button>
                         <div class="d-flex input-group float-right w-50">
@@ -48,6 +50,7 @@
                             </tr>
                             </thead>
                             <tbody>
+
                             <%
                                 List<Product> list = (List<Product>) request.getAttribute("list");
                                 if (list != null) {
@@ -64,7 +67,7 @@
                                 </th>
                                 <th><%=Util.convertPrice(product.getPrice())%>
                                 </th>
-                                <th><img class="NO-CACHE img-fluid img-thumbnail"
+                                <th><img class="img-fluid img-thumbnail"
                                          src="<%=Util.splitImg(product.getImg())%>" width="50px">
                                 </th>
                                 <th><%=product.getTotal()%>
@@ -89,9 +92,29 @@
                                     %>
                                 </th>
                                 <th>
-                                    <button onclick="" class="border-0 btn-outline-light rounded-circle mt-3">
+                                    <a href="#" class="edit_product border-0 rounded-circle mt-3" data-toggle="modal"
+                                       data-target="#addProduct">
                                         <i style="color: #ff6700" class="fas fa-pen"></i>
-                                    </button>
+                                        <input class="id_items" value="<%=product.getId_items()%>" type="hidden">
+                                        <input class="id_supplier" value="<%=product.getId_supplier()%>" type="hidden">
+                                        <input class="id_product" value="<%=product.getId_product()%>" type="hidden">
+                                        <input class="name_product" value="<%=product.getProduct_name()%>"
+                                               type="hidden">
+                                        <input class="price" value="<%=product.getPrice()%>" type="hidden">
+                                        <input class="total" value="<%=product.getTotal()%>" type="hidden">
+                                        <input class="active" value="<%=product.getActive()%>" type="hidden">
+                                        <%Configure conf = new ConfigureDAO().getConfigure(product.getId_product());%>
+                                        <input class="display" value="<%=conf.getDisplay()%>" type="hidden">
+                                        <input class="camera_font" value="<%=conf.getCamera_font()%>" type="hidden">
+                                        <input class="camera_back" value="<%=conf.getCamera_back()%>" type="hidden">
+                                        <input class="ram" value="<%=conf.getRam()%>" type="hidden">
+                                        <input class="rom" value="<%=conf.getRom()%>" type="hidden">
+                                        <input class="cpu" value="<%=conf.getCpu()%>" type="hidden">
+                                        <input class="gpu" value="<%=conf.getGpu()%>" type="hidden">
+                                        <input class="battery" value="<%=conf.getBattery()%>" type="hidden">
+                                        <input class="os" value="<%=conf.getOs()%>" type="hidden">
+                                        <input class="sim" value="<%=conf.getSim()%>" type="hidden">
+                                    </a>
                                 </th>
                                 <th>
                                     <a onclick="return confirm('Xóa sản phẩm : <%=product.getProduct_name()%>')"
@@ -114,8 +137,8 @@
     </div>
 </div>
 
+<%--==================       INCLUDE        ===================--%>
 <%@include file="include/modal_add_product.jsp" %>
-
+<%---------------------------------------------------------------%>
 </body>
 </html>
-

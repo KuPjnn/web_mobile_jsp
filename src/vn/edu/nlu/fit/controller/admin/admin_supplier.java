@@ -19,6 +19,9 @@ public class admin_supplier extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/plain");
         try {
             String action = request.getParameter("action");
             String id_items = request.getParameter("id_supplier");
@@ -47,6 +50,11 @@ public class admin_supplier extends HttpServlet {
             } else if (action != null && id_items != null && action.equals("del")) {
                 boolean del = new SupplierDAO().delSupplier(id_items);
                 if (del == true)
+                    response.sendRedirect("supplier");
+            } else if (action != null && id_items != null && action.equals("edit")) {
+                String name_supplier = request.getParameter("name_supplier");
+                boolean edit = new SupplierDAO().editSupplier(id_items, name_supplier);
+                if (edit == true)
                     response.sendRedirect("supplier");
             }
         } catch (SQLException e) {

@@ -18,7 +18,7 @@ import java.util.List;
 @WebServlet("/admin/bill")
 public class admin_bill extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
@@ -30,13 +30,10 @@ public class admin_bill extends HttpServlet {
                 request.getRequestDispatcher("admin_bill.jsp").forward(request, response);
 
             } else if (request.getParameter("action").equals("active")) {
-                int id_Bill = Integer.parseInt(request.getParameter("id"));
-                String sql = "UPDATE `webmobile`.`bill` SET `STATUS` = ? WHERE `ID_BILL` = ?";
-                PreparedStatement prepare = DBConect.getPreparedStatement(sql);
-                prepare.setString(1, "Đã thanh toán");
-                prepare.setInt(2, id_Bill);
-                prepare.executeUpdate();
-                response.sendRedirect(Util.fullPath("admin/bill"));
+                int id_bill = Integer.parseInt(request.getParameter("id"));
+                boolean active = new BillDAO().activeBill(id_bill);
+                if (active == true)
+                    response.sendRedirect(Util.fullPath("admin/bill"));
             } else {
                 response.sendRedirect(Util.fullPath("admin/bill"));
             }

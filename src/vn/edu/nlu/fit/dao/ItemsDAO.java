@@ -89,4 +89,16 @@ public class ItemsDAO {
             result = true;
         return result;
     }
+
+    public boolean editItems(String id_items, String name_items) throws SQLException, ClassNotFoundException {
+        boolean result = false;
+
+        String edit = "UPDATE `webmobile`.`items` SET `ITEMS_NAME` = ? WHERE `ID_ITEMS` = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(edit);
+        ps.setString(1, name_items);
+        ps.setString(2, id_items);
+        if (ps.executeUpdate() == 1)
+            result = true;
+        return result;
+    }
 }
