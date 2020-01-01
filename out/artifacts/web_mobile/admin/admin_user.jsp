@@ -32,8 +32,7 @@
                                 <th>Email</th>
                                 <th>Số điện thoại</th>
                                 <th>Quyền hạn</th>
-                                <th>Sửa</th>
-                                <th>Xóa</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -53,17 +52,15 @@
                                 </th>
                                 <th><%=user.getPrivileges()%>
                                 </th>
-                                <th>
-                                    <a href="<%="#"%>" class="border-0 btn-outline-light rounded-circle"
+                                <th class="d-flex justify-content-end">
+                                    <a href="<%="#"%>" class="mx-3"
                                        data-toggle="modal"
                                        data-target="#<%=user.getUser_name()%>">
                                         <i style="color: #ff6700" class="fas fa-pen"></i>
                                     </a>
-                                </th>
-
-                                <th>
-                                    <a href="<%=Util.fullPath("/admin/user")%>?action=del&&id=<%=user.getUser_name()%>"
-                                       class="border-0 btn-outline-light rounded-circle">
+                                    <a onclick="return confirm('Xóa <%=user.getUser_name()%>')"
+                                       href="<%=Util.fullPath("/admin/user")%>?action=del&&id=<%=user.getUser_name()%>"
+                                       class="mx-3">
                                         <i style="color: #000" class="fa fa-trash"></i>
                                     </a>
                                 </th>
@@ -98,14 +95,13 @@
                                                     <div class="input-group my-3">
                                                         <div class="input-group-append">
                                                             <a class="input-group-text" data-toggle="tooltip"
-                                                               title="pass word">
+                                                               title="Mật khẩu">
                                                                 <i class="fas fa-key text-dark"></i>
                                                             </a>
                                                         </div>
                                                         <input class="form-control" type="password" name="pass"
-                                                               title="pass word"
+                                                               title="Mật khẩu" placeholder="Mật khẩu"
                                                                value="<%=user.getPassword()%>"/>
-
                                                     </div>
                                                     <%--Full name--%>
                                                     <div class="input-group my-3">
@@ -144,7 +140,6 @@
                                                         <input class="form-control" type="tel"
                                                                name="phone" title="phone"
                                                                value="<%=user.getPhone()%>"/>
-
                                                     </div>
 
                                                     <%--Phân quyền--%>
@@ -154,8 +149,8 @@
                                                                href="#collapseConfigure"
                                                                role="button"
                                                                aria-expanded="false" aria-controls="collapseConfigure"
-                                                               style="background: #fd7e14">
-                                                                Phân quyền
+                                                               style="background: #c5cccc">
+                                                                PHÂN QUYỀN
                                                             </a>
                                                         </li>
 
@@ -163,27 +158,24 @@
                                                             <div class="card card-body"
                                                                  style="border: none;padding: 0px;margin-left: 30px">
                                                                 <div class="custom-control-inline" style="">
-                                                                    <span class="m-3">
+                                                                    <span class="m-2">
                                                                         <input value="ad" type="radio"
                                                                                name="privileges"
                                                                                id="ad<%=user.getUser_name()%>"
                                                                                 <%=user.getPrivileges().equals("ad") ? "checked" : ""%> />
-                                                                        <label for="ad<%=user.getUser_name()%>">Admin</label>
+                                                                        <label for="ad<%=user.getUser_name()%>">ADMIN</label>
                                                                     </span>
 
-                                                                    <span class="m-3"> <input value="kh" type="radio"
+                                                                    <span class="m-2"> <input value="kh" type="radio"
                                                                                               name="privileges"
                                                                                               id="kh<%=user.getUser_name()%>"
                                                                             <%=user.getPrivileges().equals("kh") ? "checked" : ""%>/>
-                                                                        <label for="kh<%=user.getUser_name()%>">Khách hàng</label>
+                                                                        <label for="kh<%=user.getUser_name()%>">KHÁCH HÀNG</label>
                                                                     </span>
                                                                 </div>
-
-
                                                             </div>
                                                         </div>
                                                     </ul>
-
                                                     <input class="btn btn-danger d-block w-100 mx-auto "
                                                            style="margin-top: 10px" type="submit" value="Chỉnh sửa"/>
                                                 </form>

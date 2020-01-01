@@ -1,6 +1,11 @@
 package vn.edu.nlu.fit.util;
 
+import vn.edu.nlu.fit.model.User;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
@@ -18,15 +23,8 @@ public class Util {
             url = u.replace("/web_mobile/", "");
 
         String parameterAddressBar = request.getQueryString();
-        String parameter = "";
-        if (parameterAddressBar != null) {
-            String str = parameterAddressBar.replace("login=false", "");
-            if (str != "")
-                parameter = str.replace("&", "");
-        }
-        if (parameter != "")
-            url += "?" + parameter;
-        return url;
+        String parameter = u + parameterAddressBar;
+        return parameter;
     }
 
     public static String convertPrice(double price) {
@@ -34,7 +32,7 @@ public class Util {
 
         DecimalFormat format = new DecimalFormat("####,###,###");
 
-        String pri = String.valueOf(format.format(decimal)) + "đ";
+        String pri = (String.valueOf(format.format(decimal)) + "đ").replace(",", ".");
 
         return pri;
     }
@@ -43,4 +41,5 @@ public class Util {
         String[] link = listLink.split("~");
         return link[0];
     }
+
 }

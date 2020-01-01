@@ -39,12 +39,6 @@
                     </div>
                     <div>
                         <a class="contact" href="#">
-                            <i class="fab fa-youtube"></i>
-                            <span>Youtube</span>
-                        </a>
-                    </div>
-                    <div>
-                        <a class="contact" href="#">
                             <i class="fas fa-envelope"></i>
                             <span>Email</span>
                         </a>
@@ -71,7 +65,6 @@
                 Swal.fire({
                     title: 'Vui lòng nhập đầy đủ thông tin!',
                     confirmButtonColor: '#ff6700',
-                    // showCancelButton: true,
                 });
             } else
                 $.ajax({
@@ -105,7 +98,6 @@
         });
     });
     /*===========          Register       =============*/
-
     $(document).ready(function () {
         $('#submitRegis').click(function (e) {
                 e.preventDefault();
@@ -140,7 +132,6 @@
                                 }).then((result) => {
                                     if (result.value) {
                                         $("#regisModal").modal('hide');
-                                        // location.reload();
                                     }
                                 })
                             } else {
@@ -174,9 +165,24 @@
         });
     }
 
-    /*=======================================*/
-    // document.write('<img style="position:fixed;z-index:9999;top:0;left:0" src="img/snow/top-left.png"/>' +
-    //     '<img style="position:fixed;z-index:9999;top:0;right:0" src="img/snow/top-right.png"/>' +
-    //     '<img style="position:fixed;z-index:9999;bottom:0px;left:30px" src="img/snow/bottom-left.png"/>');
-    <%--<script type="text/javascript" src="js/snow.js"></script>--%>
+    /*============      Add to cart     =============*/
+    $(".btn_add").click(function () {
+        var id_product = $(this).find(".id_product").val();
+        $.ajax({
+            url: "<%=Util.fullPath("add")%>",
+            type: "get",
+            data: {
+                id: id_product
+            },
+            success: function () {
+                swal.fire({
+                    title: 'Đã thêm vào giỏ.',
+                    confirmButtonColor: '#ff6700'
+                });
+            },
+            error: function (error) {
+                alert(error)
+            }
+        });
+    });
 </script>

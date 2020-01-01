@@ -16,7 +16,7 @@
 
 <%--=================   BODY     ==============--%>
 <section id="shop_cart">
-    <div class="shopping_cart container">
+    <div class="shopping_cart container" style="height: 67vh">
         <h3 class="mt-3">Giỏ hàng</h3>
         <div class="row">
             <div class="col-md-8 col-12">
@@ -24,7 +24,7 @@
                     ListCart list_item = (ListCart) session.getAttribute("list_cart");
                     if (list_item.list_cart.isEmpty()) {
                 %>
-                <p style="font-size: 30px">Chưa có sản phẩm</p>
+                <p style="font-size: 25px" align="center">Chưa có sản phẩm</p>
                 <%
                 } else {
                     for (Cart item : list_item.list_cart) {
@@ -32,14 +32,13 @@
                 <div class="product_cart row">
                     <div class="col-md-3 col-6">
                         <div>
-                            <%--<input type="checkbox" name="select_product" checked>--%>
                             <img width="100px" src="<%=Util.splitImg(item.getPro().getImg())%>" alt="img">
                         </div>
                     </div>
                     <div class="col-md-3 col-6 detail_cart">
                         <div class="float-left mt-4">
                             <span><%=item.getPro().getProduct_name()%></span> <br>
-                            <span><%=Util.convertPrice(item.getPro().getPrice())%></span>
+                            <span><%=Util.convertPrice(item.getPro().getPrice() - item.getPro().getDiscout())%></span>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mt-4">
@@ -113,13 +112,13 @@
 
 <%--==============  MODAL PAY ONLINE    =======--%>
 <%@include file="pay.jsp" %>
-<%----------------------------------------------%>
+<%-----------------------------------------------%>
 
 </body>
 </html>
 
 <script>
-    /*=============     MINUS QUANTITY      ====================*/
+    /*=============     MINUS QUANTITY      ==================*/
     $(".minus_quantity").click(function () {
         var id_product = $(this).find(".id_product_minus").val();
         $.ajax({
@@ -155,7 +154,7 @@
         });
     });
 
-    /*==============        DELETE  PRODUCT         ===================*/
+    /*===========       DELETE  PRODUCT     ==================*/
     $(".delete_product").click(function () {
         var id_product = $(this).find(".id_del").val();
         $.ajax({

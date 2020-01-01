@@ -29,6 +29,7 @@ public class ProductDAO {
             pro.setPrice(rs.getDouble(5));
             pro.setImg(rs.getString(6));
             pro.setTotal(rs.getInt(7));
+            pro.setDiscout(rs.getDouble(9));
         }
         return pro;
     }
@@ -50,7 +51,8 @@ public class ProductDAO {
             String img = rs.getString(6);
             int total = rs.getInt(7);
             int active = rs.getInt(8);
-            list.add(new Product(id_product, id_item, id_supplier, product_name, price, img, total, active));
+            double discount = rs.getDouble(9);
+            list.add(new Product(id_product, id_item, id_supplier, product_name, price, img, total, active, discount));
         }
         return list;
     }

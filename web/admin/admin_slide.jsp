@@ -30,8 +30,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Ảnh</th>
-                                <th>Hiển thị</th>
-                                <th>Xóa</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -47,27 +46,25 @@
                                     <img class="img-fluid img-thumbnail" src="data:image/png;base64,<%=s.getImg()%>"
                                          width="300px">
                                 </th>
-                                <th>
+                                <th class="d-flex justify-content-end">
                                     <%
                                         if (s.getActive() == 1) {
                                     %>
                                     <a href="slide?action=hide&id_slide=<%=s.getId()%>"
-                                       class="__icon mt-5">
+                                       class="mx-3">
                                         <i style="color: #ff6700" class="far fa-check-circle"></i>
                                     </a>
                                     <%
                                     } else {
                                     %>
-                                    <a href="slide?action=active&id_slide=<%=s.getId()%>">
+                                    <a href="slide?action=active&id_slide=<%=s.getId()%>" class="mx-3">
                                         <i style="color: #000" class="fas fa-minus-circle"></i>
                                     </a>
                                     <%
                                         }
                                     %>
-                                </th>
-                                <th>
                                     <a onclick="return confirm('Xóa slide <%=s.getId()%>')"
-                                       href="slide?action=del&id_slide=<%=s.getId()%>" class="__icon mt-5">
+                                       href="slide?action=del&id_slide=<%=s.getId()%>" class="mx-3">
                                         <i style="color: #000" class="fa fa-trash"></i>
                                     </a>
                                 </th>

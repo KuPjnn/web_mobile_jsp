@@ -15,7 +15,7 @@ public class ListCart {
         if (list_cart.isEmpty()) return sum;
         else {
             for (Cart list : list_cart) {
-                sum += list.getPro().getPrice() * list.getTotal();
+                sum += (list.getPro().getPrice() - list.getPro().getDiscout()) * list.getTotal();
             }
         }
         return sum;

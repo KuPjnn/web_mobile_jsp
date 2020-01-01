@@ -1,79 +1,61 @@
 <%@ page import="vn.edu.nlu.fit.model.User" %>
-<%@ page import="java.util.List" %>
-<%@ page import="vn.edu.nlu.fit.model.ListCart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header id="main_header">
-    <div id="header_style">
-        <div class="container">
-            <div class="row">
-                <!--=========   HEADER  =============-->
-                <div class="col-md-12">
-                    <nav class="main_header navbar">
-                        <%--    BRAND   --%>
-                        <div class="col-md-2 col-3">
-                            <a class="logo navbar-brand" href="<%=Util.fullPath("home")%>">
-                                <img class="img-fluid" width="50" src="img/logo/logo.svg" alt="logo">
-                            </a>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="<%=Util.fullPath("home")%>">
+                <i style="font-size: 45px; color: #fff" class="fab fa-speaker-deck"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContentLG" aria-controls="navbarSupportedContentLG"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContentLG">
+                <ul class="navbar-nav mr-auto">
+                    <!--==========   MENU    ============-->
+                    <jsp:include page="menu"/>
+                </ul>
+                <form action="<%=Util.fullPath("list_product")%>" method="get" class="mr-5" autocomplete="off">
+                    <div class="input-group">
+                        <input name="search" type="text" class="form-control pt-2"
+                               style="border-start-start-radius: 20px"
+                               placeholder="Nhập tên sản phẩm..." required=""
+                               oninvalid="this.setCustomValidity('Bạn chưa nhập tên sản phẩm')"
+                               oninput="setCustomValidity('')">
+                        <div class="input-group-append">
+                            <button class="btn btn-light" type="submit">
+                                <i style="color: #ff6700" class="fas fa-search"></i>
+                            </button>
                         </div>
-                        <%--    SEARCH  --%>
-                        <div class="col-md-6 col-9">
-                            <form action="<%=Util.fullPath("list_product")%>" method="get">
-                                <div class="search input-group mb-3">
-                                    <input name="search" type="text" class="form-control"
-                                           placeholder="Nhập tên sản phẩm cần tìm..." required=""
-                                           oninvalid="this.setCustomValidity('Bạn chưa nhập tên sản phẩm')"
-                                           oninput="setCustomValidity('')">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <%--    LOGIN   --%>
-                        <div class="col-md-4 col-12 login">
-                            <%--    CART    --%>
-                            <div class="d-inline">
-                                <a id="shopping_cart" class="fas fa-shopping-cart float-right mt-3 ml-5"
-                                   href="<%=Util.fullPath("show_cart")%>">
-                                    <span style="font-size: 0.85rem; position: absolute; right: 0; top: 5px"
-                                          class="badge badge-dark">
-                                        <% ListCart cart = (ListCart) session.getAttribute("list_cart");%>
-                                    <%=cart != null ? cart.list_cart.size() : 0%>
-                                    </span>
-                                </a>
-                            </div>
-                            <%--    LOGIN_LOGOUT    --%>
-                            <%
-                                User ss = (User) session.getAttribute("user");
-                                if (ss != null) {
-                            %>
-                            <ul class="login mt-3 float-right">
-                                <a class="mx-2 text-decoration-none" href="<%=Util.fullPath("info")%>">
-                                    <i class="fa fa-user" style="font-size: 25px; color: #fff"></i>
-                                    <%=ss.getFull_name()%> <%--Tên người dùng--%>
-                                </a>
-                                <a onclick="return logout()" href="#" class="text-decoration-none">Đăng xuất</a>
-                            </ul>
-                            <%
-                            } else {
-                            %>
-                            <a class="float-right mt-3"
-                               href="" data-toggle="modal"
-                               data-target="#regisModal">Đăng kí</a>
-                            <a id="login" class="float-right mt-3"
-                               href="" data-toggle="modal"
-                               data-target="#loginModal">Đăng nhập</a>
-                            <%
-                                }
-                            %>
-                        </div>
-                    </nav>
-                </div>
-                <!--==========   MENU    ============-->
-                <jsp:include page="menu"/>
+                    </div>
+                </form>
+                <%--    LOGIN_LOGOUT    --%>
+                <%
+                    User ss = (User) session.getAttribute("user");
+                    if (ss != null) {
+                %>
+                <a class="mr-3 text-decoration-none" href="<%=Util.fullPath("info")%>">
+                    <%=ss.getFull_name().toUpperCase()%>
+                </a>
+                <a onclick="return logout()" href="#" class="text-decoration-none mr-3">ĐĂNG XUẤT</a>
+                <%
+                } else {
+                %>
+                <a id="login" class="mr-3 text-decoration-none" href="" data-toggle="modal"
+                   data-target="#loginModal">ĐĂNG NHẬP</a>
+                <a class="mr-3 text-decoration-none" href="" data-toggle="modal"
+                   data-target="#regisModal">ĐĂNG KÍ</a>
+                <%
+                    }
+                %>
+                <%--    CART    --%>
+                <a class="fas fa-shopping-cart mr-3 text-decoration-none" href="<%=Util.fullPath("show_cart")%>"
+                   style="font-size: 20px; line-height: 45px"
+                >
+                </a>
             </div>
-        </div>
+        </nav>
     </div>
 </header>
 

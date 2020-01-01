@@ -15,17 +15,21 @@ import java.sql.SQLException;
 @WebServlet("/del_comment")
 public class del_comment extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String link = request.getParameter("link");
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/plain");
+
         String id_comment = request.getParameter("id_comment");
         String delComment = "DELETE FROM `webmobile`.`comment` WHERE `ID_COMMENT` = ?";
         try {
             PreparedStatement ps = DBConect.getPreparedStatement(delComment);
             ps.setInt(1, Integer.parseInt(id_comment));
             ps.executeUpdate();
-            response.sendRedirect(Util.fullPath(link));
+            response.getWriter().write("Xoa");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

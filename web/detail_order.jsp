@@ -8,23 +8,27 @@
     <title>Chi tiết đơn hàng | Saitama</title>
     <%@include file="headAllPage.jsp" %>
     <style>
+        thead {
+            background-color: #ff6700;
+        }
+
         thead th {
-            font-size: 20px;
-            color: #ff6700;
+            font-size: 18px;
+            color: #fff;
         }
 
         tbody td {
-            font-size: 18px;
+            font-size: 16px;
         }
 
         tbody th {
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         tfoot td {
             font-weight: bold;
-            font-size: 20px;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -51,7 +55,7 @@
                         while (resultSet.next()) {
                     %>
                     <table class="table">
-                        <thead class="bg-dark">
+                        <thead>
                         <tr>
                             <th>Thông tin</th>
                             <th>Chi tiết</th>

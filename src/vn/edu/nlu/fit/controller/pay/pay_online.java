@@ -27,7 +27,7 @@ public class pay_online extends HttpServlet {
 
         ListCart listCart = (ListCart) session.getAttribute("list_cart");
 
-        String name = request.getParameter("name_atm");
+        String name_atm = request.getParameter("name_atm");
         int number_atm = Integer.parseInt(request.getParameter("number_atm"));
 
         String[] info = ((String) request.getParameter("info")).split("~");
@@ -36,12 +36,12 @@ public class pay_online extends HttpServlet {
         try {
             PreparedStatement preparedStatement = DBConect.getPreparedStatement(query);
             preparedStatement.setInt(1, number_atm);
-            preparedStatement.setString(2, name);
+            preparedStatement.setString(2, name_atm);
             ResultSet rs = preparedStatement.executeQuery();
             rs.last();
             int index = rs.getRow();
-            rs.first();
             if (rs != null && index == 1) {
+                rs.first();
                 if (rs.getDouble(3) >= listCart.totalPrice()) {
                     User user = (User) session.getAttribute("user");
                     listCart = (ListCart) session.getAttribute("list_cart");
@@ -64,6 +64,7 @@ public class pay_online extends HttpServlet {
                     response.sendRedirect(Util.fullPath("detail_order"));
                 } else {
                     /*Thông báo ko đủ tiền*/
+                    response.sendRedirect(Util.fullPath("detail_order"));
                 }
 
             } else {

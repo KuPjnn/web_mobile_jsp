@@ -9,6 +9,10 @@
           <element id="directory" name="classes">
             <element id="module-output" name="web_mobile" />
           </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="lib" />
+            <element id="library" level="project" name="uploadfile" />
+          </element>
         </element>
       </root>
     </artifact>
@@ -147,6 +151,9 @@
         <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
       </item>
     </group>
+  </component>
+  <component name="ProjectCodeStyleConfiguration">
+    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />
   </component>
   <component name="ProjectModuleManager">
     <modules>

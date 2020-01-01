@@ -25,7 +25,7 @@ public class detail_product extends HttpServlet {
         try {
 
             /*thong tin san pham*/
-            String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
+            String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT,product.DISCOUNT\n" +
                     " FROM product,items,supplier\n" +
                     " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER " +
                     "AND product.ID_PRODUCT= ?;";
@@ -43,14 +43,14 @@ public class detail_product extends HttpServlet {
 
             /*Binh luan san pham*/
             String com = "SELECT DISTINCT `comment`.USER_NAME,`user`.FULLNAME,`comment`.ID_PRODUCT,`comment`.CONTENT,`comment`.DATE_COMMENT, `comment`.ID_COMMENT\n" +
-                    " FROM `comment`,`user` WHERE `comment`.USER_NAME=`user`.USER_NAME AND `comment`.ID_PRODUCT= ?; ";
+                    " FROM `comment`,`user` WHERE `comment`.USER_NAME=`user`.USER_NAME AND `comment`.ID_PRODUCT= ? AND `comment`.ACTIVE=1 ";
             PreparedStatement stCom = DBConect.getPreparedStatement(com);
             stCom.setString(1, detail);
             ResultSet comment = stCom.executeQuery();
             request.setAttribute("comment", comment);
 
             /*San pham tuong tu*/
-            String same = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
+            String same = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT, product.DISCOUNT\n" +
                     "FROM product,items,supplier\n" +
                     "WHERE \n" +
                     "product.ID_ITEMS=items.ID_ITEMS \n" +

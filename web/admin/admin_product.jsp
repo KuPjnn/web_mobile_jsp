@@ -28,7 +28,7 @@
                         <div class="d-flex input-group float-right w-50">
                             <input type="text" class="form-control " placeholder="Tìm kiếm......">
                             <div class="input-group-append">
-                                <button class="btn btn-dark border-0" type="button"><i class="fas fa-search"></i>
+                                <button class="btn btn-danger border-0" type="button"><i class="fas fa-search"></i>
                                 </button>
                             </div>
                         </div>
@@ -39,14 +39,12 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Tên sản phẩm</th>
-                                <th>Tên hàng hóa</th>
+                                <th>Loại</th>
                                 <th>Nhà cung cấp</th>
                                 <th>Giá</th>
                                 <th>Ảnh</th>
                                 <th>Số lượng</th>
-                                <th>Hiển thị</th>
-                                <th>Sửa</th>
-                                <th>Xóa</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -72,27 +70,24 @@
                                 </th>
                                 <th><%=product.getTotal()%>
                                 </th>
-
                                 <th>
                                     <%
                                         if (product.getActive() == 1) {
                                     %>
-                                    <a href="product?action=hide&id_product=<%=product.getId_product()%>"
-                                       class="__icon mt-5">
-                                        <i style="color: #ff6700" class="far fa-check-circle"></i>
+                                    <a class="mx-3" href="product?action=hide&id_product=<%=product.getId_product()%>">
+                                        <i style="color: #ff6700" class="far fa-check-circle "></i>
                                     </a>
                                     <%
                                     } else {
                                     %>
-                                    <a href="product?action=active&id_product=<%=product.getId_product()%>">
+                                    <a class="mx-3"
+                                       href="product?action=active&id_product=<%=product.getId_product()%>">
                                         <i style="color: #000" class="fas fa-minus-circle"></i>
                                     </a>
                                     <%
                                         }
                                     %>
-                                </th>
-                                <th>
-                                    <a href="#" class="edit_product border-0 rounded-circle mt-3" data-toggle="modal"
+                                    <a href="#" class="edit_product mx-3" data-toggle="modal"
                                        data-target="#addProduct">
                                         <i style="color: #ff6700" class="fas fa-pen"></i>
                                         <input class="id_items" value="<%=product.getId_items()%>" type="hidden">
@@ -115,11 +110,9 @@
                                         <input class="os" value="<%=conf.getOs()%>" type="hidden">
                                         <input class="sim" value="<%=conf.getSim()%>" type="hidden">
                                     </a>
-                                </th>
-                                <th>
                                     <a onclick="return confirm('Xóa sản phẩm : <%=product.getProduct_name()%>')"
                                        href="product?action=del&id_product=<%=product.getId_product()%>"
-                                       class="border-0 btn-outline-light rounded-circle mt-3">
+                                       class="mx-3">
                                         <i style="color: #000" class="fa fa-trash"></i>
                                     </a>
                                 </th>

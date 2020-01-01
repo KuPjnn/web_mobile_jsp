@@ -2,12 +2,13 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="icon" href="<%=Util.fullPath("img/logo/logo.png")%>" type="image">
 
-<!-- JQUERY -->
+<!--========================== JQUERY ============================-->
 <script src="<%=Util.fullPath("lib/jquery/jquery-3.2.1.slim.min.js")%>"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<!-- BOOTSTRAP -->
+<script type="text/javascript" src="<%=Util.fullPath("js/sweetalert.js")%>"></script>
+<%--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>--%>
+<%------------------------------------------------------------------------------%>
+<!--========================== BOOTSTRAP ============================-->
 <%--<link href="<%=Util.fullPath("lib/bootstrap/bootstrap.min.css")%>">--%>
 <%--<script src="<%=Util.fullPath("lib/bootstrap/bootstrap.min.js")%>"></script>--%>
 <%--<script src="<%=Util.fullPath("lib/bootstrap/popper.min.js")%>"></script>--%>

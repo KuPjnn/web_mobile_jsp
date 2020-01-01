@@ -15,7 +15,7 @@
                         <input type="hidden" name="action" value="add">
                         <%--ID mặt hàng--%>
                         <div class="input-group my-3">
-                            <select name="id_items" class="custom-select w-50" id="id_items">
+                            <select name="id_items" class="custom-select" id="id_items">
                                 <option selected label="Chọn loại hàng hóa" hidden></option>
                                 <%
                                     List<Item> itemList = (List<Item>) request.getAttribute("itemList");
@@ -89,7 +89,7 @@
                                 <a class="nav-link active text-dark" data-toggle="collapse"
                                    href="#collapseConfigure"
                                    role="button"
-                                   style="background: #fd7e14"
+                                   style="background: #c5cccc"
                                    aria-expanded="false" aria-controls="collapseConfigure">
                                     Cấu hình sản phẩm
                                 </a>
@@ -181,7 +181,7 @@
                                     </div>
                                     <div class="custom-control-inline">
                                         <div class="input-group m-2">
-                                            <input id="pin" class="form-control w-50" type="text" name="pin"
+                                            <input id="battery" class="form-control w-50" type="text" name="battery"
                                                    placeholder="Pin"/>
                                             <div class="input-group-append">
                                                 <a class="input-group-text" data-toggle="tooltip" title="Pin">
@@ -236,12 +236,23 @@
         $('#formAddProduct input[name=price]').val("");
         $('#formAddProduct input[name=total]').val("");
         $('#formAddProduct input[name=active]').prop('checked', false);
+
+        $('#formAddProduct input[name=display]').val("");
+        $('#formAddProduct input[name=camera_font]').val("");
+        $('#formAddProduct input[name=camera_back]').val("");
+        $('#formAddProduct input[name=ram]').val("");
+        $('#formAddProduct input[name=rom]').val("");
+        $('#formAddProduct input[name=cpu]').val("");
+        $('#formAddProduct input[name=gpu]').val("");
+        $('#formAddProduct input[name=battery]').val("");
+        $('#formAddProduct input[name=os]').val("");
+        $('#formAddProduct input[name=sim]').val("");
     });
 
 
     $(".edit_product").click(function () {
-        $("#title_product").html("Sửa sản phẩm!");
-        $("#btn_add_product").val("Sửa");
+        $("#title_product").html("Cập nhật sản phẩm!");
+        $("#btn_add_product").val("Cập nhật");
 
         /*get giá trị của các input trong nút edit_product*/
         var id_items = $(this).find(".id_items").val();
@@ -258,7 +269,7 @@
         var ram = $(this).find(".ram").val();
         var rom = $(this).find(".rom").val();
         var cpu = $(this).find(".cpu").val();
-        var gpu = $(this).find(".cpu").val();
+        var gpu = $(this).find(".gpu").val();
         var battery = $(this).find(".battery").val();
         var os = $(this).find(".os").val();
         var sim = $(this).find(".sim").val();
@@ -308,7 +319,7 @@
             var rom = $("#rom").val();
             var cpu = $("#cpu").val();
             var gpu = $("#gpu").val();
-            var pin = $("#pin").val();
+            var pin = $("#battery").val();
             var sim = $("#sim").val();
 
             if (id_items == '' || id_supplier == '' || product_name == '' || price == '' ||
@@ -346,7 +357,6 @@
                 formData.append("pin", pin);
                 formData.append("sim", sim);
                 formData.append("id_product", id_pro);
-
 
                 var xhr = new XMLHttpRequest();
                 if ($(this).val() == 'Thêm') {

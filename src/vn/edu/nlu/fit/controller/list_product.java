@@ -57,13 +57,13 @@ public class list_product extends HttpServlet {
             page = Integer.parseInt(request.getParameter("page"));
         }
         String supplier = request.getParameter("supplier");
-
+        String sort = request.getParameter("sort");
         String search = request.getParameter("search");
         if (search == "")
             search = "<>";
 
         String[] arr = null;
-        String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
+        String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT, product.DISCOUNT\n" +
                 " FROM product,items,supplier\n" +
                 " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1 " +
                 " AND items.ACTIVE=1 AND supplier.ACTIVE=1 ";
@@ -75,7 +75,7 @@ public class list_product extends HttpServlet {
         try {
             if (supplier != null) {
                 arr = supplier.split("_");
-                product += " AND supplier.NAME_SUPPLIER= ? AND items.ID_ITEMS= ? LIMIT " + (page - 1) * 16 + ",16";
+                product += " AND supplier.NAME_SUPPLIER= ? AND items.ID_ITEMS= ? LIMIT " + (page - 1) * 15 + ",15";
                 PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
                 preparedStatement.setString(1, arr[1]);
                 preparedStatement.setString(2, arr[0]);
@@ -95,7 +95,7 @@ public class list_product extends HttpServlet {
                 checkPage = "false" + "_" + total;
                 request.setAttribute("total", checkPage);
             } else if (search != null) {
-                product += " AND product.PRODUCT_NAME LIKE ? LIMIT " + (page - 1) * 16 + ",16";
+                product += " AND product.PRODUCT_NAME LIKE ? LIMIT " + (page - 1) * 15 + ",15";
                 PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
                 preparedStatement.setString(1, "%" + search + "%");
                 ResultSet resultSet = preparedStatement.executeQuery();
@@ -110,8 +110,60 @@ public class list_product extends HttpServlet {
                 int total = cc.getInt(1);
                 checkPage = search + "_" + total;
                 request.setAttribute("total", checkPage);
+            } else if (sort.equals("<5000000")) {
+                product += " AND product.PRICE < ? LIMIT " + (page - 1) * 15 + ",15";
+                PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
+                preparedStatement.setInt(1, 5000000);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                request.setAttribute("resultSet", resultSet);
+
+                count += " AND product.PRICE < ?";
+                PreparedStatement pre = DBConect.getPreparedStatement(count);
+                pre.setInt(1, 5000000);
+                ResultSet cc = pre.executeQuery();
+                cc.beforeFirst();
+                cc.next();
+                int total = cc.getInt(1);
+                checkPage = "false" + "_" + total;
+                request.setAttribute("total", checkPage);
+
+            } else if (!sort.equals("<5000000") && sort.equals("<10000000")) {
+                product += " AND product.PRICE BETWEEN ? AND ? LIMIT " + (page - 1) * 15 + ",15";
+                PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
+                preparedStatement.setInt(1, 5000000);
+                preparedStatement.setInt(2, 10000000);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                request.setAttribute("resultSet", resultSet);
+
+                count += " AND product.PRICE BETWEEN ? AND ?";
+                PreparedStatement pre = DBConect.getPreparedStatement(count);
+                pre.setInt(1, 5000000);
+                pre.setInt(2, 10000000);
+
+                ResultSet cc = pre.executeQuery();
+                cc.beforeFirst();
+                cc.next();
+                int total = cc.getInt(1);
+                checkPage = "false" + "_" + total;
+                request.setAttribute("total", checkPage);
+            } else if (sort.equals(">10000000")) {
+                product += " AND product.PRICE > ? LIMIT " + (page - 1) * 15 + ",15";
+                PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
+                preparedStatement.setInt(1, 10000000);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                request.setAttribute("resultSet", resultSet);
+
+                count += " AND product.PRICE > ?";
+                PreparedStatement pre = DBConect.getPreparedStatement(count);
+                pre.setInt(1, 10000000);
+                ResultSet cc = pre.executeQuery();
+                cc.beforeFirst();
+                cc.next();
+                int total = cc.getInt(1);
+                checkPage = "sort" + "_" + total;
+                request.setAttribute("total", checkPage);
             } else {
-                product += " LIMIT " + (page - 1) * 16 + ",16";
+                product += " LIMIT " + (page - 1) * 15 + ",15";
                 PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 request.setAttribute("resultSet", resultSet);

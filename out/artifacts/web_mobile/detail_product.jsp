@@ -29,7 +29,6 @@
 
             <div class="col-md-7 col-12">
                 <div id="add_cart" class="img_product_detail" align="center">
-
                     <div id="thumbnails-product" class="carousel slide carousel-fade carousel-thumbnails bg-white"
                          data-ride="carousel"
                          data-interval="2000">
@@ -89,8 +88,11 @@
                         </ol>
                     </div>
                     <%--=========================--%>
-                    <h5 class="my-3"><%=Util.convertPrice(detail.getDouble(2))%>
+                    <h5 class="my-3"><%=Util.convertPrice(detail.getDouble(2) - detail.getDouble(7))%>
                     </h5>
+                    <del style="font-size: 18px;display: <%=detail.getDouble(7)==0?"none":"block"%>"
+                         class="my-3"><%=Util.convertPrice(detail.getDouble(2))%>
+                    </del>
                 </div>
                 <div align="center">
                     <form class="d-inline"
@@ -99,7 +101,7 @@
                         <button class="btn_buy col-md-5 buy_now mt-1" type="submit">Mua ngay
                         </button>
                     </form>
-                    <button class="btn_add col-md-5 add_shop_cart mt-1" type="submit">Thêm vào giỏ
+                    <button class="btn_add btn_add_add col-md-5 add_shop_cart mt-1" type="submit">Thêm vào giỏ
                         <input type="hidden" class="id_product" name="" value="<%=detail.getString(6)%>">
                     </button>
                 </div>
@@ -108,7 +110,7 @@
             <div class="col-md-5 col-12">
                 <div>
                     <h4 class="mt-5">Thông số kĩ thuật</h4>
-                    <h5 class="my-3"><%=detail.getString(4) + " " + detail.getString(1)%>
+                    <h5 class="my-3"><%=detail.getString(1)%>
                     </h5>
                     <%
                         ResultSet conf = (ResultSet) request.getAttribute("configuration");
@@ -140,27 +142,28 @@
             <h3>Nhận xét sản phẩm</h3>
         </div>
         <div class="product_evaluation">
-            <form action="<%=Util.fullPath("comment")%>" method="get">
+            <form id="form_comment">
                 <div class="input-group mb-3">
-                    <input type="hidden" name="link" value="<%=Util.urlRedirect(request)%>">
                     <%
                         detail.first();
                     %>
-                    <input type="hidden" name="id" value="<%=detail.getString(6)%>">
-                    <input name="comment" type="text" class="form-control"
-                           placeholder="Viết đánh giá ...">
+                    <input id="id" name="id" type="hidden" value="<%=detail.getString(6)%>">
+                    <input id="comment" name="comment" type="text" class="form-control"
+                           placeholder="Viết đánh giá ..." autocomplete="off">
                     <div class="input-group-append">
                         <%
                             User user = (User) session.getAttribute("user");
                             if (user == null) {
                         %>
-                        <button type="button" onclick="alert('Bạn cần đăng nhập để sử dụng chức băng bình luận')"
+                        <button type="button" onclick="swal.fire({
+                            title: 'Bạn cần đăng nhập.',
+                            confirmButtonColor: '#ff6700'});"
                                 class="btn_evaluation btn btn-dark">Bình luận
                         </button>
                         <%
                         } else {
                         %>
-                        <button class="btn_evaluation btn btn-dark" type="submit">Bình luận</button>
+                        <button id="btn_evaluation" class="btn_evaluation btn btn-dark" type="submit">Bình luận</button>
                         <%
                             }
                         %>
@@ -180,9 +183,10 @@
                     <%
                         if (user != null && user.getUser_name().equals(comment.getString(1))) {
                     %>
-                    <a href="del_comment?id_comment=<%=comment.getInt(6) + "&link="+ Util.urlRedirect(request)%>"
-                       class="float-right" style="color: #000 !important;">Xóa</a>
-                    <%--                    <a class="float-right pr-4">Sửa</a>--%>
+                    <a id="del_comment" class=" float-right" style="color: #000 !important;">
+                        Xóa
+                        <input type="hidden" id="id_comment" value="<%=comment.getInt(6)%>">
+                    </a>
                     <%
                         }
                     %>
@@ -206,7 +210,7 @@
                     (like.next()) {
                         if (i <= 8) {
                 %>
-                <div class="col-md-3 col-6">
+                <div class="frame col-1-5 d-flex align-items-stretch">
                     <div class="product_item">
                         <div class="figure figure-img">
                             <a href="<%=Util.fullPath("detail_product?detail="+like.getString(6))%>">
@@ -215,13 +219,34 @@
                                     String[] arrImg = img.split("~");
                                 %>
                                 <img class="img-fluid" src="<%=arrImg[0]%>" alt="img">
+                                <label class="discountt1"
+                                       style="visibility: <%=like.getDouble(7)==0?"hidden":"visible"%>">
+                                    <i class="fas fa-tags"> </i> GIẢM <%=Util.convertPrice(like.getDouble(7))%>
+                                </label>
+                                <div class="cotain_icon1">
+                                    <div class="btn_add icon">
+                                        <a><i class="fas fa-cart-plus"> </i></a>
+                                        <input type="hidden" class="id_product" value="<%=like.getString(6)%>">
+                                    </div>
+                                    <div class="icon">
+                                        <a href="<%=Util.fullPath("add?id=" + like.getString(6)+"&btn=buynow")%>">
+                                            <i class="fas fa-dollar-sign"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                         <h5 class="product_name"><a
                                 href="<%=Util.fullPath("detail_product?detail="+like.getString(6))%>">
                             <%=like.getString(1)%>
-                        </a></h5>
-                        <span class="product_price"><%=Util.convertPrice(like.getDouble(2))%></span>
+                        </a>
+                            <span class="product_price"><%=Util.convertPrice(like.getDouble(2) - like.getDouble(7))%></span>
+                            <div>
+                                        <span style="font-size: 12px;color: #4e555b;visibility: <%=like.getDouble(7)==0?"hidden":"visible"%>">
+                                        <del class="product_price"><%=Util.convertPrice(like.getDouble(2))%></del>
+                                    </span>
+                            </div>
+                        </h5>
                     </div>
                 </div>
                 <%
@@ -268,37 +293,70 @@
     .carousel-control-prev {
         filter: invert(100%);
     }
+
+    #del_comment:hover {
+        cursor: pointer;
+    }
 </style>
 <%-----------------------------------------------%>
+<script>
+    /*Add comment   */
+    $(document).ready(function () {
+        $('#btn_evaluation').click(function (e) {
+            e.preventDefault();
 
-<script type="text/javascript">
-    /*==========        SLIDE MINI SHOW     ==============*/
-    $(".btn_add").click(function () {
-        var id_product = $(this).find(".id_product").val();
-        $.ajax({
-            url: "<%=Util.fullPath("add")%>",
-            type: "get",
-            data: {
-                id: id_product
-            },
-            success: function () {
-                window.location.reload();
-            },
-            error: function (error) {
-                alert(error)
-            }
+            var id = $('#id').val();
+            var comment = $('#comment').val();
+            if (comment == '') {
+                Swal.fire({
+                    title: 'Vui lòng nhập bình luận.',
+                    confirmButtonColor: '#ff6700',
+                });
+            } else
+                $.ajax({
+                    url: '<%=Util.fullPath("comment")%>',
+                    type: 'GET',
+                    data: { /*Dữ liệu post lên server*/
+                        id: id,
+                        comment: comment
+                    },
+                    success: function (result) { /*Thành công thì thực hiện function(success)*/
+                        location.reload();
+                    },
+                    error: function (error) { /*Lỗi thì thực hiện function(error)*/
+                        alert(error);
+                    }
+                })
         });
     });
-    /*----------------------------------------------------*/
-
-    /*==========        SLIDE MINI SHOW     ==============*/
-    // document.documentElement.setAttribute("lang", "en");
-    // document.documentElement.removeAttribute("class");
-    // axe.run(function (err, results) {
-    //     console.log(results.violations);
-    // });
-    /*----------------------------------------------------*/
-
+    /*Delete comment*/
+    $(document).ready(function () {
+        $("#del_comment").click(function () {
+            swal.fire({
+                title: 'Xóa bình luận.',
+                showCancelButton: true,
+                confirmButtonText: 'Xóa',
+                cancelButtonText: 'Hủy',
+                confirmButtonColor: '#ff6700',
+                preConfirm: () => {
+                    var id_comment = $('#id_comment').val();
+                    $.ajax({
+                        url: "<%=Util.fullPath("del_comment")%>",
+                        type: "get",
+                        data: {
+                            id_comment: id_comment
+                        },
+                        success: function () {
+                            location.reload();
+                        },
+                        error: function (error) {
+                            alert(error);
+                        }
+                    });
+                }
+            });
+        })
+    });
 </script>
 </body>
 </html>

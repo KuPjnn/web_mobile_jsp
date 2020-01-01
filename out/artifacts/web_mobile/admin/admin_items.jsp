@@ -26,14 +26,12 @@
                         </button>
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped table-hover">
                             <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Tên</th>
-                                <th>Hiện thị</th>
-                                <th>Sửa</th>
-                                <th>Xóa</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -47,32 +45,25 @@
                                 </th>
                                 <th><%=item.getName()%>
                                 </th>
-                                <th>
+                                <th class="d-flex justify-content-end">
                                     <%
                                         if (item.getActive() == 1) {
                                     %>
-                                    <a href="items?action=hide&id_items=<%=item.getId()%>"
-                                       class="border-0 btn-outline-light rounded-circle ">
+                                    <a class="mx-3" href="items?action=hide&id_items=<%=item.getId()%>">
                                         <i style="color: #ff6700" class="far fa-check-circle"></i>
                                     </a>
                                     <%
                                     } else {
                                     %>
-                                    <a href="items?action=active&id_items=<%=item.getId()%>">
+                                    <a class="mx-3" href="items?action=active&id_items=<%=item.getId()%>">
                                         <i style="color: #000" class="fas fa-minus-circle"></i>
                                     </a>
                                     <%
                                         }
                                     %>
-                                </th>
-                                <th>
-                                    <a class="btn info_items" data-toggle="modal"
+                                    <a class="info_items mx-3" data-toggle="modal"
                                        data-target="#addItem<%=item.getId()%>">
                                         <i style="color: #ff6700" class="fas fa-pen"></i>
-                                        <%--<div style="display: none" class="id_items"><%=item.getId()%>--%>
-                                        <%--</div>--%>
-                                        <%--<div style="display: none" class="name_items"><%=item.getName()%>--%>
-                                        <%--</div>--%>
                                     </a>
                                     <div class="modal fade" id="addItem<%=item.getId()%>" tabindex="-1" role="dialog">
                                         <div class="modal-dialog" role="document">
@@ -80,7 +71,7 @@
                                                 <div class="card">
                                                     <div class="card-header bg-light">
                                                         <h4 id="title_editItem" class="text-center font-weight-bold">
-                                                            Thêm mặt hàng mới</h4>
+                                                            Sửa mặt hàng</h4>
                                                     </div>
                                                     <div class="card-body">
                                                         <form id="formeditItems"
@@ -123,11 +114,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </th>
-                                <th>
                                     <a onclick="return confirm('Xóa mặt hàng : <%=item.getName()%>')"
-                                       class="border-0 btn-outline-light rounded-circle"
-                                       href="items?action=del&id_items=<%=item.getId()%>">
+                                       href="items?action=del&id_items=<%=item.getId()%>"
+                                       class="mx-3">
                                         <i style="color: #000" class="fa fa-trash"></i>
                                     </a>
                                 </th>

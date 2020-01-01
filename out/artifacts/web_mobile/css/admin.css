@@ -20,8 +20,8 @@ tbody th {
 }
 
 #admin_header .admin_header a {
-    font-size: 18px;
-    margin: 0 0;
+    font-size: 14px;
+    margin: 0;
 }
 
 #admin_header .admin_header i {
@@ -44,14 +44,14 @@ tbody th {
 }
 
 #admin_body .nav-item:hover {
-    color: #000;
+    color: #fff;
     cursor: pointer;
 }
 
 #admin_body .nav-item.active,
 #admin_body .nav-item.active i {
     background-color: #ff6700;
-    color: #000;
+    color: #fff;
 }
 
 #admin_body i {

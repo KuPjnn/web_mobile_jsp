@@ -20,14 +20,33 @@
                     String welcome = (String) request.getAttribute("welcome");
                     if (welcome != null) {
                 %>
-                <div align="center" class="pt-5 display-1"><%=welcome%>
+                <div align="center" class="pt-5 display-1">
+                    <div class="row w-100">
+                        <div class="col-md-3">
+                            <div class="card border-success mx-sm-1 p-3">
+                                <div class="card border-success shadow text-success p-3 my-card">
+                                    <span class="fa fa-eye" aria-hidden="true"></span>
+                                </div>
+                                <div class="text-success text-center mt-3"><h4>Lượt truy cập/ngày</h4></div>
+                                <div class="text-success text-center mt-2"><h1>9332</h1></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <%
-                    }
-                %>
             </div>
+            <%
+                }
+            %>
         </div>
     </div>
 </div>
 </body>
+<style>
+    .my-card {
+        position: absolute;
+        left: 40%;
+        top: -20px;
+        border-radius: 50%;
+    }
+</style>
 </html>

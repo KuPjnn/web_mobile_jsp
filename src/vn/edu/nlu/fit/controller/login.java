@@ -27,21 +27,10 @@ public class login extends javax.servlet.http.HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", u);
                 response.getWriter().write("true");
-//                response.sendRedirect(Util.fullPath(link));
             } else {
                 response.getWriter().write("false");
             }
-/*            else {
-                String url = "";
-                if (link.matches(".*\\?{1}.*")) {
-                    url = link + "&login=false";
-                } else {
-                    url = link + "?login=false";
-                }
-                response.setContentType("text/plain");
-                response.getWriter().write("Dang nhap thanh cong!");
-                response.sendRedirect(Util.fullPath(url));
-            }*/
+
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

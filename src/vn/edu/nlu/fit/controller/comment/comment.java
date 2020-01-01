@@ -23,8 +23,6 @@ public class comment extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String content = request.getParameter("comment");
         String idProduct = request.getParameter("id");
-        String link = request.getParameter("link");
-
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
@@ -36,7 +34,7 @@ public class comment extends HttpServlet {
                 ps.setString(2, idProduct);
                 ps.setString(3, content);
                 ps.executeUpdate();
-                response.sendRedirect(Util.fullPath(link));
+                response.sendRedirect(Util.fullPath("home"));
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (SQLException e) {

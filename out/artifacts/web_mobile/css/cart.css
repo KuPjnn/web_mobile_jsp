@@ -2,10 +2,10 @@
 #shop_cart h3 {
     background-color: #ff6700;
     padding: 5px 20px;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
     width: 200px;
-    border-bottom: 3px solid #000;
+    border-bottom: 2px solid #000;
     color: #fff;
 }
 
@@ -22,20 +22,18 @@
 
 #shop_cart input[type=button] {
     padding: 5px 10px;
-    font-weight: bold;
 }
 
 #shop_cart input[type=button]:hover {
-    transform: scale(1.1);
     color: #ff6700;
 }
 
 #shop_cart .product_cart {
-    border-top: 1px dotted #ff6700;
+    border-top: 1px dotted #c5cccc;
 }
 
 #shop_cart .product_total {
-    border: 1px solid #ff6700;
+    border: 1px solid #c5cccc;
     position: sticky;
     top: 20px;
     padding: 50px 50px;
@@ -55,7 +53,7 @@
 
 #shop_cart .product_total button {
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px 20px;
     display: block;
     cursor: pointer;

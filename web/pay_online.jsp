@@ -11,14 +11,17 @@
         }
 
         .title_big {
-            font-size: 25px;
-            color: #ff6700;
-            font-weight: bold;
+            font-size: 18px;
+            color: #fff;
         }
 
-        li, b {
-            font-size: 20px;
+        .card-body li, b {
+            font-size: 16px;
             text-align: center;
+        }
+
+        .card-header {
+            background-color: #ff6700;
         }
     </style>
 </head>
@@ -38,8 +41,8 @@
             <div class="col-md-6 col-12 mx-auto pb-5">
                 <form method="get" action="<%=Util.fullPath("pay_online")%>">
                     <div class="card m-auto">
-                        <div class="card-header bg-dark">
-                            <p class="title_big text-center">Thông tin giao dịch</p>
+                        <div class="card-header">
+                            <p class="title_big text-center">THÔNG TIN GIAO DỊCH</p>
                         </div>
                         <%
                             String info = (String) request.getAttribute("info");
@@ -55,21 +58,21 @@
                             <hr>
                             <li><b>Nội dung thanh toán : </b> mua hàng</li>
                             <hr>
-                            <h4 class="font-weight-bold text-center mt-5">Tài khoản</h4>
-                            <div class="form-label-group w-75 mx-auto my-5">
+                            <h5 class="font-weight-bold text-center mt-4">Tài khoản</h5>
+                            <div class="form-label-group w-75 mx-auto my-4">
                                 <input name="name_atm" type="text" id="name" class="form-control"
                                        placeholder="Tên chủ tài khoản">
                             </div>
-                            <div class="form-label-group w-75 mx-auto mb-5">
+                            <div class="form-label-group w-75 mx-auto mb-4">
                                 <input name="number_atm" type="number" id="inputSTK" class="form-control"
                                        placeholder="Số tài khoản">
                             </div>
                             <hr>
                             <div align="center">
-                                <button class="btn btn_pay px-5" type="submit">Ok</button>
-                                <a class="btn font-weight-bold btn-secondary px-5"
+                                <button class="btn btn_pay px-5" type="submit">OK</button>
+                                <a class="btn btn-secondary px-5"
                                    href="<%=Util.fullPath("show_cart")%>">
-                                    Hủy
+                                    HỦY
                                 </a>
                             </div>
                         </div>
@@ -83,8 +86,6 @@
 
 <%--=================   FOOTER    =============--%>
 <%@include file="footer.jsp" %>
-<%-----------------------------------------------%>
-
 
 </body>
 </html>

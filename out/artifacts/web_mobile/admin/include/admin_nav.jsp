@@ -30,7 +30,7 @@
             Sản phẩm
         </a>
         <a class="nav-item <%if(active.matches(".*comment.*")){%>active<%}%>"
-           href="admin_comment.jsp">
+           href="<%=Util.fullPath("admin/comment")%>">
             <i class="fa fa-comment"> </i>
             Bình luận
         </a>

@@ -14,12 +14,12 @@
         border-radius: 50%;
         width: 50px;
         height: 50px;
-        background-color: #333;
         visibility: hidden;
+        background-color: #6c757d;
     }
 
     .top:hover {
-        background-color: #ff6700;
+        background-color: #e27e60;
     }
 
     .top.show {
