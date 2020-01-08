@@ -19,14 +19,16 @@ public class login extends javax.servlet.http.HttpServlet {
 
         String user = request.getParameter("username");
         String pass = request.getParameter("password");
-
+        HttpSession session = request.getSession();
         try {
             User u = new UserDAO().getUser(user);
             boolean validate = new UserDAO().checkLogin(user, pass);
-            if (u != null && validate) {
-                HttpSession session = request.getSession();
+            if (u != null && validate && u.getPrivileges().equals("kh")) {
                 session.setAttribute("user", u);
                 response.getWriter().write("true");
+            } else if (u != null && validate && u.getPrivileges().equals("ad")) {
+                session.setAttribute("user", u);
+                response.getWriter().write("true_ad");
             } else {
                 response.getWriter().write("false");
             }

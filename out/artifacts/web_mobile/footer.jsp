@@ -84,6 +84,15 @@
                                     location.reload();
                                 }
                             })
+                        } else if (result == 'true_ad') {
+                            Swal.fire({
+                                title: 'Đăng nhập thành công!',
+                                confirmButtonColor: '#ff6700'
+                            }).then((result) => {
+                                if (result.value) {
+                                    window.location.assign("<%=Util.fullPath("admin/")%>");
+                                }
+                            })
                         } else {
                             Swal.fire({
                                 title: 'Sai tên đăng nhập hoặc mật khẩu!',

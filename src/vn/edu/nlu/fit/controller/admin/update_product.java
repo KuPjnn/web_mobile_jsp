@@ -13,11 +13,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Random;
 
 @WebServlet("/admin/update_product")
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
@@ -27,6 +25,7 @@ public class update_product extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/plain");
         response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
 //      String ajaxUpdateResult = ""; //test value các input nhập vào
         String[] value = new String[20]; /*Lưu các giá trị nhận được từ input*/
         int i = 0;

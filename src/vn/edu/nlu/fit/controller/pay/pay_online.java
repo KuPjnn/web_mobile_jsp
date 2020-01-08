@@ -27,6 +27,7 @@ public class pay_online extends HttpServlet {
 
         ListCart listCart = (ListCart) session.getAttribute("list_cart");
 
+
         String name_atm = request.getParameter("name_atm");
         int number_atm = Integer.parseInt(request.getParameter("number_atm"));
 
@@ -63,15 +64,13 @@ public class pay_online extends HttpServlet {
 
                     response.sendRedirect(Util.fullPath("detail_order"));
                 } else {
-                    /*Thông báo ko đủ tiền*/
-                    response.sendRedirect(Util.fullPath("detail_order"));
+                    request.setAttribute("atm_error", "Tài khoản của bạn không đủ tiền.");
+                    request.getRequestDispatcher("pay_online.jsp").forward(request, response);
                 }
-
             } else {
-                /*Thông báo sai tài khoản atm*/
-                response.sendRedirect(Util.fullPath("show_cart"));
+                request.setAttribute("atm_error", "Sai thông tin tài khoản.");
+                request.getRequestDispatcher("pay_online.jsp").forward(request, response);
             }
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

@@ -1,9 +1,17 @@
 package vn.edu.nlu.fit.model;
 
 public class User {
-    private String user_name, password, full_name, email, phone, privileges;
+    private String user_name, password, full_name, email, phone, privileges, code;
 
     public User() {
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public User(String user_name, String password, String full_name, String email, String phone, String privileges) {

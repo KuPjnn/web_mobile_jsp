@@ -33,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="overflow : scroll; height: 77vh">
                         <table class="table table-striped">
                             <thead>
                             <tr>

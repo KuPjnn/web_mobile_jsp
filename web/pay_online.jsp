@@ -61,11 +61,15 @@
                             <h5 class="font-weight-bold text-center mt-4">Tài khoản</h5>
                             <div class="form-label-group w-75 mx-auto my-4">
                                 <input name="name_atm" type="text" id="name" class="form-control"
-                                       placeholder="Tên chủ tài khoản">
+                                       placeholder="Tên chủ tài khoản" required
+                                       oninvalid="this.setCustomValidity('Bạn chưa nhập tên tài khoản.')"
+                                       oninput="setCustomValidity('')">
                             </div>
                             <div class="form-label-group w-75 mx-auto mb-4">
                                 <input name="number_atm" type="number" id="inputSTK" class="form-control"
-                                       placeholder="Số tài khoản">
+                                       placeholder="Số tài khoản" required
+                                       oninvalid="this.setCustomValidity('Bạn chưa nhập số tài khoản.')"
+                                       oninput="setCustomValidity('')">
                             </div>
                             <hr>
                             <div align="center">
@@ -88,4 +92,16 @@
 <%@include file="footer.jsp" %>
 
 </body>
+<script>
+    <%
+    if(request.getAttribute("atm_error")!=null){
+    %>
+    swal.fire({
+        title: '<%=request.getAttribute("atm_error")%>',
+        confirmButtonColor: '#ff6700'
+    });
+    <%
+    }
+    %>
+</script>
 </html>

@@ -46,6 +46,23 @@ public class UserDAO {
         return check;
     }
 
+    public boolean checkmail(String user, String mail) throws SQLException, ClassNotFoundException {
+        boolean check = false;
+
+        String query = "SELECT * FROM `user` WHERE USER_NAME= ? AND `EMAIL`= ?;";
+
+        PreparedStatement preparedStatement = DBConect.getPreparedStatement(query);
+        preparedStatement.setString(1, user);
+        preparedStatement.setString(2, mail);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        resultSet.last();
+        int row = resultSet.getRow();
+        if (resultSet != null && row == 1)
+            check = true;
+        return check;
+    }
+
     public User getUser(String userName) throws SQLException, ClassNotFoundException {
 
         String query = "SELECT * FROM `user` WHERE USER_NAME = ?;";
@@ -65,10 +82,12 @@ public class UserDAO {
             u.setEmail(rs.getString(4));
             u.setPhone(rs.getString(5));
             u.setPrivileges(rs.getString(6));
+            u.setCode(rs.getString(7));
             return u;
         }
         return u;
     }
+
 
     public List<User> listUser() throws SQLException, ClassNotFoundException {
 

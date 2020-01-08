@@ -33,6 +33,8 @@
                         <button id="submitLogin" type="submit" class="btn_login btn btn-lg btn-block text-uppercase">
                             Đăng nhập
                         </button>
+                        <div class="mt-3"><a href="<%=Util.fullPath("forget_passwd")%>" style="color: #1d2124">Quên mật
+                            khẩu.</a></div>
                     </form>
                 </div>
             </div>
