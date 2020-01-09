@@ -145,7 +145,7 @@
                                 })
                             } else {
                                 Swal.fire({
-                                    title: 'Sai thông tin đăng kí!',
+                                    title: msg,
                                     confirmButtonColor: '#ff6700',
                                 });
                             }

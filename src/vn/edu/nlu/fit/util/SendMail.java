@@ -9,8 +9,8 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 import java.util.Random;
 
-public class sendMail {
-    public sendMail() {
+public class SendMail {
+    public SendMail() {
     }
 
     public static void send(String toMail, String code) throws MessagingException {

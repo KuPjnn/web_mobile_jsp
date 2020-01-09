@@ -63,7 +63,7 @@ public class list_product extends HttpServlet {
             search = "<>";
 
         String[] arr = null;
-        String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT, product.DISCOUNT\n" +
+        String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT, product.DISCOUNT, product.STAR_MEDIUM\n" +
                 " FROM product,items,supplier\n" +
                 " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1 " +
                 " AND items.ACTIVE=1 AND supplier.ACTIVE=1 ";

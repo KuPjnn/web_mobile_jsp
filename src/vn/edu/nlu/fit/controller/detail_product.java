@@ -42,7 +42,7 @@ public class detail_product extends HttpServlet {
             request.setAttribute("configuration", configuration);
 
             /*Binh luan san pham*/
-            String com = "SELECT DISTINCT `comment`.USER_NAME,`user`.FULLNAME,`comment`.ID_PRODUCT,`comment`.CONTENT,`comment`.DATE_COMMENT, `comment`.ID_COMMENT\n" +
+            String com = "SELECT DISTINCT `comment`.USER_NAME,`user`.FULLNAME,`comment`.ID_PRODUCT,`comment`.CONTENT,`comment`.DATE_COMMENT, `comment`.ID_COMMENT, `comment`.EVALUATE\n" +
                     " FROM `comment`,`user` WHERE `comment`.USER_NAME=`user`.USER_NAME AND `comment`.ID_PRODUCT= ? AND `comment`.ACTIVE=1 ";
             PreparedStatement stCom = DBConect.getPreparedStatement(com);
             stCom.setString(1, detail);
@@ -50,7 +50,7 @@ public class detail_product extends HttpServlet {
             request.setAttribute("comment", comment);
 
             /*San pham tuong tu*/
-            String same = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT, product.DISCOUNT\n" +
+            String same = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT, product.DISCOUNT, product.STAR_MEDIUM\n" +
                     "FROM product,items,supplier\n" +
                     "WHERE \n" +
                     "product.ID_ITEMS=items.ID_ITEMS \n" +

@@ -1,6 +1,6 @@
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font: 14px Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
 }
@@ -83,7 +83,6 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    height: 32px;
     text-align: center;
     color: #000;
     text-decoration: none;
@@ -209,7 +208,6 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
-
 .discountt1 {
     color: #fff;
     background-image: linear-gradient(-90deg, #ec1f1f 0%, #ff9c00 100%);
@@ -217,7 +215,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: .5rem;
     font: 14px Helvetica, Arial, Freesans, sans-serif;
     position: absolute;
-    top: 62%;
+    top: 60%;
     left: 7%;
     border-radius: 2px;
     padding: 0 5px;
@@ -232,4 +230,25 @@ input[type=number]::-webkit-outer-spin-button {
 
 .product_item:hover .cotain_icon1 {
     display: block;
+}
+
+/* Đánh giá sản phẩm*/
+.star_detail {
+    color: #9fcdff;
+    font-size: 25px;
+}
+
+.star {
+    color: #9fcdff;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rating > i:hover ~ i:before,
+.rating > i:hover:before {
+    color: darkorange;
+    cursor: pointer;
 }

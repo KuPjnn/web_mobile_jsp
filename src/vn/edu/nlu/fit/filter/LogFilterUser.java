@@ -19,9 +19,7 @@ public class LogFilterUser implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
-
         HttpSession session = req.getSession();
-
         User user = (User) session.getAttribute("user");
 
         if (user != null) {

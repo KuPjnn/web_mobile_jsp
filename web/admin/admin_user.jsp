@@ -21,7 +21,9 @@
             <div class="col-md-9 ml-sm-auto col-lg-10 tab-content">
                 <div id="admin_khachhang" class="card mt-1 tab-pane active">
                     <div class="card-header">Người dùng
-
+                        <button id="add_user" class="btn btn-danger ml-5" data-toggle="modal"
+                                data-target="#modal_add_user">Thêm người dùng
+                        </button>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
@@ -65,24 +67,23 @@
                                     </a>
                                 </th>
                             </tr>
-                            <%--==========      MODAL ADD NEW ITEMS     =================--%>
+                            <%--==========      MODAL EDIT USER     =================--%>
                             <div class="modal fade" id="<%=user.getUser_name()%>" tabindex="-1" role="dialog">
                                 <div class="modal-dialog" role="document">
-                                    <div class="modal-content m-auto">
+                                    <div class="modal-content m-auto w-75">
                                         <div class="card">
                                             <div class="card-header bg-light">
                                                 <h4 class="text-center font-weight-bold">Chỉnh sửa thông tin</h4>
                                             </div>
                                             <div class="card-body">
-                                                <form action="<%=Util.fullPath("admin/user")%>" method="get"
-                                                      enctype="multipart/form-data">
+                                                <form action="<%=Util.fullPath("admin/user")%>" method="get">
                                                     <input type="hidden" name="action" value="edit">
                                                     <%--User name--%>
                                                     <div class="input-group my-3">
                                                         <div class="input-group-append">
                                                             <a class="input-group-text" data-toggle="tooltip"
                                                                title="User name">
-                                                                <i class="fas fa-user-circle text-dark"></i>
+                                                                <i class="fas fa-user text-dark"></i>
                                                             </a>
                                                         </div>
                                                         <input type="text" name="user_name"
@@ -121,7 +122,7 @@
                                                         <div class="input-group-append">
                                                             <a class="input-group-text" data-toggle="tooltip"
                                                                title="Email">
-                                                                <i class="fas fa-mail-bulk text-dark"></i>
+                                                                <i class="fas fa-envelope text-dark"></i>
                                                             </a>
                                                         </div>
                                                         <input class="form-control" type="email"
@@ -210,5 +211,6 @@
         }
     }
 </script>
+<%@include file="include/modal_add_user.jsp" %>
 </html>
 

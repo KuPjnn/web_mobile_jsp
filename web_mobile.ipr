@@ -16,6 +16,15 @@
         </element>
       </root>
     </artifact>
+    <artifact type="war" name="web_mobile_war">
+      <output-path>$PROJECT_DIR$/out/artifacts/web_mobile_war</output-path>
+      <root id="archive" name="web_mobile_war.war">
+        <element id="artifact" artifact-name="web_mobile" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/web_mobile/META-INF/MANIFEST.MF" />
+        </element>
+      </root>
+    </artifact>
   </component>
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="webmobile@localhost" uuid="1f345c2a-3d7b-403b-9da1-3c1fca6bddc0">

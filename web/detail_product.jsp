@@ -22,6 +22,7 @@
         </div>
         <%
             ResultSet detail = (ResultSet) request.getAttribute("detailProduct");
+            ResultSet comment = (ResultSet) request.getAttribute("comment");
 
             while (detail.next()) {
         %>
@@ -88,6 +89,32 @@
                         </ol>
                     </div>
                     <%--=========================--%>
+                    <%
+                        int star = 0;
+                        int check = 0;
+                        while (comment.next()) {
+                            star += comment.getInt(7);
+                            check++;
+                        }
+                        if (star == 0) {
+                    %>
+                    <p>Chưa có đánh giá</p>
+                    <%
+                    } else {
+
+                        for (int i = 0; i < star / check; i++) {
+                    %>
+                    <i class="fa fa-star star" style="color:darkorange"></i>
+                    <%
+                        }
+                        for (int i = 0; i < 5 - star / check; i++) {
+                    %>
+
+                    <i class="fa fa-star star" style="color: #9fcdff"></i>
+                    <%
+                            }
+                        }
+                    %>
                     <h5 class="my-3"><%=Util.convertPrice(detail.getDouble(2) - detail.getDouble(7))%>
                     </h5>
                     <del style="font-size: 18px;display: <%=detail.getDouble(7)==0?"none":"block"%>"
@@ -141,6 +168,54 @@
         <div class="py-3">
             <h3>Nhận xét sản phẩm</h3>
         </div>
+        <div>
+            <p style="margin-bottom: 10px;font-size: 15px">**Đánh giá sản phẩm**</p>
+            <div class="float-left">
+                <p class="rating">
+                    <i class="fa fa-star star_detail" id="star1" onclick="this.style.color='darkorange';
+                document.getElementById('star5').style.color='darkorange';
+                document.getElementById('star2').style.color='darkorange';
+                document.getElementById('star3').style.color='darkorange';
+                document.getElementById('star4').style.color='darkorange';
+                document.getElementById('star_num').value='5';
+                "></i>
+                    <i class="fa fa-star star_detail" id="star2"
+                       onclick="this.style.color='darkorange';
+                    document.getElementById('star1').style.color='#9fcdff';
+                    document.getElementById('star3').style.color='darkorange';
+                    document.getElementById('star4').style.color='darkorange';
+                    document.getElementById('star5').style.color='darkorange';
+                    document.getElementById('star_num').value='4';
+                "></i>
+
+                    <i class="fa fa-star star_detail" id="star3"
+                       onclick="this.style.color='darkorange';
+                    document.getElementById('star1').style.color='#9fcdff';
+                    document.getElementById('star2').style.color='#9fcdff';
+                    document.getElementById('star4').style.color='darkorange';
+                    document.getElementById('star5').style.color='darkorange';
+                    document.getElementById('star_num').value='3';
+                "></i>
+                    <i class="fa fa-star star_detail" id="star4"
+                       onclick="this.style.color='darkorange';
+                    document.getElementById('star1').style.color='#9fcdff';
+                    document.getElementById('star2').style.color='#9fcdff';
+                    document.getElementById('star3').style.color='#9fcdff';
+                    document.getElementById('star5').style.color='darkorange';
+                    document.getElementById('star_num').value='2';
+"></i>
+                    <i class="fa fa-star star_detail" id="star5"
+                       onclick="this.style.color='darkorange';
+                    document.getElementById('star1').style.color='#9fcdff';
+                    document.getElementById('star2').style.color='#9fcdff';
+                    document.getElementById('star3').style.color='#9fcdff';
+                    document.getElementById('star4').style.color='#9fcdff';
+                    document.getElementById('star_num').value='1';
+"></i>
+
+                </p>
+            </div>
+        </div>
         <div class="product_evaluation">
             <form id="form_comment">
                 <div class="input-group mb-3">
@@ -150,6 +225,7 @@
                     <input id="id" name="id" type="hidden" value="<%=detail.getString(6)%>">
                     <input id="comment" name="comment" type="text" class="form-control"
                            placeholder="Viết đánh giá ..." autocomplete="off">
+                    <input id="star_num" name="star_num" type="number" value="" style="display: none">
                     <div class="input-group-append">
                         <%
                             User user = (User) session.getAttribute("user");
@@ -172,13 +248,30 @@
             </form>
             <div>
                 <%
-                    ResultSet comment = (ResultSet) request.getAttribute("comment");
+                    comment.beforeFirst();
                     while (comment.next()) {
                 %>
                 <div class="user_evaluation">
                     <span class="float-right"><%=comment.getString(5)%></span>
                     <p>Bởi : <%=comment.getString(2)%>
                     </p>
+                    <div style="">
+                        <%
+                            for (int i = 0; i < comment.getInt(7); i++) {
+                        %>
+                        <i class="fa fa-star star" style="color:darkorange"></i>
+                        <%
+                            }
+                            for (int i = 0; i < 5 - comment.getInt(7); i++) {
+                        %>
+
+                        <i class="fa fa-star star" style="color: #9fcdff"></i>
+                        <%
+                            }
+                        %>
+
+
+                    </div>
                     <span><%=comment.getString(4)%></span>
                     <%
                         if (user != null && user.getUser_name().equals(comment.getString(1))) {
@@ -240,6 +333,28 @@
                                 href="<%=Util.fullPath("detail_product?detail="+like.getString(6))%>">
                             <%=like.getString(1)%>
                         </a>
+                            <div style="text-align: center">
+                                <%
+                                    if (like.getInt(8) == 0) {
+                                %>
+                                <span style="font-size: 10px;color: #1b1e21">Chưa có đánh giá</span>
+                                <%
+                                } else {
+
+                                    for (int j = 0; j < like.getInt(8); j++) {
+                                %>
+                                <i class="fa fa-star star" style="color:darkorange"></i>
+                                <%
+                                    }
+                                    for (int j = 0; j < 5 - like.getInt(8); j++) {
+                                %>
+
+                                <i class="fa fa-star star" style="color: #9fcdff"></i>
+                                <%
+                                        }
+                                    }
+                                %>
+                            </div>
                             <span class="product_price"><%=Util.convertPrice(like.getDouble(2) - like.getDouble(7))%></span>
                             <div>
                                         <span style="font-size: 12px;color: #4e555b;visibility: <%=like.getDouble(7)==0?"hidden":"visible"%>">
@@ -307,6 +422,7 @@
 
             var id = $('#id').val();
             var comment = $('#comment').val();
+            var star_num = $('#star_num').val();
             if (comment == '') {
                 Swal.fire({
                     title: 'Vui lòng nhập bình luận.',
@@ -318,7 +434,8 @@
                     type: 'GET',
                     data: { /*Dữ liệu post lên server*/
                         id: id,
-                        comment: comment
+                        comment: comment,
+                        star_num: star_num
                     },
                     success: function (result) { /*Thành công thì thực hiện function(success)*/
                         location.reload();

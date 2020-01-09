@@ -2,6 +2,7 @@ package vn.edu.nlu.fit.controller.user;
 
 import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.util.CheckMail;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,13 +25,17 @@ public class change_info extends HttpServlet {
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         try {
-            boolean change = new UserDAO().updateUser(user_name, full_name, email, phone);
-            if (change == true) {
-                response.getWriter().write("Cập nhật thành công!");
-                User user = new UserDAO().getUser(user_name);
-                session.setAttribute("user", user);
+            if (CheckMail.isMailAddressValid(email)) {
+                boolean change = new UserDAO().updateUser(user_name, full_name, email, phone);
+                if (change == true) {
+                    response.getWriter().write("Cập nhật thành công!");
+                    User user = new UserDAO().getUser(user_name);
+                    session.setAttribute("user", user);
+                } else {
+                    response.getWriter().write("Lỗi cập nhật!");
+                }
             } else {
-                response.getWriter().write("Lỗi cập nhật!");
+                response.getWriter().write("Email không tồn tại");
             }
         } catch (SQLException e) {
             e.printStackTrace();

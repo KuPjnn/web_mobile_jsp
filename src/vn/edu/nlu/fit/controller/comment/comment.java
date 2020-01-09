@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @WebServlet("/comment")
@@ -24,16 +25,35 @@ public class comment extends HttpServlet {
         String content = request.getParameter("comment");
         String idProduct = request.getParameter("id");
 
+        int evaluate = Integer.parseInt(request.getParameter("star_num"));
+
+
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         if (content != null && user != null) {
-            String insertComment = "INSERT INTO `webmobile`.`comment`(`USER_NAME`, `ID_PRODUCT`, `CONTENT`, `DATE_COMMENT`) VALUES (?, ?, ?, NOW())";
+            String insertComment = "INSERT INTO `webmobile`.`comment`(`USER_NAME`, `ID_PRODUCT`, `CONTENT`, `DATE_COMMENT`,`EVALUATE`) VALUES (?, ?, ?, NOW(),?)";
             try {
                 PreparedStatement ps = DBConect.getPreparedStatement(insertComment);
                 ps.setString(1, user.getUser_name());
                 ps.setString(2, idProduct);
                 ps.setString(3, content);
+                ps.setInt(4, evaluate);
                 ps.executeUpdate();
+
+                //loi
+                String sql1 = "SELECT AVG(`EVALUATE`)\n" +
+                        "FROM `comment`\n" +
+                        "WHERE `ID_PRODUCT`= ? ;";
+                PreparedStatement ps1 = DBConect.getPreparedStatement(sql1);
+                ps1.setString(1, idProduct);
+                ResultSet rs = ps1.executeQuery();
+                rs.next();
+                String sql2 = "update product set STAR_MEDIUM= ? where `ID_PRODUCT`= ? ;";
+                PreparedStatement ps2 = DBConect.getPreparedStatement(sql2);
+                System.out.println(rs.getInt(1));
+                ps2.setInt(1, rs.getInt(1));
+                ps2.setString(2, idProduct);
+                ps2.executeUpdate();
                 response.sendRedirect(Util.fullPath("home"));
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

@@ -76,6 +76,28 @@
                                     href="<%=Util.fullPath("detail_product?detail="+rs.getString(6))%>">
                                 <%=rs.getString(1)%>
                             </a>
+                                <div style="text-align: center">
+                                    <%
+                                        if (rs.getInt(8) == 0) {
+                                    %>
+                                    <span style="font-size: 10px;color: #1b1e21">Chưa có đánh giá</span>
+                                    <%
+                                    } else {
+
+                                        for (int j = 0; j < rs.getInt(8); j++) {
+                                    %>
+                                    <i class="fa fa-star star" style="color:darkorange"></i>
+                                    <%
+                                        }
+                                        for (int j = 0; j < 5 - rs.getInt(8); j++) {
+                                    %>
+
+                                    <i class="fa fa-star star" style="color: #9fcdff"></i>
+                                    <%
+                                            }
+                                        }
+                                    %>
+                                </div>
                                 <span class="product_price"><%=Util.convertPrice(rs.getDouble(2) - rs.getDouble(7))%></span>
                                 <div>
                                         <span style="font-size: 12px;color: #4e555b;visibility: <%=rs.getDouble(7)==0?"hidden":"visible"%>">

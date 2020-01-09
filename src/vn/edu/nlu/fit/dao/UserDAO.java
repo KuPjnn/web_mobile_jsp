@@ -123,12 +123,10 @@ public class UserDAO {
 
     public boolean editUser(String username, String pass, String fullname, String email, String phone, String privileges) throws SQLException, ClassNotFoundException {
         boolean edit = false;
-
         String sql = "UPDATE `webmobile`.`user` SET `USER_NAME` = ?, `FULLNAME` = ?, `EMAIL` = ?, `PHONE` = ?, `PRIVILEGES` = ? WHERE `USER_NAME` = ?";
         if (pass != "") {
             sql = "UPDATE `webmobile`.`user` SET `USER_NAME` = ?, `PASSWORD` = ?, `FULLNAME` = ?, `EMAIL` = ?, `PHONE` = ?, `PRIVILEGES` = ? WHERE `USER_NAME` = ?";
         }
-
         PreparedStatement ps = DBConect.getPreparedStatement(sql);
         if (pass != "") {
             ps.setString(1, username);

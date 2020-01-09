@@ -2,6 +2,7 @@ package vn.edu.nlu.fit.controller;
 
 import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.util.CheckMail;
 import vn.edu.nlu.fit.util.Util;
 
 import javax.servlet.ServletException;
@@ -30,17 +31,20 @@ public class register extends HttpServlet {
         User user = new User(userName, password, fullName, email, phone, role);
         try {
             User getUser = new UserDAO().getUser(userName);
-
-            if (getUser.getUser_name() == null && password.equalsIgnoreCase(rePassword) && new UserDAO().addUser(user)) {
-                response.getWriter().write("true");
+            if (CheckMail.isMailAddressValid(email)) {
+                if (getUser.getUser_name() == null && password.equalsIgnoreCase(rePassword) && new UserDAO().addUser(user)) {
+                    response.getWriter().write("true");
+                } else {
+                    response.getWriter().write("Sai thông tin đăng kí");
+                }
             } else {
-                response.getWriter().write("false");
+                response.getWriter().write("Email không tồn tại");
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (
+                SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
