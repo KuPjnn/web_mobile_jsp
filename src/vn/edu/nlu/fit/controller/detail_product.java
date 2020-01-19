@@ -1,17 +1,18 @@
 package vn.edu.nlu.fit.controller;
 
 import vn.edu.nlu.fit.db.DBConect;
+import vn.edu.nlu.fit.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 @WebServlet("/detail_product")
 public class detail_product extends HttpServlet {
@@ -25,7 +26,7 @@ public class detail_product extends HttpServlet {
         try {
 
             /*thong tin san pham*/
-            String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT,product.DISCOUNT\n" +
+            String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT,product.DISCOUNT,product.STAR_MEDIUM\n" +
                     " FROM product,items,supplier\n" +
                     " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER " +
                     "AND product.ID_PRODUCT= ?;";
@@ -49,6 +50,20 @@ public class detail_product extends HttpServlet {
             ResultSet comment = stCom.executeQuery();
             request.setAttribute("comment", comment);
 
+            /*kiem tra danh gia*/
+            HttpSession s = request.getSession();
+            User us = (User) s.getAttribute("user");
+            if (us != null) {
+                String sql = "SELECT ID_PRODUCT, USER_NAME, EVALUATE FROM `comment` where ID_PRODUCT=? and USER_NAME=? and EVALUATE!=0";
+                stCom = DBConect.getPreparedStatement(sql);
+                stCom.setString(1, detail);
+                stCom.setString(2, us.getUser_name());
+                comment = stCom.executeQuery();
+                comment.last();
+
+                request.setAttribute("check", comment.getRow());
+            } else
+                request.setAttribute("check", 0);
             /*San pham tuong tu*/
             String same = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT, product.DISCOUNT, product.STAR_MEDIUM\n" +
                     "FROM product,items,supplier\n" +

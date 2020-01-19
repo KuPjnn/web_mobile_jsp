@@ -80,13 +80,20 @@ public class SupplierDAO {
 
     public boolean addSupplier(String id, String name) throws SQLException, ClassNotFoundException {
         boolean result = false;
-        String add = "INSERT INTO `webmobile`.`supplier`(`ID_SUPPLIER`, `NAME_SUPPLIER`, `ACTIVE`) VALUES (?, ?, 1)";
-        PreparedStatement ps = DBConect.getPreparedStatement(add);
+        String check_id = "SELECT * FROM `supplier` WHERE `ID_SUPPLIER` = ? ";
+        PreparedStatement ps;
+        ps = DBConect.getPreparedStatement(check_id);
         ps.setString(1, id.toUpperCase());
-        ps.setString(2, name);
-        int index = ps.executeUpdate();
-        if (index == 1)
-            result = true;
+        ResultSet rs = ps.executeQuery();
+        if (!rs.next()) {
+            String add = "INSERT INTO `webmobile`.`supplier`(`ID_SUPPLIER`, `NAME_SUPPLIER`, `ACTIVE`) VALUES (?, ?, 1)";
+            ps = DBConect.getPreparedStatement(add);
+            ps.setString(1, id.toUpperCase());
+            ps.setString(2, name);
+            int index = ps.executeUpdate();
+            if (index == 1)
+                result = true;
+        }
         return result;
     }
 

@@ -16,10 +16,10 @@
 
 <%--=================   BODY     ==============--%>
 <section id="shop_cart">
-    <div class="shopping_cart container" style="height: 67vh">
+    <div class="shopping_cart container">
         <h3 class="mt-3">Giỏ hàng</h3>
         <div class="row">
-            <div class="col-md-8 col-12">
+            <div class="col-md-8 col-12" style="height: 70vh; overflow: auto">
                 <%
                     ListCart list_item = (ListCart) session.getAttribute("list_cart");
                     if (list_item.list_cart.isEmpty()) {

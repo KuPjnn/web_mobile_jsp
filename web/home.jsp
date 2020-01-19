@@ -163,7 +163,6 @@
 
                                             for (int j = 0; j < rs.getInt(8); j++) {
                                         %>
-                                        %>
                                         <i class="fa fa-star star" style="color:darkorange"></i>
                                         <%
                                             }
@@ -247,7 +246,6 @@
                                         } else {
 
                                             for (int j = 0; j < rs.getInt(8); j++) {
-                                        %>
                                         %>
                                         <i class="fa fa-star star" style="color:darkorange"></i>
                                         <%

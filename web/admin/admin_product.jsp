@@ -25,13 +25,13 @@
                         <button id="add_pro" class="btn btn-danger ml-5" data-toggle="modal"
                                 data-target="#addProduct">Thêm sản phẩm
                         </button>
-                        <div class="d-flex input-group float-right w-50">
+                        <%--<div class="d-flex input-group float-right w-50">
                             <input type="text" class="form-control " placeholder="Tìm kiếm......">
                             <div class="input-group-append">
                                 <button class="btn btn-danger border-0" type="button"><i class="fas fa-search"></i>
                                 </button>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
                     <div class="table-responsive" style="overflow : scroll; height: 77vh">
                         <table class="table table-striped">

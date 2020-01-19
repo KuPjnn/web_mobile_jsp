@@ -14,7 +14,7 @@
 
 <%--=================   BODY      =============--%>
 <section id="main_body">
-    <div class="container">
+    <div  class="container">
 
         <!--==========  PRODUCT LIsT    ==========-->
         <div class="product">
@@ -117,7 +117,6 @@
         <ul class="pagination">
             <div class="d-inline m-auto">
                 <%
-
                     if (request.getAttribute("total") != null) {
                         String[] ans = ((String) request.getAttribute("total")).split("_");
                         int total = ((Integer.parseInt(ans[1]) % 16 == 0) ? (Integer.parseInt(ans[1]) / 16) : (Integer.parseInt(ans[1]) / 16 + 1));

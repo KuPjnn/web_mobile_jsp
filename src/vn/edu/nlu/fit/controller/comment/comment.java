@@ -24,29 +24,39 @@ public class comment extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String content = request.getParameter("comment");
         String idProduct = request.getParameter("id");
-
-        int evaluate = Integer.parseInt(request.getParameter("star_num"));
+        int evaluate = 0;
 
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         if (content != null && user != null) {
             String insertComment = "INSERT INTO `webmobile`.`comment`(`USER_NAME`, `ID_PRODUCT`, `CONTENT`, `DATE_COMMENT`,`EVALUATE`) VALUES (?, ?, ?, NOW(),?)";
+            String sql = "SELECT ID_PRODUCT, USER_NAME, EVALUATE FROM `comment` where ID_PRODUCT=? and USER_NAME=? and EVALUATE!=0";
+
             try {
-                PreparedStatement ps = DBConect.getPreparedStatement(insertComment);
+                PreparedStatement ps = DBConect.getPreparedStatement(sql);
+                ps.setString(1, idProduct);
+                ps.setString(2, user.getUser_name());
+
+                ResultSet rs = ps.executeQuery();
+                rs.last();
+                if (rs.getRow() == 0) {
+                    evaluate = Integer.parseInt(request.getParameter("star_num"));
+                }
+
+                ps = DBConect.getPreparedStatement(insertComment);
                 ps.setString(1, user.getUser_name());
                 ps.setString(2, idProduct);
                 ps.setString(3, content);
                 ps.setInt(4, evaluate);
                 ps.executeUpdate();
 
-                //loi
                 String sql1 = "SELECT AVG(`EVALUATE`)\n" +
                         "FROM `comment`\n" +
-                        "WHERE `ID_PRODUCT`= ? ;";
+                        "WHERE `ID_PRODUCT`= ? and EVALUATE!=0;";
                 PreparedStatement ps1 = DBConect.getPreparedStatement(sql1);
                 ps1.setString(1, idProduct);
-                ResultSet rs = ps1.executeQuery();
+                rs = ps1.executeQuery();
                 rs.next();
                 String sql2 = "update product set STAR_MEDIUM= ? where `ID_PRODUCT`= ? ;";
                 PreparedStatement ps2 = DBConect.getPreparedStatement(sql2);

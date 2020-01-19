@@ -33,7 +33,7 @@ public class SendMail {
         // Bạn có thể chọn CC, BCC
         //generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("cc@gmail.com")); //Địa chỉ cc gmail
         mailMessage.setSubject("Forgot Password");
-        mailMessage.setText("Mã của bạn là: " + code);
+        mailMessage.setText("Ma xac nhan doi mat khau : " + code);
 
         // Step3: Send mail
         Transport transport = getMailSession.getTransport("smtp");

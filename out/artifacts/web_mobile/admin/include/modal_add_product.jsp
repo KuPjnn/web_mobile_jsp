@@ -300,7 +300,7 @@
 </script>
 
 <script type="text/javascript">
-    /*==============        Ajax request servlet add product     ==============*/
+    /*==============        Ajax request servlet edit product     ==============*/
     $(document).ready(function () {
         $('#btn_add_product').click(function (e) {
             e.preventDefault();

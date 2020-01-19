@@ -191,6 +191,20 @@ input[type=number]::-webkit-outer-spin-button {
         padding-right: 15px;
         padding-left: 15px;
     }
+
+    .discountt1 {
+        color: #fff;
+        background-image: linear-gradient(-90deg, #ec1f1f 0%, #ff9c00 100%);
+        display: inline-flex;
+        margin-bottom: .5rem;
+        font: 14px Helvetica, Arial, Freesans, sans-serif;
+        position: absolute;
+        top: 60%;
+        left: 7%;
+        border-radius: 2px;
+        padding: 0 5px;
+    }
+
 }
 
 @media (max-width: 960px) {
@@ -206,19 +220,19 @@ input[type=number]::-webkit-outer-spin-button {
     .advertise {
         display: none;
     }
-}
 
-.discountt1 {
-    color: #fff;
-    background-image: linear-gradient(-90deg, #ec1f1f 0%, #ff9c00 100%);
-    display: inline-flex;
-    margin-bottom: .5rem;
-    font: 14px Helvetica, Arial, Freesans, sans-serif;
-    position: absolute;
-    top: 60%;
-    left: 7%;
-    border-radius: 2px;
-    padding: 0 5px;
+    .discountt1 {
+        color: #fff;
+        background-image: linear-gradient(-90deg, #ec1f1f 0%, #ff9c00 100%);
+        display: inline-flex;
+        margin-bottom: .5rem;
+        font: 14px Helvetica, Arial, Freesans, sans-serif;
+        position: absolute;
+        top: 55%;
+        left: 7%;
+        border-radius: 2px;
+        padding: 0 5px;
+    }
 }
 
 .cotain_icon1 {

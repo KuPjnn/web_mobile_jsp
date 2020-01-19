@@ -2,6 +2,7 @@ package vn.edu.nlu.fit.controller.admin;
 
 import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.util.CheckMail;
 import vn.edu.nlu.fit.util.Util;
 
 import javax.servlet.ServletException;
@@ -16,7 +17,34 @@ import java.util.List;
 @WebServlet("/admin/user")
 public class admin_user extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/plain");
+
+        String userName = request.getParameter("user_register");
+        String password = request.getParameter("pass_register");
+        String fullName = request.getParameter("name_register");
+        String email = request.getParameter("mail_register");
+        String phone = request.getParameter("phone_register");
+        String role = "kh";
+
+        User user = new User(userName, password, fullName, email, phone, role);
+        try {
+            User getUser = new UserDAO().getUser(userName);
+            if (CheckMail.isMailAddressValid(email)) {
+                if (getUser.getUser_name() == null && new UserDAO().addUser(user)) {
+                    response.getWriter().write("true");
+                } else {
+                    response.getWriter().write("Tên đăng nhập tồn tại");
+                }
+            } else {
+                response.getWriter().write("Email không tồn tại");
+            }
+        } catch (
+                SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,9 +71,7 @@ public class admin_user extends HttpServlet {
                 if (del == true)
                     response.sendRedirect(Util.fullPath("admin/user"));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

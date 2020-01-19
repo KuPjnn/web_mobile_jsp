@@ -39,9 +39,11 @@
                             </thead>
                             <tbody>
                             <%
+                                User admin = (User) session.getAttribute("user");
                                 List<User> list_user = (List<User>) request.getAttribute("list_user");
                                 if (list_user != null)
                                     for (User user : list_user) {
+                                        if (!user.getUser_name().equals(admin.getUser_name())) {
                             %>
                             <tr>
                                 <th><%=user.getUser_name()%>
@@ -70,7 +72,7 @@
                             <%--==========      MODAL EDIT USER     =================--%>
                             <div class="modal fade" id="<%=user.getUser_name()%>" tabindex="-1" role="dialog">
                                 <div class="modal-dialog" role="document">
-                                    <div class="modal-content m-auto w-75">
+                                    <div class="modal-content m-auto w-100">
                                         <div class="card">
                                             <div class="card-header bg-light">
                                                 <h4 class="text-center font-weight-bold">Chỉnh sửa thông tin</h4>
@@ -142,7 +144,6 @@
                                                                name="phone" title="phone"
                                                                value="<%=user.getPhone()%>"/>
                                                     </div>
-
                                                     <%--Phân quyền--%>
                                                     <ul class="nav nav-tabs" style="padding-bottom: 3px">
                                                         <li class="">
@@ -186,6 +187,7 @@
                                 </div>
                             </div>
                             <%
+                                        }
                                     }
                             %>
                             </tbody>

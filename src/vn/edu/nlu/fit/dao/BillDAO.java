@@ -1,5 +1,6 @@
 package vn.edu.nlu.fit.dao;
 
+import org.apache.jasper.tagplugins.jstl.core.If;
 import vn.edu.nlu.fit.db.DBConect;
 import vn.edu.nlu.fit.model.Bill;
 
@@ -29,26 +30,15 @@ public class BillDAO {
         return list;
     }
 
-    public Bill getBill(String id_bill) throws SQLException, ClassNotFoundException {
+    public ResultSet getBill(String id_bill) throws SQLException, ClassNotFoundException {
 
-        Bill bill = new Bill();
-
-        String getBill = "SELECT * FROM `webmobile`.`bill` WHERE ID_BILL=?";
-        PreparedStatement ps = DBConect.getPreparedStatement(getBill);
+        String sql = "SELECT bill.ID_BILL,`user`.USER_NAME,`user`.FULLNAME,bill.PHONE,bill.ADDRESS,bill.DATE,product.PRODUCT_NAME,product.PRICE,bill.`STATUS`,bill.TOTAL\n" +
+                " FROM bill,detail_order,product,`user` WHERE bill.ID_BILL=detail_order.ID_BILL AND detail_order.ID_PRODUCT=product.ID_PRODUCT\n" +
+                " AND bill.USER_NAME = `user`.USER_NAME AND bill.ID_BILL = ?";
+        PreparedStatement ps = DBConect.getPreparedStatement(sql);
         ps.setString(1, id_bill);
         ResultSet rs = ps.executeQuery();
-        rs.last();
-        if (rs.getRow() == 1) {
-            rs.first();
-            bill.setId(rs.getInt(1));
-            bill.setUserName(rs.getString(2));
-            bill.setDate(rs.getDate(3));
-            bill.setPhone(rs.getString(4));
-            bill.setAddress(rs.getString(5));
-            bill.setTotal(rs.getDouble(6));
-            bill.setStatus(rs.getString(7));
-        }
-        return bill;
+        return rs;
     }
 
     public boolean activeBill(int id_bill) throws SQLException, ClassNotFoundException {

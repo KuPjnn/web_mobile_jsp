@@ -11,20 +11,10 @@ import java.text.DecimalFormat;
 
 public class Util {
     static final String HOST = "http://localhost:8080/web_mobile/";
+//    static final String HOST = "http://webmobile.jl.serv.net.mx/";
 
     public static String fullPath(String path) {
         return HOST + path;
-    }
-
-    public static String urlRedirect(HttpServletRequest request) {
-        String u = (String) request.getAttribute("javax.servlet.forward.request_uri");
-        String url = "";
-        if (u != null)
-            url = u.replace("/web_mobile/", "");
-
-        String parameterAddressBar = request.getQueryString();
-        String parameter = u + parameterAddressBar;
-        return parameter;
     }
 
     public static String convertPrice(double price) {

@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--BILL--%>
-<%@ page import="vn.edu.nlu.fit.util.Util" %>
-<%@ page import="java.util.List" %>
 <%@ page import="vn.edu.nlu.fit.model.Bill" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -34,6 +33,7 @@
                                 <th>Tổng tiền</th>
                                 <th>Trạng thái</th>
                                 <th>Xác nhận</th>
+                                <th>Chi tiết</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -76,6 +76,20 @@
                                     %>
 
                                 </th>
+                                <th>
+                                    <a class="details_btn" data-toggle="modal"
+                                       data-target="#modal_see_bill">
+                                        <i class="far fa-eye text-dark"></i>
+                                        <input type="hidden" class="id_bill" value="<%=bill.getId()%>">
+                                        <input type="hidden" class="user_name" value="<%=bill.getUserName()%>">
+                                        <input type="hidden" class="address" value="<%=bill.getAddress()%>">
+                                        <input type="hidden" class="phone" value="<%=bill.getPhone()%>">
+                                        <input type="hidden" class="date_order" value="<%=bill.getDate()%>">
+                                        <input type="hidden" class="status" value="<%=bill.getStatus()%>">
+                                        <input type="hidden" class="total_price"
+                                               value="<%=Util.convertPrice(bill.getTotal())%>">
+                                    </a>
+                                </th>
                             </tr>
                             <%
                                     }
@@ -90,4 +104,6 @@
     </div>
 </div>
 </body>
+<%--=================   FOOTER    =============--%>
+<%@include file="include/modal_see_bill.jsp" %>
 </html>

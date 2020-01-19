@@ -12,13 +12,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet("/admin/bill")
 public class admin_bill extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/plain");
+
+        String id_bill = request.getParameter("id_bill");
+        try {
+            ResultSet bill = new BillDAO().getBill(id_bill);
+            String result = "";
+            while (bill.next()) {
+                result += bill.getString(7) + " | " + bill.getString(8) + "~";
+            }
+            response.getWriter().write(result);
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws

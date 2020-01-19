@@ -7,42 +7,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79b9d7c4-a086-4b09-9e5f-6f13304ad0a3" name="Default Changelist" comment="admin">
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/util/CheckMail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/include/modal_add_user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/user/change_info.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/user/change_info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/filter/LogFilterUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/filter/LogFilterUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/forget/sendCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/forget/sendCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/include/modal_see_bill.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/admin/admin_bill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/admin/admin_bill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/admin/admin_user.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/admin/admin_user.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/comment/comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/comment/comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/comment/del_comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/comment/del_comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/detail_product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/detail_product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/list_product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/list_product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/BillDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/BillDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/SupplierDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/dao/SupplierDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/db/DBConect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/db/DBConect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/forget/confirmCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/forget/forget_passwd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/forget/sendCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/util/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/util/Util.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/util/sendMail.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/util/sendMail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/admin_bill.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/admin_bill.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/admin_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/admin_product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/admin_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/admin_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/include/modal_add_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/include/modal_add_product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/include/modal_add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/admin/include/modal_add_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/database/webmobile.sql" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/database/webmobile.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/user/change_info.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/user/change_info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/filter/LogFilterUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/filter/LogFilterUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/forget/sendCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/forget/sendCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/forgetPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/forgetPassword.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/admin/admin_bill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/admin/admin_bill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/admin/admin_user.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/admin/admin_user.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/comment/comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/comment/comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/comment/del_comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/comment/del_comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/detail_product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/detail_product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/list_product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/list_product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/BillDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/dao/BillDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/db/DBConect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/db/DBConect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/forget/confirmCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/forget/forget_passwd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/forget/sendCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/util/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/util/Util.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/util/sendMail.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/util/sendMail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/admin/admin_bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/admin/admin_bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/admin/admin_user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/admin/admin_user.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/comment/comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/comment/comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/comment/del_comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/comment/del_comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/detail_product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/detail_product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/list_product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/list_product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/user/change_info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/user/change_info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/filter/LogFilterUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/filter/LogFilterUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/forget/sendCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/forget/sendCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/util/sendMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/util/SendMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/BillDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/BillDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/SupplierDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/SupplierDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/db/DBConect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/db/DBConect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/forget/confirmCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/forget/confirmCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/forget/forget_passwd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/forget/forget_passwd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/forget/sendCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/forget/sendCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/util/SendMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/util/SendMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/util/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/admin_bill.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin_bill.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/admin_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin_product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin/admin_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/include/modal_add_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/include/modal_add_product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/include/modal_add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/include/modal_add_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/include/modal_see_bill.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/include/modal_see_bill.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/detail_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/detail_product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/forgetPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/forgetPassword.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/list_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/list_product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_mobile.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/web_mobile.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_mobile.iws" beforeDir="false" afterPath="$PROJECT_DIR$/web_mobile.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,8 +128,8 @@
         <option value="jsf" />
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -153,7 +185,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -362,7 +394,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -456,7 +488,12 @@
       <workItem from="1578452058031" duration="6265000" />
       <workItem from="1578461158295" duration="16776000" />
       <workItem from="1578486158772" duration="18289000" />
-      <workItem from="1578534152737" duration="5837000" />
+      <workItem from="1578534152737" duration="13113000" />
+      <workItem from="1578551642052" duration="11010000" />
+      <workItem from="1578566364348" duration="291000" />
+      <workItem from="1578567092721" duration="254000" />
+      <workItem from="1578574496332" duration="10766000" />
+      <workItem from="1578622913572" duration="17660000" />
     </task>
     <servers />
   </component>
@@ -501,10 +538,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="363" y="75" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1575186745739" />
-    <state x="361" y="69" key="#Project_Structure" timestamp="1578501537276">
+    <state x="361" y="69" key="#Project_Structure" timestamp="1578577850415">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="69" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1578501537276" />
+    <state x="361" y="69" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1578577850415" />
     <state x="363" y="75" key="#Template_Data_Languages" timestamp="1575220140701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -513,14 +550,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="360" y="69" key="#Web_Browsers/0.0.1536.824@0.0.1536.824" timestamp="1576305545836" />
-    <state x="223" y="66" width="1089" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578507132879">
+    <state x="223" y="66" width="1089" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578566558147">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="66" width="1089" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1578507132879" />
+    <state x="223" y="66" width="1089" height="699" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1578566558147" />
     <state x="576" y="0" width="394" height="554" key="#com.intellij.ide.util.MemberChooser" timestamp="1578473449489">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="576" y="0" width="394" height="554" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1578473449489" />
+    <state x="498" y="193" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578575551115">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="193" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1578575551115" />
     <state x="360" y="74" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1578503458701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -561,58 +602,58 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1536.824@0.0.1536.824" timestamp="1576919522181" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1578506998529">
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1578577847479">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578506998529" />
-    <state width="1266" height="225" key="GridCell.Tab.0.bottom" timestamp="1578535584113">
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578577847479" />
+    <state width="1266" height="2" key="GridCell.Tab.0.bottom" timestamp="1578646618055">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="225" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578535584113" />
-    <state width="1266" height="225" key="GridCell.Tab.0.center" timestamp="1578535584113">
+    <state width="1266" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578646618055" />
+    <state width="1266" height="2" key="GridCell.Tab.0.center" timestamp="1578646618054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="225" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578535584113" />
-    <state width="1266" height="225" key="GridCell.Tab.0.left" timestamp="1578535584112">
+    <state width="1266" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578646618054" />
+    <state width="1266" height="2" key="GridCell.Tab.0.left" timestamp="1578646618054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="225" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578535584112" />
-    <state width="1266" height="225" key="GridCell.Tab.0.right" timestamp="1578535584113">
+    <state width="1266" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578646618054" />
+    <state width="1266" height="2" key="GridCell.Tab.0.right" timestamp="1578646618054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="225" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578535584113" />
-    <state width="1266" height="405" key="GridCell.Tab.1.bottom" timestamp="1578535586575">
+    <state width="1266" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578646618054" />
+    <state width="1266" height="2" key="GridCell.Tab.1.bottom" timestamp="1578646618056">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="405" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578535586575" />
-    <state width="1266" height="405" key="GridCell.Tab.1.center" timestamp="1578535586575">
+    <state width="1266" height="2" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578646618056" />
+    <state width="1266" height="2" key="GridCell.Tab.1.center" timestamp="1578646618055">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="405" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1578535586575" />
-    <state width="1266" height="405" key="GridCell.Tab.1.left" timestamp="1578535586575">
+    <state width="1266" height="2" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1578646618055" />
+    <state width="1266" height="2" key="GridCell.Tab.1.left" timestamp="1578646618055">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="405" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1578535586575" />
-    <state width="1266" height="405" key="GridCell.Tab.1.right" timestamp="1578535586575">
+    <state width="1266" height="2" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1578646618055" />
+    <state width="1266" height="2" key="GridCell.Tab.1.right" timestamp="1578646618056">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="405" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1578535586575" />
-    <state width="1266" height="316" key="GridCell.Tab.2.bottom" timestamp="1578535913912">
+    <state width="1266" height="2" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1578646618056" />
+    <state width="1266" height="2" key="GridCell.Tab.2.bottom" timestamp="1578646618057">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="316" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578535913912" />
-    <state width="1266" height="316" key="GridCell.Tab.2.center" timestamp="1578535913912">
+    <state width="1266" height="2" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578646618057" />
+    <state width="1266" height="2" key="GridCell.Tab.2.center" timestamp="1578646618057">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="316" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1578535913912" />
-    <state width="1266" height="316" key="GridCell.Tab.2.left" timestamp="1578535913912">
+    <state width="1266" height="2" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1578646618057" />
+    <state width="1266" height="2" key="GridCell.Tab.2.left" timestamp="1578646618056">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="316" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1578535913912" />
-    <state width="1266" height="316" key="GridCell.Tab.2.right" timestamp="1578535913912">
+    <state width="1266" height="2" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1578646618056" />
+    <state width="1266" height="2" key="GridCell.Tab.2.right" timestamp="1578646618057">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1266" height="316" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1578535913912" />
+    <state width="1266" height="2" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1578646618057" />
     <state width="1266" height="287" key="GridCell.Tab.3.bottom" timestamp="1576393925698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -681,10 +722,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1576127095384" />
-    <state x="170" y="126" width="1200" height="584" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577327058223">
+    <state x="170" y="126" width="1200" height="584" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1578629445744">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="170" y="126" width="1200" height="584" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1577327058223" />
+    <state x="170" y="126" width="1200" height="584" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1578629445744" />
     <state x="339" y="56" key="com.intellij.javaee.view.ServerArtifactsDialog" timestamp="1576598664262">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

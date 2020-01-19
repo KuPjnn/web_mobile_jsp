@@ -23,7 +23,6 @@
         <%
             ResultSet detail = (ResultSet) request.getAttribute("detailProduct");
             ResultSet comment = (ResultSet) request.getAttribute("comment");
-
             while (detail.next()) {
         %>
         <div class="row">
@@ -90,24 +89,22 @@
                     </div>
                     <%--=========================--%>
                     <%
-                        int star = 0;
-                        int check = 0;
-                        while (comment.next()) {
-                            star += comment.getInt(7);
-                            check++;
-                        }
-                        if (star == 0) {
+
+                        if (detail.getInt(8) == 0) {
                     %>
                     <p>Chưa có đánh giá</p>
                     <%
                     } else {
 
-                        for (int i = 0; i < star / check; i++) {
+                        for (int i = 0; i < detail.getInt(8); i++) {
+                            System.out.println("");
                     %>
                     <i class="fa fa-star star" style="color:darkorange"></i>
+
                     <%
                         }
-                        for (int i = 0; i < 5 - star / check; i++) {
+                        for (int i = 0; i < 5 - detail.getInt(8); i++) {
+                            System.out.println("b");
                     %>
 
                     <i class="fa fa-star star" style="color: #9fcdff"></i>
@@ -165,9 +162,15 @@
             }
         %>
         <!--ĐÁNH GIÁ SẢN PHẨM-->
+
         <div class="py-3">
             <h3>Nhận xét sản phẩm</h3>
         </div>
+        <%
+            if (request.getAttribute("check") != null) {
+                if ((int) request.getAttribute("check") == 0) {
+
+        %>
         <div>
             <p style="margin-bottom: 10px;font-size: 15px">**Đánh giá sản phẩm**</p>
             <div class="float-left">
@@ -216,6 +219,10 @@
                 </p>
             </div>
         </div>
+        <%
+                }
+            }
+        %>
         <div class="product_evaluation">
             <form id="form_comment">
                 <div class="input-group mb-3">
@@ -257,7 +264,8 @@
                     </p>
                     <div style="">
                         <%
-                            for (int i = 0; i < comment.getInt(7); i++) {
+                            if (comment.getInt(7) != 0) {
+                                for (int i = 0; i < comment.getInt(7); i++) {
                         %>
                         <i class="fa fa-star star" style="color:darkorange"></i>
                         <%
@@ -267,6 +275,7 @@
 
                         <i class="fa fa-star star" style="color: #9fcdff"></i>
                         <%
+                                }
                             }
                         %>
 
@@ -435,7 +444,7 @@
                     data: { /*Dữ liệu post lên server*/
                         id: id,
                         comment: comment,
-                        star_num: star_num
+                        star_num: star_num,
                     },
                     success: function (result) { /*Thành công thì thực hiện function(success)*/
                         location.reload();
@@ -457,11 +466,13 @@
                 confirmButtonColor: '#ff6700',
                 preConfirm: () => {
                     var id_comment = $('#id_comment').val();
+                    var id = $('#id').val();
                     $.ajax({
                         url: "<%=Util.fullPath("del_comment")%>",
                         type: "get",
                         data: {
-                            id_comment: id_comment
+                            id_comment: id_comment,
+                            id: id
                         },
                         success: function () {
                             location.reload();

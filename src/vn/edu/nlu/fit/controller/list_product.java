@@ -16,40 +16,6 @@ import java.sql.SQLException;
 public class list_product extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*String supplier = request.getParameter("supplier");
-
-        String search = request.getParameter("search");
-        String[] arr = null;
-        if (supplier != null)
-            arr = supplier.split("_");
-        try {
-            String product = "SELECT product.PRODUCT_NAME,product.PRICE,product.IMG,supplier.NAME_SUPPLIER, items.ID_ITEMS, product.ID_PRODUCT\n" +
-                    " FROM product,items,supplier\n" +
-                    " WHERE product.ID_ITEMS=items.ID_ITEMS AND product.ID_SUPPLIER=supplier.ID_SUPPLIER AND product.ACTIVE=1 ";
-            if (supplier != null) {
-                product += " AND supplier.NAME_SUPPLIER= ? AND items.ID_ITEMS= ?";
-            }
-
-            if (search != null) {
-                product += " AND product.PRODUCT_NAME LIKE ?";
-            }
-            PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
-            if (supplier != null) {
-                preparedStatement.setString(1, arr[1]);
-                preparedStatement.setString(2, arr[0]);
-            }
-            if (search != null)
-                preparedStatement.setString(1, "%" + search + "%");
-            ResultSet resultSet = preparedStatement.executeQuery();
-            request.setAttribute("resultSet", resultSet);
-
-            request.getRequestDispatcher("list_product.jsp").forward(request, response);
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }*/
         int page = 0;
         String checkPage = "";
         if (request.getParameter("page") == null) page = 1;
@@ -110,7 +76,7 @@ public class list_product extends HttpServlet {
                 int total = cc.getInt(1);
                 checkPage = search + "_" + total;
                 request.setAttribute("total", checkPage);
-            } else if (sort.equals("<5000000")) {
+            } else if (sort != null && sort.equals("<5000000")) {
                 product += " AND product.PRICE < ? LIMIT " + (page - 1) * 15 + ",15";
                 PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
                 preparedStatement.setInt(1, 5000000);
@@ -127,7 +93,7 @@ public class list_product extends HttpServlet {
                 checkPage = "false" + "_" + total;
                 request.setAttribute("total", checkPage);
 
-            } else if (!sort.equals("<5000000") && sort.equals("<10000000")) {
+            } else if (sort != null && !sort.equals("<5000000") && sort.equals("<10000000")) {
                 product += " AND product.PRICE BETWEEN ? AND ? LIMIT " + (page - 1) * 15 + ",15";
                 PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
                 preparedStatement.setInt(1, 5000000);
@@ -144,9 +110,9 @@ public class list_product extends HttpServlet {
                 cc.beforeFirst();
                 cc.next();
                 int total = cc.getInt(1);
-                checkPage = "false" + "_" + total;
+                checkPage = "sort" + "_" + total;
                 request.setAttribute("total", checkPage);
-            } else if (sort.equals(">10000000")) {
+            } else if (sort != null && sort.equals(">10000000")) {
                 product += " AND product.PRICE > ? LIMIT " + (page - 1) * 15 + ",15";
                 PreparedStatement preparedStatement = DBConect.getPreparedStatement(product);
                 preparedStatement.setInt(1, 10000000);
@@ -176,9 +142,7 @@ public class list_product extends HttpServlet {
                 checkPage = "true" + "_" + total;
                 request.setAttribute("total", checkPage);
             }
-
             request.getRequestDispatcher("list_product.jsp").forward(request, response);
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

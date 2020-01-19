@@ -10,7 +10,7 @@
                     <h4 class="card-title text-center font-weight-bold">Đăng ký</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<%=Util.fullPath("register")%>" method="POST" class="form-regis">
+                    <form action="<%=Util.fullPath("register")%>" method="POST" class="form-regis" name="register">
 
                         <div class="input-group mb-4 mt-5">
                             <div class="input-group-prepend">
