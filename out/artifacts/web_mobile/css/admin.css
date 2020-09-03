@@ -1,0 +1,71 @@
+thead {
+    background-color: #ff6700;
+}
+
+thead th {
+    font-size: 16px;
+    color: #fff;
+}
+
+tbody th {
+    font-weight: normal;
+}
+
+#admin_header {
+    background-color: #ff6700;
+}
+
+#admin_header .admin_header {
+    margin: auto;
+}
+
+#admin_header .admin_header a {
+    font-size: 14px;
+    margin: 0;
+}
+
+#admin_header .admin_header i {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+#admin_body {
+    margin: auto;
+}
+
+#admin_body .nav-item {
+    background-color: #ffa500;
+    padding: 20px 10px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#admin_body .nav-item:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+#admin_body .nav-item.active,
+#admin_body .nav-item.active i {
+    background-color: #ff6700;
+    color: #fff;
+}
+
+#admin_body i {
+    color: #fff;
+    font-size: 20px;
+}
+
+#admin_body .card-header {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff6700;
+}
+
+#admin_body .flex-column {
+    position: sticky;
+    top: 0;
+}

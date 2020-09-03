@@ -4,7 +4,6 @@ import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.db.DBConect;
 import vn.edu.nlu.fit.model.Cart;
 import vn.edu.nlu.fit.model.ListCart;
-import vn.edu.nlu.fit.model.Product;
 import vn.edu.nlu.fit.model.UserModel;
 import vn.edu.nlu.fit.signatures.Signatures;
 import vn.edu.nlu.fit.util.Util;
