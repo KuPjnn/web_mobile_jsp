@@ -21,15 +21,12 @@ public class detail_order extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         HttpSession session = request.getSession();
-
         String select = "SELECT * FROM `webmobile`.`bill` WHERE ID_BILL = (SELECT MAX(id_bill) FROM bill)";
-
         try {
             PreparedStatement preparedStatement = DBConect.getPreparedStatement(select);
-
             ResultSet rs = preparedStatement.executeQuery();
-
             request.setAttribute("rs", rs);
 
             int id_bill = 0;
@@ -48,9 +45,7 @@ public class detail_order extends HttpServlet {
 
             request.getRequestDispatcher("detail_order.jsp").forward(request, response);
             request.getSession().removeAttribute("list_cart");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }

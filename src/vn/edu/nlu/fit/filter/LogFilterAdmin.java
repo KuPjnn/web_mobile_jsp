@@ -1,6 +1,6 @@
 package vn.edu.nlu.fit.filter;
 
-import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.model.UserModel;
 import vn.edu.nlu.fit.util.Util;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class LogFilterAdmin implements Filter {
 
         HttpSession session = req.getSession();
 
-        User user = (User) session.getAttribute("user");
+        UserModel user = (UserModel) session.getAttribute("user");
 
         if (user != null && user.getPrivileges().equals("ad")) {
             // Cho phép request được đi tiếp. (Vượt qua Filter này).

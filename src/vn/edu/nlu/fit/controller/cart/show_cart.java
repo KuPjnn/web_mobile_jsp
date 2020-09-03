@@ -12,16 +12,16 @@ import java.io.IOException;
 
 @WebServlet("/show_cart")
 public class show_cart extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        ListCart listCart = (ListCart) session.getAttribute("list_cart");
-        if (listCart == null)
-            listCart = new ListCart();
-        session.setAttribute("list_cart", listCart);
-        request.getRequestDispatcher("cart.jsp").forward(request, response);
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		ListCart listCart = (ListCart) session.getAttribute("list_cart");
+		if (listCart == null)
+			listCart = new ListCart();
+		session.setAttribute("list_cart", listCart);
+		request.getRequestDispatcher("cart.jsp").forward(request, response);
+	}
 }

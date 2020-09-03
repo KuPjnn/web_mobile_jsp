@@ -1,5 +1,5 @@
 <%@ page import="vn.edu.nlu.fit.util.Util" %>
-<%@ page import="vn.edu.nlu.fit.model.User" %>
+<%@ page import="vn.edu.nlu.fit.model.UserModel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header id="admin_header">
     <div class="container-fluid">
@@ -14,7 +14,7 @@
                     <div class="col-md-3 col12">
                         <ul class="login mt-3 float-right">
                             <%
-                                User u = (User) session.getAttribute("user");
+                                UserModel u = (UserModel) session.getAttribute("user");
                             %>
                             <a class="mx-5 text-decoration-none" href="<%=Util.fullPath("info")%>"><i
                                     class="fa fa-user"></i><%=u.getFull_name().toUpperCase()%>

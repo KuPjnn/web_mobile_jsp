@@ -1,8 +1,6 @@
 package vn.edu.nlu.fit.controller.cart;
 
-import vn.edu.nlu.fit.model.Cart;
 import vn.edu.nlu.fit.model.ListCart;
-import vn.edu.nlu.fit.util.Util;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

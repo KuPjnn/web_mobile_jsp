@@ -26,7 +26,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Tên người dùng</th>
-                                <th>Tên sản phẩm</th>
+                                <th>ID sản phẩm</th>
                                 <th>Nội dung</th>
                                 <th>Ngày bình luận</th>
                                 <th></th>

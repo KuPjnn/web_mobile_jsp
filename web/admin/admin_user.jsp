@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="vn.edu.nlu.fit.util.Util" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.nlu.fit.model.User" %>
+<%@ page import="vn.edu.nlu.fit.model.UserModel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -39,10 +39,10 @@
                             </thead>
                             <tbody>
                             <%
-                                User admin = (User) session.getAttribute("user");
-                                List<User> list_user = (List<User>) request.getAttribute("list_user");
+                                UserModel admin = (UserModel) session.getAttribute("user");
+                                List<UserModel> list_user = (List<UserModel>) request.getAttribute("list_user");
                                 if (list_user != null)
-                                    for (User user : list_user) {
+                                    for (UserModel user : list_user) {
                                         if (!user.getUser_name().equals(admin.getUser_name())) {
                             %>
                             <tr>

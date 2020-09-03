@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.nlu.fit.model.UserModel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -27,7 +28,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <%
-                                User user = (User) session.getAttribute("user");
+                                UserModel user = (UserModel) session.getAttribute("user");
                                 if (user != null) {
                             %>
                             <table class="table m-auto">

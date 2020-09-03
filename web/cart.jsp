@@ -1,5 +1,6 @@
 <%@ page import="vn.edu.nlu.fit.model.ListCart" %>
 <%@ page import="vn.edu.nlu.fit.model.Cart" %>
+<%@ page import="vn.edu.nlu.fit.model.UserModel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -78,7 +79,7 @@
                     <span id="total" class="d-block my-4"><%=Util.convertPrice(list_item.totalPrice())%></span>
 
                     <%
-                        User user = (User) session.getAttribute("user");
+                        UserModel user = (UserModel) session.getAttribute("user");
                         if (user == null) {
                     %>
                     <button onclick="Swal.fire({ title: 'Bạn chưa đăng nhập!', confirmButtonColor: '#ff6700',})"
@@ -171,4 +172,5 @@
             }
         });
     });
+
 </script>

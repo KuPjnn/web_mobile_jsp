@@ -1,6 +1,7 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="vn.edu.nlu.fit.model.Cart" %>
 <%@ page import="vn.edu.nlu.fit.model.ListCart" %>
+<%@ page import="vn.edu.nlu.fit.model.UserModel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -48,7 +49,7 @@
             <div class="col-md-8 col-11 m-auto pb-5">
                 <div class="table-responsive border rounded">
                     <%
-                        User user = (User) session.getAttribute("user");
+                        UserModel user = (UserModel) session.getAttribute("user");
                         ListCart listCart = (ListCart) session.getAttribute("list_cart");
                         ResultSet resultSet = (ResultSet) request.getAttribute("rs");
                         resultSet.beforeFirst();

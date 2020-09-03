@@ -1,4 +1,3 @@
-<%@ page import="vn.edu.nlu.fit.model.User" %>
 <%@ page import="vn.edu.nlu.fit.dao.ProductDAO" %>
 <%@ page import="vn.edu.nlu.fit.model.Product" %>
 <%@ page import="java.util.ArrayList" %>
@@ -6,7 +5,7 @@
 <header id="main_header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="<%=Util.fullPath("home")%>">
+            <a class="navbar-brand" href="<c:url value="/home"/>">
                 <i style="font-size: 45px; color: #fff" class="fab fa-speaker-deck"></i>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -17,9 +16,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContentLG">
                 <ul class="navbar-nav mr-auto">
                     <!--==========   MENU    ============-->
-                    <jsp:include page="menu"/>
+                    <jsp:include page="/menu"/>
                 </ul>
-                <form action="<%=Util.fullPath("list_product")%>" method="get" class="mr-5" autocomplete="off">
+                <form action="<c:url value="/list_product"/>" method="get" class="mr-5" autocomplete="off">
                     <div class="input-group">
                         <input id="search" name="search" type="text" class="form-control pt-2"
                                style="border-start-start-radius: 20px"
@@ -34,28 +33,23 @@
                     </div>
                 </form>
                 <%--    LOGIN_LOGOUT    --%>
-                <%
-                    User ss = (User) session.getAttribute("user");
-                    if (ss != null) {
-                %>
-                <a class="mr-3 text-decoration-none" href="<%=Util.fullPath("info")%>">
-                    <%=ss.getFull_name().toUpperCase()%>
-                </a>
-                <a onclick="return logout()" href="#" class="text-decoration-none mr-3">ĐĂNG XUẤT</a>
-                <%
-                } else {
-                %>
-                <a id="login" class="mr-3 text-decoration-none" href="" data-toggle="modal"
-                   data-target="#loginModal">ĐĂNG NHẬP</a>
-                <a class="mr-3 text-decoration-none" href="" data-toggle="modal"
-                   data-target="#regisModal">ĐĂNG KÍ</a>
-                <%
-                    }
-                %>
+                <c:if test="${not empty sessionScope.user}">
+                    <a class="mr-3 text-decoration-none" href="<c:url value="/info"/>">
+                            ${sessionScope.user.full_name}
+                    </a>
+                    <a onclick="return logout()" href="#" class="text-decoration-none mr-3">ĐĂNG XUẤT</a>
+                </c:if>
+
+                <c:if test="${empty sessionScope.user}">
+                    <a id="login" class="mr-3 text-decoration-none" href="" data-toggle="modal"
+                       data-target="#loginModal">ĐĂNG NHẬP</a>
+                    <a class="mr-3 text-decoration-none" href="" data-toggle="modal"
+                       onclick="return generateKeyRSA()" data-target="#regisModal">ĐĂNG KÍ</a>
+                </c:if>
+
                 <%--    CART    --%>
-                <a class="fas fa-shopping-cart mr-3 text-decoration-none" href="<%=Util.fullPath("show_cart")%>"
-                   style="font-size: 20px; line-height: 45px"
-                >
+                <a class="fas fa-shopping-cart mr-3 text-decoration-none" href="<c:url value="/show_cart"/>"
+                   style="font-size: 20px; line-height: 45px">
                 </a>
             </div>
         </nav>
@@ -174,12 +168,54 @@
 
     /*An array containing all the country names in the world:*/
     <%
-    String text = "";
-    ProductDAO auto  = new ProductDAO();
-    ArrayList<Product> arr = auto.listProduct();
-    for(Product pro: arr){
-        text+= "\""+pro.getProduct_name()+"\""+", ";
-    }
+        String
+        text
+        =
+        ""
+        ;
+        ProductDAO
+        auto
+        =
+        new
+        ProductDAO
+        (
+        )
+        ;
+        ArrayList
+        <
+        Product
+        >
+        arr
+        =
+        auto
+        .
+        listProduct
+        (
+        )
+        ;
+        for
+        (
+        Product
+        pro
+        :
+        arr
+        )
+        {
+        text
+        +=
+        "\""
+        +
+        pro
+        .
+        getProduct_name
+        (
+        )
+        +
+        "\""
+        +
+        ", "
+        ;
+        }
     %>
     var product = [<%=text%>];
     /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/

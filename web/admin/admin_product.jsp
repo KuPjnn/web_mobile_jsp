@@ -1,8 +1,6 @@
-<%@ page import="vn.edu.nlu.fit.model.Product" %>
-<%@ page import="vn.edu.nlu.fit.util.Util" %>
-<%@ page import="java.util.List" %>
-<%@ page import="vn.edu.nlu.fit.model.Configure" %>
 <%@ page import="vn.edu.nlu.fit.dao.ConfigureDAO" %>
+<%@ page import="vn.edu.nlu.fit.model.Configure" %>
+<%@ page import="vn.edu.nlu.fit.model.Product" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -33,7 +31,7 @@
                             </div>
                         </div>--%>
                     </div>
-                    <div class="table-responsive" style="overflow : scroll; height: 77vh">
+                    <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                             <tr>
@@ -48,7 +46,6 @@
                             </tr>
                             </thead>
                             <tbody>
-
                             <%
                                 List<Product> list = (List<Product>) request.getAttribute("list");
                                 if (list != null) {

@@ -50,10 +50,6 @@ public class admin_product extends HttpServlet {
                 if (del == true)
                     response.sendRedirect("product");
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

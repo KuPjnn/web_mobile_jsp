@@ -1,4 +1,5 @@
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="vn.edu.nlu.fit.model.UserModel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -235,7 +236,7 @@
                     <input id="star_num" name="star_num" type="number" value="" style="display: none">
                     <div class="input-group-append">
                         <%
-                            User user = (User) session.getAttribute("user");
+                            UserModel user = (UserModel) session.getAttribute("user");
                             if (user == null) {
                         %>
                         <button type="button" onclick="swal.fire({
@@ -424,7 +425,7 @@
 </style>
 <%-----------------------------------------------%>
 <script>
-    /*Add comment   */
+    /*Add comment*/
     $(document).ready(function () {
         $('#btn_evaluation').click(function (e) {
             e.preventDefault();

@@ -17,6 +17,7 @@
         <filter-name>logFilterAdmin</filter-name>
         <url-pattern>/admin/*</url-pattern>
     </filter-mapping>
+
     <filter-mapping>
         <filter-name>logFilterUser</filter-name>
         <url-pattern>/info</url-pattern>
@@ -24,4 +25,14 @@
         <url-pattern>/detail_order</url-pattern>
         <url-pattern>/pay_online</url-pattern>
     </filter-mapping>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>ERP APPLICATION</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
 </web-app>
