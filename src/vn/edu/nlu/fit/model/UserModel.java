@@ -1,7 +1,7 @@
 package vn.edu.nlu.fit.model;
 
 public class UserModel {
-	private String user_name, password, full_name, email, phone, privileges, code, key;
+	private String user_name, password, full_name, email, phone, privileges, code, key, key_code;
 
 	public UserModel() {
 	}
@@ -78,6 +78,14 @@ public class UserModel {
 
 	public void setKey(String key) {
 		this.key = key;
+	}
+
+	public String getKey_code() {
+		return key_code;
+	}
+
+	public void setKey_code(String key_code) {
+		this.key_code = key_code;
 	}
 }
 

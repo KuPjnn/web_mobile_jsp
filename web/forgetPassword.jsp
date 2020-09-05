@@ -79,7 +79,7 @@
     $("#sendCode").click(function () {
         var email = $('#email').val();
         var username = $('#username_').val();
-        if (email != '' && username != '') {
+        if (email !== '' && username !== '') {
             $.ajax({
                 url: "<%=Util.fullPath("sendCode")%>",
                 type: "post",

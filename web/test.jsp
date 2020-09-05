@@ -7,10 +7,9 @@
     <script src="<c:url value="/lib/JSEncrypt/jsencrypt.min.js"/>"></script>
     <script src="<c:url value="/lib/JSEncrypt/cryptojs.min.js"/>"></script>
 </head>
+
 <body>
-<input type="file" id="inputPrivateKey">
-<input type="button" id="submit" onclick="return signatures('aaa')">
-<span style="display: none" id="outputPrivateKey"></span>
+
 </body>
 <%--<script>
     /*====================================   Generate key   ====================================*/
@@ -127,7 +126,7 @@
     }
 
 </script>--%>
-<script>
+<%--<script>
     var input = document.getElementById("inputPrivateKey");
     var output = document.getElementById("outputPrivateKey");
 
@@ -150,5 +149,5 @@
         sign.setPrivateKey(key);
         return sign.sign(data, CryptoJS.SHA256, "sha256");
     }
-</script>
+</script>--%>
 </html>

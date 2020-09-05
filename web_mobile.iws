@@ -3,7 +3,6 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="web_mobile" />
-      <artifact name="web_mobile_war" />
     </artifacts-to-build>
   </component>
   <component name="BranchesTreeState">
@@ -25,7 +24,45 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79b9d7c4-a086-4b09-9e5f-6f13304ad0a3" name="Default Changelist" comment="admin" />
+    <list default="true" id="79b9d7c4-a086-4b09-9e5f-6f13304ad0a3" name="Default Changelist" comment="admin">
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/key/KeyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/pay/pay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/pay/pay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/pay/pay_online.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/WEB-INF/classes/vn/edu/nlu/fit/controller/pay/pay_online.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/forgetPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/forgetPassword.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/headAllPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/headAllPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/info_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/info_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/pay.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/pay_online.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/pay_online.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_mobile/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_mobile/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/forget/SendCodeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/forget/SendCodeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/pay/pay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/pay/pay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/pay/pay_online.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web_mobile/vn/edu/nlu/fit/controller/pay/pay_online.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/authenticator/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/authenticator/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/forget/ConfirmCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/forget/ConfirmCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/forget/SendCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/forget/SendCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/pay/pay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/pay/pay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/pay/pay_online.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/controller/pay/pay_online.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/database/webmobile-athttt.sql" beforeDir="false" afterPath="$PROJECT_DIR$/web/database/webmobile-athttt.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/forgetPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/forgetPassword.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/headAllPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/headAllPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/info_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/info_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pay.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pay_online.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pay_online.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_mobile.iws" beforeDir="false" afterPath="$PROJECT_DIR$/web_mobile.iws" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,9 +73,9 @@
       <list>
         <option value="jsf" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="Class" />
         <option value="Jsp File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -100,22 +137,22 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Intellij\web_mobile\resource\lib" />
-      <recent name="D:\Intellij\web_mobile\web" />
-      <recent name="D:\Intellij\web_mobile\web\img\snow" />
-      <recent name="D:\Intellij\web_mobile\web\admin\include" />
-      <recent name="D:\Intellij\web_mobile\web\view_admin" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="vn.edu.nlu.fit.controller.admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Intellij\web_mobile\resource\lib" />
       <recent name="D:\Intellij\web_mobile\web\img\logo" />
       <recent name="D:\Intellij\web_mobile\web\WEB-INF\lib" />
       <recent name="D:\Intellij\web_mobile\web" />
       <recent name="D:\Intellij\web_mobile\web\js" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="vn.edu.nlu.fit.controller.admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Intellij\web_mobile\web\database" />
+      <recent name="D:\Intellij\web_mobile\resource\lib" />
+      <recent name="D:\Intellij\web_mobile\web" />
+      <recent name="D:\Intellij\web_mobile\web\img\snow" />
+      <recent name="D:\Intellij\web_mobile\web\admin\include" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
@@ -132,15 +169,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -449,7 +484,8 @@
       <workItem from="1598931240254" duration="27225000" />
       <workItem from="1599021535645" duration="5475000" />
       <workItem from="1599027089160" duration="18296000" />
-      <workItem from="1599099210648" duration="3790000" />
+      <workItem from="1599099210648" duration="13857000" />
+      <workItem from="1599312404302" duration="6895000" />
     </task>
     <servers />
   </component>
@@ -501,10 +537,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="526" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1598602379615" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1599022288708">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1599315877334">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599022288708" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599315877334" />
     <state x="499" y="51" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1598581439219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -521,54 +557,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1598885089076" />
-    <state width="1259" height="371" key="GridCell.Tab.0.bottom" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.0.bottom" timestamp="1599318879299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.0.center" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599318879299" />
+    <state width="1259" height="248" key="GridCell.Tab.0.center" timestamp="1599318879299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.0.left" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599318879299" />
+    <state width="1259" height="248" key="GridCell.Tab.0.left" timestamp="1599318879299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.0.right" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599318879299" />
+    <state width="1259" height="248" key="GridCell.Tab.0.right" timestamp="1599318879299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.1.bottom" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599318879299" />
+    <state width="1259" height="248" key="GridCell.Tab.1.bottom" timestamp="1599318879300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.1.center" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599318879300" />
+    <state width="1259" height="248" key="GridCell.Tab.1.center" timestamp="1599318879299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.1.left" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599318879299" />
+    <state width="1259" height="248" key="GridCell.Tab.1.left" timestamp="1599318879299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.1.right" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599318879299" />
+    <state width="1259" height="248" key="GridCell.Tab.1.right" timestamp="1599318879299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.2.bottom" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599318879299" />
+    <state width="1259" height="248" key="GridCell.Tab.2.bottom" timestamp="1599318879300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.2.center" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599318879300" />
+    <state width="1259" height="248" key="GridCell.Tab.2.center" timestamp="1599318879300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.2.left" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599318879300" />
+    <state width="1259" height="248" key="GridCell.Tab.2.left" timestamp="1599318879300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
-    <state width="1259" height="371" key="GridCell.Tab.2.right" timestamp="1599101147771">
+    <state width="1259" height="248" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599318879300" />
+    <state width="1259" height="248" key="GridCell.Tab.2.right" timestamp="1599318879300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1259" height="371" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599101147771" />
+    <state width="1259" height="248" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599318879300" />
     <state width="1259" height="326" key="GridCell.Tab.3.bottom" timestamp="1598608324091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -585,6 +621,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1259" height="326" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1598608324091" />
+    <state width="1259" height="165" key="GridCell.Tab.5.bottom" timestamp="1599317066629">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1259" height="165" key="GridCell.Tab.5.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599317066629" />
+    <state width="1259" height="165" key="GridCell.Tab.5.center" timestamp="1599317066628">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1259" height="165" key="GridCell.Tab.5.center/0.0.1536.824@0.0.1536.824" timestamp="1599317066628" />
+    <state width="1259" height="165" key="GridCell.Tab.5.left" timestamp="1599317066628">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1259" height="165" key="GridCell.Tab.5.left/0.0.1536.824@0.0.1536.824" timestamp="1599317066628" />
+    <state width="1259" height="165" key="GridCell.Tab.5.right" timestamp="1599317066629">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1259" height="165" key="GridCell.Tab.5.right/0.0.1536.824@0.0.1536.824" timestamp="1599317066629" />
+    <state width="1259" height="165" key="GridCell.Tab.6.bottom" timestamp="1599317069582">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1259" height="165" key="GridCell.Tab.6.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599317069582" />
+    <state width="1259" height="165" key="GridCell.Tab.6.center" timestamp="1599317069581">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1259" height="165" key="GridCell.Tab.6.center/0.0.1536.824@0.0.1536.824" timestamp="1599317069581" />
+    <state width="1259" height="165" key="GridCell.Tab.6.left" timestamp="1599317069581">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1259" height="165" key="GridCell.Tab.6.left/0.0.1536.824@0.0.1536.824" timestamp="1599317069581" />
+    <state width="1259" height="165" key="GridCell.Tab.6.right" timestamp="1599317069582">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1259" height="165" key="GridCell.Tab.6.right/0.0.1536.824@0.0.1536.824" timestamp="1599317069582" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1599099730928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -617,10 +685,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="410" y="139" width="700" height="530" key="recent.locations.popup/0.0.1536.824@0.0.1536.824" timestamp="1595002402245" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1599060481338">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1599315827859">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599060481338" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599315827859" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -11,35 +11,32 @@ import java.sql.SQLException;
 
 @WebServlet("/login")
 public class LoginController extends javax.servlet.http.HttpServlet {
-    protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
-        response.setContentType("text/plain");
+	protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/plain");
 
-        String user = request.getParameter("username");
-        String pass = request.getParameter("password");
-        HttpSession session = request.getSession();
-        try {
-            UserModel u = new UserDAO().getUser(user);
-            boolean validate = new UserDAO().checkLogin(user, pass);
-            if (u != null && validate && u.getPrivileges().equals("kh")) {
-                session.setAttribute("user", u);
-                response.getWriter().write("true");
-            } else if (u != null && validate && u.getPrivileges().equals("ad")) {
-                session.setAttribute("user", u);
-                response.getWriter().write("true_ad");
-            } else {
-                response.getWriter().write("false");
-            }
+		String user = request.getParameter("username");
+		String pass = request.getParameter("password");
+		HttpSession session = request.getSession();
+		try {
+			UserModel userModel = new UserDAO().getUser(user);
+			boolean validate = new UserDAO().checkLogin(user, pass);
+			if (userModel != null && validate && userModel.getPrivileges().equals("kh")) {
+				session.setAttribute("user", userModel);
+				response.getWriter().write("true");
+			} else if (userModel != null && validate && userModel.getPrivileges().equals("ad")) {
+				session.setAttribute("user", userModel);
+				response.getWriter().write("true_ad");
+			} else {
+				response.getWriter().write("false");
+			}
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
-    }
+	protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
 }

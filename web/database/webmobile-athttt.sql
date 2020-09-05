@@ -11,7 +11,7 @@
  Target Server Version : 100411
  File Encoding         : 65001
 
- Date: 03/09/2020 10:03:13
+ Date: 05/09/2020 22:22:17
 */
 
 SET NAMES utf8mb4;
@@ -49,7 +49,7 @@ CREATE TABLE `bill`  (
   PRIMARY KEY (`ID_BILL`) USING BTREE,
   INDEX `bill_ibfk_1`(`USER_NAME`) USING BTREE,
   CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`USER_NAME`) REFERENCES `user` (`USER_NAME`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 68 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 74 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for comment
@@ -517,12 +517,8 @@ CREATE TABLE `user`  (
   `PRIVILEGES` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `CODE` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `PUBLIC_KEY` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `KEY_CODE` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`USER_NAME`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of user
--- ----------------------------
-INSERT INTO `user` VALUES ('admin', '42443g4A9c79c7c864@@6b2f6b922he4', 'Hoang Long', 'hoangvanlong1702@gmail.com', '0123456789', 'ad', NULL, '-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCVG7UkB1Mkh7rcf8ZmP5cMOqlx\n9QLmUH/LZ+tXGwlN7hsc3O7jFpcp2qznCp8oyuodEJeKsDRX3X+JbY/tIFphEb1m\nAGpOd3ZSIggDibvxpuu+e2TnpVX0DsxHhKoDYvwQttJNKzjVeBkhpL9LsL73csor\n4nH0/CCHCXo0v5A9zwIDAQAB\n-----END PUBLIC KEY-----');
 
 SET FOREIGN_KEY_CHECKS = 1;

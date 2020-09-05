@@ -35,6 +35,7 @@ public class pay_online extends HttpServlet {
 		String name_atm = request.getParameter("name_atm");
 		int number_atm = Integer.parseInt(request.getParameter("number_atm"));
 		String[] info = request.getParameter("info").split("~");
+
 		String signatures = request.getParameter("signatures");
 		String data_sign = request.getParameter("data_sign");
 
@@ -76,10 +77,16 @@ public class pay_online extends HttpServlet {
 
 						response.sendRedirect(Util.fullPath("detail_order"));
 					} else {
+						request.setAttribute("info", info[0] + "~" + info[1]);
+						request.setAttribute("signatures", signatures);
+						request.setAttribute("data_sign", data_sign);
 						request.setAttribute("atm_error", "Tài khoản của bạn không đủ tiền.");
 						request.getRequestDispatcher("pay_online.jsp").forward(request, response);
 					}
 				} else {
+					request.setAttribute("info", info[0] + "~" + info[1]);
+					request.setAttribute("signatures", signatures);
+					request.setAttribute("data_sign", data_sign);
 					request.setAttribute("atm_error", "Sai thông tin tài khoản.");
 					request.getRequestDispatcher("pay_online.jsp").forward(request, response);
 				}
@@ -87,6 +94,9 @@ public class pay_online extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else {
+			request.setAttribute("info", info[0] + "~" + info[1]);
+			request.setAttribute("signatures", signatures);
+			request.setAttribute("data_sign", data_sign);
 			request.setAttribute("atm_error", "Xác thực chữ ký không thành công!");
 			request.getRequestDispatcher("pay_online.jsp").forward(request, response);
 		}

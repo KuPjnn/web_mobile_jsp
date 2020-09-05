@@ -32,7 +32,7 @@ public class SendCodeController extends HttpServlet {
                 preparedStatement.setString(1, Encyption.MyEncypt(code));
                 preparedStatement.setString(2, userName);
                 preparedStatement.executeUpdate();
-                response.getWriter().write("Đã gửi mã xác nhận");
+                response.getWriter().write("Đã gửi mã xác nhận!");
             } else {
                 response.getWriter().write("Email hoặc tên đăng nhập không đúng");
             }

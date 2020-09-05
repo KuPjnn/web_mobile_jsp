@@ -75,6 +75,7 @@ public class UserDAO {
 			userModel.setPrivileges(rs.getString(6));
 			userModel.setCode(rs.getString(7));
 			userModel.setKey(rs.getString(8));
+			userModel.setKey_code(rs.getString(9));
 			return userModel;
 		}
 		return userModel;

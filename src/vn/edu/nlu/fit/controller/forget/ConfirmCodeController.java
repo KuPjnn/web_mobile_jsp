@@ -31,7 +31,7 @@ public class ConfirmCodeController extends HttpServlet {
 		String code = request.getParameter("code");
 		try {
 			UserModel us = new UserDAO().getUser(userName);
-			if (pass.equals(rePass) && code != "") {
+			if (pass.equals(rePass) && !code.equals("")) {
 				if (us.getCode().equals(Encyption.MyEncypt(code))) {
 					String sql = "update user set CODE = ?, PASSWORD = ? where USER_NAME=?;";
 					PreparedStatement preparedStatement = DBConect.getPreparedStatement(sql);
