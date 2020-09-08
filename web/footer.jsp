@@ -221,6 +221,7 @@
     $(document).ready(function () {
         $('#submitRegis').click(function (e) {
                 e.preventDefault();
+
                 var username = $('#inputUser').val();
                 var pass = $('#inputPass').val();
                 var rePass = $('#inputRePass').val();
@@ -229,9 +230,15 @@
                 var phone = $('#inputPhone').val();
                 var pub_key = $('#public-key').val();
                 var pri_key = $('#private-key').val();
+
                 if (valid() || username === '' || pass === '' || rePass === '' || fullname === '' || mail === '' || phone === '') {
                     console.log("error");
                 } else {
+                    $(this).prop("disabled", true);
+                    // add spinner to button
+                    $(this).html(
+                        '<div id="submitRegis" class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>'
+                    );
                     $.ajax({
                         url: '<c:url value="/register"/>',
                         type: 'POST',
@@ -260,6 +267,11 @@
                                     confirmButtonColor: '#ff6700',
                                 });
                             }
+                            $('#submitRegis').prop("disabled", false);
+                            // add spinner to button
+                            $('#submitRegis').html(
+                                '<button id="submitRegis" class="btn_regis btn btn-lg btn-block text-uppercase" type="submit">Đăng ký</button>'
+                            );
                         }
                         ,
                         error: function (error) {

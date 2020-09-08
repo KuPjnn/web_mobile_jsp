@@ -205,6 +205,7 @@
         <entry key="file://$PROJECT_DIR$/web/admin_slide.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/detail_product.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/footer.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/info_user.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/test.jsp" value="file://$PROJECT_DIR$/web" />
       </map>
     </option>

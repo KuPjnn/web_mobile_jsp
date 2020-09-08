@@ -128,7 +128,6 @@
 </div>
 <%------------------------------------------------%>
 
-<%--=================   FOOTER    ==============--%>
 <div class="modal fade" id="changePublicKey" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content w-75 m-auto">
@@ -159,7 +158,6 @@
         </div>
     </div>
 </div>
-<%------------------------------------------------%>
 
 <%--=================   FOOTER    ==============--%>
 <%@include file="footer.jsp" %>
@@ -243,9 +241,16 @@
         }
     });
 
-
     /*Gửi mã xác nhận*/
-    $("#sendKeyCode").click(function () {
+    $("#sendKeyCode").click(function (e) {
+        e.preventDefault();
+
+        $(this).prop("disabled", true);
+        // add spinner to button
+        $(this).html(
+            '<div id="sendKeyCode" class="spinner-border spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>'
+        );
+
         $.ajax({
             url: "<c:url value="/changePublicKey"/>",
             type: "post",
@@ -254,6 +259,11 @@
                     title: mess,
                     confirmButtonColor: '#ff6700'
                 });
+                $('#sendKeyCode').prop("disabled", false);
+                // add spinner to button
+                $('#sendKeyCode').html(
+                    '<a id="sendKeyCode" class="btn-sm btn-danger text-light">Gửi lại</a>'
+                );
             },
             error: function (error) {
                 console.log(error);

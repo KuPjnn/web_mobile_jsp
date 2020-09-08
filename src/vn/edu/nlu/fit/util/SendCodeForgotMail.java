@@ -37,11 +37,11 @@ public class SendCodeForgotMail {
 		getMailSession = Session.getDefaultInstance(mailServerProperties, null);
 		mailMessage = new MimeMessage(getMailSession);
 
-		mailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(toMail)); // Thay
+		mailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(toMail));
 
 		// Bạn có thể chọn CC, BCC
 		//generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("cc@gmail.com")); //Địa chỉ cc gmail
-		mailMessage.setSubject("Forgot Password", StandardCharsets.UTF_8.name());
+		mailMessage.setSubject("Saitama - Code", StandardCharsets.UTF_8.name());
 //		mailMessage.setText("Mã xác nhận đổi mật khẩu của bạn là: " + code, StandardCharsets.UTF_8.name());
 		mailMessage.setContent(
 				"<div align='center'>" +
