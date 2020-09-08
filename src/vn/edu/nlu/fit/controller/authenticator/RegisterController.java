@@ -2,6 +2,8 @@ package vn.edu.nlu.fit.controller.authenticator;
 
 import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.model.UserModel;
+import vn.edu.nlu.fit.signatures.Aes;
+import vn.edu.nlu.fit.util.CheckMail;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,19 +29,21 @@ public class RegisterController extends HttpServlet {
 		String phone = request.getParameter("phone_register");
 		String publicKey = request.getParameter("public_key");
 
+		publicKey = Aes.encrypt(publicKey, Aes.readKey("key/key.aes"));
+
 		UserModel user = new UserModel(userName, password, fullName, email, phone, "kh", publicKey);
 
 		try {
 			UserModel getUser = new UserDAO().getUser(userName);
-//			if (CheckMail.isMailAddressValid(email)) {
-			if (getUser.getUser_name() == null && password.equalsIgnoreCase(rePassword) && new UserDAO().insertUser(user)) {
-				response.getWriter().write("true");
+			if (CheckMail.isMailAddressValid(email)) {
+				if (getUser.getUser_name() == null && password.equalsIgnoreCase(rePassword) && new UserDAO().insertUser(user)) {
+					response.getWriter().write("true");
+				} else {
+					response.getWriter().write("Sai thông tin đăng kí!");
+				}
 			} else {
-				response.getWriter().write("Sai thông tin đăng kí!");
+				response.getWriter().write("Email không tồn tại!");
 			}
-//			} else {
-//				response.getWriter().write("Email không tồn tại!");
-//			}
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}

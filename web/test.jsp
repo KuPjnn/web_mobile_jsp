@@ -6,10 +6,13 @@
     <title>test</title>
     <script src="<c:url value="/lib/JSEncrypt/jsencrypt.min.js"/>"></script>
     <script src="<c:url value="/lib/JSEncrypt/cryptojs.min.js"/>"></script>
+    <jsp:include page="/headAllPage.jsp"/>
 </head>
 
 <body>
-
+<div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+</div>
 </body>
 <%--<script>
     /*====================================   Generate key   ====================================*/

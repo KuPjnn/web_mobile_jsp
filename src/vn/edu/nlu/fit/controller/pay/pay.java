@@ -5,6 +5,7 @@ import vn.edu.nlu.fit.db.DBConect;
 import vn.edu.nlu.fit.model.Cart;
 import vn.edu.nlu.fit.model.ListCart;
 import vn.edu.nlu.fit.model.UserModel;
+import vn.edu.nlu.fit.signatures.Aes;
 import vn.edu.nlu.fit.signatures.Signatures;
 import vn.edu.nlu.fit.util.Util;
 
@@ -52,7 +53,7 @@ public class pay extends HttpServlet {
 			}
 			data.append(address).append("~").append(phone).append(user.getUser_name());
 
-			PublicKey publicKey = Signatures.getPublicKey(new UserDAO().getPublicKey(user.getUser_name()));
+			PublicKey publicKey = Signatures.getPublicKey(Aes.decrypt(new UserDAO().getPublicKey(user.getUser_name()), Aes.readKey("key/key.aes")));
 			if (Signatures.verify(data_sign, signatures, publicKey) && data_sign.equalsIgnoreCase(data.toString())) {
 				String update = "INSERT INTO `webmobile`.`bill`(`USER_NAME`, `DATE`, `PHONE`, `ADDRESS`,`TOTAL`, `STATUS`) VALUES (?, NOW(), ?, ?, ?, ?)";
 				try {

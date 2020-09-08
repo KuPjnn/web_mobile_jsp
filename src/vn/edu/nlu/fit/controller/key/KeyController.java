@@ -3,6 +3,7 @@ package vn.edu.nlu.fit.controller.key;
 import vn.edu.nlu.fit.dao.UserDAO;
 import vn.edu.nlu.fit.db.DBConect;
 import vn.edu.nlu.fit.model.UserModel;
+import vn.edu.nlu.fit.signatures.Aes;
 import vn.edu.nlu.fit.util.Encyption;
 import vn.edu.nlu.fit.util.SendCodeForgotMail;
 
@@ -47,6 +48,8 @@ public class KeyController extends HttpServlet {
 
 		String key_code = request.getParameter("key_code");
 		String public_key = request.getParameter("public_key");
+
+		public_key = Aes.encrypt(public_key, Aes.readKey("key/key.aes"));
 
 		UserModel userModel = (UserModel) request.getSession().getAttribute("user");
 		try {

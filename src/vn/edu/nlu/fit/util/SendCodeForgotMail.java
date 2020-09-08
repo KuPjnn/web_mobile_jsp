@@ -45,7 +45,7 @@ public class SendCodeForgotMail {
 //		mailMessage.setText("Mã xác nhận đổi mật khẩu của bạn là: " + code, StandardCharsets.UTF_8.name());
 		mailMessage.setContent(
 				"<div align='center'>" +
-						"<h3>Mã xác nhận quên mật khẩu :</h3>" +
+						"<h3>Mã xác nhận :</h3>" +
 						"<h4>" + code + "</h4>" +
 						"</div>",
 				"text/html; charset=UTF-8");
